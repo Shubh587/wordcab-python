@@ -4,17 +4,11 @@
 	<a  href="https://pypi.org/project/wordcab" target="_blank">
 		<img src="https://img.shields.io/pypi/v/wordcab.svg" />
 	</a>
-	<a  href="https://pypi.org/project/wordcab/" target="_blank">
-		<img src="https://img.shields.io/pypi/status/wordcab.svg" />
-	</a>
 	<a  href="https://pypi.org/project/wordcab" target="_blank">
 		<img src="https://img.shields.io/pypi/pyversions/wordcab" />
 	</a>
 	<a  href="https://github.com/Wordcab/wordcab-python/blob/main/LICENSE" target="_blank">
 		<img src="https://img.shields.io/pypi/l/wordcab" />
-	</a>
-	<a  href="https://wordcab-python.readthedocs.io/" target="_blank">
-		<img src="https://img.shields.io/readthedocs/wordcab-python/latest.svg?label=Read%20the%20Docs" />
 	</a>
 	<a  href="https://github.com/Wordcab/wordcab-python/actions?workflow=Tests" target="_blank">
 		<img src="https://github.com/Wordcab/wordcab-python/workflows/Tests/badge.svg" />
