@@ -1,27 +1,37 @@
-# Wordcab Python
+<h1 align="center">Wordcab Python</h1>
 
-[![PyPI](https://img.shields.io/pypi/v/wordcab.svg)][pypi_]
-[![Status](https://img.shields.io/pypi/status/wordcab.svg)][status]
-[![Python Version](https://img.shields.io/pypi/pyversions/wordcab)][python version]
-[![License](https://img.shields.io/pypi/l/wordcab)][license]
+<div align="center">
+	<a  href="https://pypi.org/project/wordcab" target="_blank">
+		<img src="https://img.shields.io/pypi/v/wordcab.svg" />
+	</a>
+	<a  href="https://pypi.org/project/wordcab/" target="_blank">
+		<img src="https://img.shields.io/pypi/status/wordcab.svg" />
+	</a>
+	<a  href="https://pypi.org/project/wordcab" target="_blank">
+		<img src="https://img.shields.io/pypi/pyversions/wordcab" />
+	</a>
+	<a  href="https://github.com/Wordcab/wordcab-python/blob/main/LICENSE" target="_blank">
+		<img src="https://img.shields.io/pypi/l/wordcab" />
+	</a>
+	<a  href="https://wordcab-python.readthedocs.io/" target="_blank">
+		<img src="https://img.shields.io/readthedocs/wordcab-python/latest.svg?label=Read%20the%20Docs" />
+	</a>
+	<a  href="https://github.com/Wordcab/wordcab-python/actions?workflow=Tests" target="_blank">
+		<img src="https://github.com/Wordcab/wordcab-python/workflows/Tests/badge.svg" />
+	</a>
+	<a  href="https://app.codecov.io/gh/Wordcab/wordcab-python" target="_blank">
+		<img src="https://codecov.io/gh/Wordcab/wordcab-python/branch/main/graph/badge.svg" />
+	</a>
+</div>
 
-[![Read the documentation at https://wordcab-python.readthedocs.io/](https://img.shields.io/readthedocs/wordcab-python/latest.svg?label=Read%20the%20Docs)][read the docs]
-[![Tests](https://github.com/Wordcab/wordcab-python/workflows/Tests/badge.svg)][tests]
-[![Codecov](https://codecov.io/gh/Wordcab/wordcab-python/branch/main/graph/badge.svg)][codecov]
-
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
-[![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
-
-[pypi_]: https://pypi.org/project/wordcab-python/
-[status]: https://pypi.org/project/wordcab-python/
-[python version]: https://pypi.org/project/wordcab-python
-[read the docs]: https://wordcab-python.readthedocs.io/
-[tests]: https://github.com/Wordcab/wordcab-python/actions?workflow=Tests
-[codecov]: https://app.codecov.io/gh/Wordcab/wordcab-python
-[pre-commit]: https://github.com/pre-commit/pre-commit
-[black]: https://github.com/psf/black
-
-## Wordcab
+<div align="center">
+	<a  href="https://join.slack.com/t/wordcabcommunity/shared_invite/zt-1n0jo2mxj-47rYqGquR1BeyQwYrkf~kg">
+		<img src="https://img.shields.io/badge/JOIN US ON SLACK-4A154B?style=for-the-badge&logo=slack&logoColor=white" />
+	</a>
+	<a href="https://linkedin.com/company/wordcab">
+		<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+	</a>
+</div>
 
 ### What is Wordcab?
 
