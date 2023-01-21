@@ -108,6 +108,8 @@ def test_dummy_job(dummy_job: BaseJob) -> None:
     assert dummy_job.metadata is None
     assert dummy_job.settings is not None
     assert dummy_job.source == "generic"
+    assert dummy_job.source_lang is None
+    assert dummy_job.target_lang is None
     assert dummy_job.tags is None
     assert dummy_job.time_started == "dummy_time"
     assert dummy_job.time_completed is None
@@ -145,6 +147,8 @@ def test_dummy_extract_job(dummy_extract_job: ExtractJob) -> None:
     assert dummy_extract_job.job_status == "Pending"
     assert dummy_extract_job.settings is not None
     assert dummy_extract_job.source == "generic"
+    assert dummy_extract_job.source_lang is None
+    assert dummy_extract_job.target_lang is None
     assert dummy_extract_job.time_started == "dummy_time"
     assert dummy_extract_job.time_completed is None
     assert dummy_extract_job.transcript_id == "dummy_transcript"

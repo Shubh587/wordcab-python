@@ -165,7 +165,7 @@ def test_api_retrieve_job(api_key: str) -> None:
 def test_api_retrieve_summary(api_key: str) -> None:
     """Test the retrieve_summary function."""
     summary = retrieve_summary(
-        summary_id="narrative_summary_VYJfH4TbBgQx6LHJKXgsPZwG9nRGgh8m", api_key=api_key
+        summary_id="narrative_summary_dWmuBMfs4CfKWMn8iGqRwgFmBDHcEx2S", api_key=api_key
     )
     assert summary is not None
     assert isinstance(summary, BaseSummary)
@@ -175,7 +175,9 @@ def test_api_retrieve_summary(api_key: str) -> None:
     assert summary.display_name is not None
     assert summary.summary_type is not None
     assert summary.source is not None
+    assert summary.source_lang is not None
     assert summary.speaker_map is not None
+    assert summary.target_lang is not None
     assert summary.time_started is not None
     assert summary.time_completed is not None
     assert isinstance(summary.summary, dict)

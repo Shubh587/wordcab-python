@@ -53,6 +53,8 @@ class BaseJob:
     job_status: Optional[str] = field(default="Pending")
     metadata: Optional[Dict[str, str]] = field(default=None)
     settings: Optional[JobSettings] = field(default=None)
+    source_lang: Optional[str] = field(default=None)
+    target_lang: Optional[str] = field(default=None)
     tags: Optional[List[str]] = field(default=None)
     time_started: Optional[str] = field(default=None)
     time_completed: Optional[str] = field(default=None)
@@ -99,8 +101,6 @@ class SummarizeJob(BaseJob):
     """Wordcab API SummarizeJob object."""
 
     summary_details: Optional[Dict[str, str]] = field(default=None)
-    source_lang: Optional[str] = field(default=None)
-    target_lang: Optional[str] = field(default=None)
 
     def __post_init__(self) -> None:
         """Post-init."""

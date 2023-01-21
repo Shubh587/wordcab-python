@@ -373,6 +373,8 @@ def test_retrieve_job(api_key: str) -> None:
         assert job.job_status is not None
         assert job.display_name is not None
         assert job.source is not None
+        assert job.source_lang is None
+        assert job.target_lang is None
         assert job.time_started is not None
         assert job.time_completed is not None
         assert job.transcript_id is not None
