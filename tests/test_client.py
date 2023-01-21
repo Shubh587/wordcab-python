@@ -350,13 +350,15 @@ def test_retrieve_job(api_key: str) -> None:
     """Test client retrieve_job method."""
     with Client(api_key=api_key) as client:
         # Summarize job
-        job = client.retrieve_job(job_name="job_VkzpZbp79KVv4SoTiW8bFATY4FVQ9rCp")
-        assert job.job_name == "job_VkzpZbp79KVv4SoTiW8bFATY4FVQ9rCp"
+        job = client.retrieve_job(job_name="job_QeYrPCc5mc43TaHsyXEk4eF6Bejg2gDU")
+        assert job.job_name == "job_QeYrPCc5mc43TaHsyXEk4eF6Bejg2gDU"
         assert job is not None
         assert isinstance(job, SummarizeJob)
         assert job.job_status is not None
         assert job.display_name is not None
         assert job.source is not None
+        assert job.source_lang is not None
+        assert job.target_lang is not None
         assert job.time_started is not None
         assert job.time_completed is not None
         assert job.transcript_id is not None
@@ -491,7 +493,7 @@ def test_retrieve_summary(api_key: str) -> None:
     """Test client retrieve_summary method."""
     with Client(api_key=api_key) as client:
         summary = client.retrieve_summary(
-            summary_id="narrative_summary_VYJfH4TbBgQx6LHJKXgsPZwG9nRGgh8m"
+            summary_id="narrative_summary_dWmuBMfs4CfKWMn8iGqRwgFmBDHcEx2S"
         )
         assert summary is not None
         assert isinstance(summary, BaseSummary)
@@ -501,7 +503,9 @@ def test_retrieve_summary(api_key: str) -> None:
         assert summary.display_name is not None
         assert summary.summary_type is not None
         assert summary.source is not None
+        assert summary.source_lang is not None
         assert summary.speaker_map is not None
+        assert summary.target_lang is not None
         assert summary.time_started is not None
         assert summary.time_completed is not None
         assert isinstance(summary.summary, dict)

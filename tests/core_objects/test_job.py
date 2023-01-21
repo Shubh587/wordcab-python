@@ -169,6 +169,8 @@ def test_dummy_summarize_job(dummy_summarize_job: SummarizeJob) -> None:
     assert dummy_summarize_job.transcript_id == "dummy_transcript"
     assert dummy_summarize_job._job_type == "SummarizeJob"
     assert dummy_summarize_job.summary_details is None
+    assert dummy_summarize_job.source_lang is None
+    assert dummy_summarize_job.target_lang is None
     assert dummy_summarize_job.available_status is not None
     assert dummy_summarize_job.available_status == SUMMARIZE_AVAILABLE_STATUS
     assert hasattr(dummy_summarize_job, "job_update") and callable(
