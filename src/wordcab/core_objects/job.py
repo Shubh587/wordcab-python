@@ -99,6 +99,8 @@ class SummarizeJob(BaseJob):
     """Wordcab API SummarizeJob object."""
 
     summary_details: Optional[Dict[str, str]] = field(default=None)
+    source_lang: Optional[str] = field(default=None)
+    target_lang: Optional[str] = field(default=None)
 
     def __post_init__(self) -> None:
         """Post-init."""
