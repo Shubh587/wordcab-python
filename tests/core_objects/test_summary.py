@@ -76,6 +76,7 @@ def dummy_full_base_summary() -> BaseSummary:
         job_name="job_name",
         speaker_map={"A": "The Speaker", "B": "The Other Speaker"},
         source="generic",
+        source_lang="en",
         summary={
             "test": {
                 "structured_summary": [
@@ -91,6 +92,7 @@ def dummy_full_base_summary() -> BaseSummary:
             }
         },
         summary_type="narrative",
+        target_lang="en",
         transcript_id="transcript_123456",
         time_started="2021-01-01T00:00:00",
         time_completed="2021-01-01T00:10:00",
@@ -156,8 +158,10 @@ def test_empty_base_summary(dummy_empty_base_summary: BaseSummary) -> None:
     assert dummy_empty_base_summary.job_name is None
     assert dummy_empty_base_summary.speaker_map is None
     assert dummy_empty_base_summary.source is None
+    assert dummy_empty_base_summary.source_lang is None
     assert dummy_empty_base_summary.summary is None
     assert dummy_empty_base_summary.summary_type is None
+    assert dummy_empty_base_summary.target_lang is None
     assert dummy_empty_base_summary.transcript_id is None
     assert dummy_empty_base_summary.time_started is None
     assert dummy_empty_base_summary.time_completed is None
@@ -175,6 +179,7 @@ def test_full_base_summary(dummy_full_base_summary: BaseSummary) -> None:
         "B": "The Other Speaker",
     }
     assert dummy_full_base_summary.source == "generic"
+    assert dummy_full_base_summary.source_lang == "en"
     assert dummy_full_base_summary.summary == {
         "test": {
             "structured_summary": [
@@ -185,6 +190,7 @@ def test_full_base_summary(dummy_full_base_summary: BaseSummary) -> None:
         }
     }
     assert dummy_full_base_summary.summary_type == "narrative"
+    assert dummy_full_base_summary.target_lang == "en"
     assert dummy_full_base_summary.transcript_id == "transcript_123456"
     assert dummy_full_base_summary.time_started == "2021-01-01T00:00:00"
     assert dummy_full_base_summary.time_completed == "2021-01-01T00:10:00"
