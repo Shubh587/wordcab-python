@@ -163,6 +163,7 @@ def start_summary(
     source_lang: Optional[str] = None,
     split_long_utterances: bool = False,
     summary_lens: Optional[Union[int, List[int]]] = None,
+    target_lang: Optional[str] = None,
     tags: Optional[Union[str, List[str]]] = None,
     api_key: Optional[str] = None,
 ) -> SummarizeJob:
@@ -193,6 +194,8 @@ def start_summary(
     summary_lens : int or list of int, optional
         The length of the summary. The default is None. The length should be between 1 and 5. If a list of ints is
         provided, the summary will be created for each length.
+    target_lang : str, optional
+        The language of the resulting summary. If None, the language will be `en` (English) by default.
     tags : str or list of str, optional
         The tags to add to the job. The default is None. If None, no tags will be added.
     api_key : str, optional
@@ -215,6 +218,7 @@ def start_summary(
         source_lang=source_lang,
         split_long_utterances=split_long_utterances,
         summary_lens=summary_lens,
+        target_lang=target_lang,
         tags=tags,
         api_key=api_key,
     )
