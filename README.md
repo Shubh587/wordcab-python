@@ -108,7 +108,7 @@ for k, v in summary.__dict__.items():
 # Get the summary as one block of text
 for k, v in summary.summary:
 	print(f"Summary Length: {k}")
-	print(f"Summary: {v['structured_summary'].summary}")
+	print(f"Summary: {v['structured_summary'][0].summary}")
 ```
 
 ### Documentation
