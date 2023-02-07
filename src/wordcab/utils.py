@@ -47,12 +47,12 @@ def _check_source_lang(lang: str) -> bool:
 def _check_target_lang(lang: str) -> bool:
     """
     Check the target language.
-    
+
     Parameters
     ----------
     lang : str
         The target language.
-        
+
     Returns
     -------
     bool
