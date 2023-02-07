@@ -309,10 +309,10 @@ class Client:
 
         if source_lang is None:
             source_lang = "en"
-        
+
         if target_lang is None:
             target_lang = "en"
-            
+
         if _check_source_lang(source_lang) is False:
             raise ValueError(
                 f"""
@@ -327,9 +327,9 @@ class Client:
             )
         elif source_lang != "en" or target_lang != "en":
             logger.warning(
-                f"""
-                Languages outside `en` are currently in beta and may not be as accurate as the English model. 
-                We are working to improve the accuracy of the non-English models. 
+                """
+                Languages outside `en` are currently in beta and may not be as accurate as the English model.
+                We are working to improve the accuracy of the non-English models.
                 If you have any feedback, don't hesitate to get in touch with us at info@wordcab.com.
             """
             )
