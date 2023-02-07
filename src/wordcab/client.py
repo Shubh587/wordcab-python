@@ -27,6 +27,7 @@ from .config import (
     SUMMARY_LENGTHS_RANGE,
     SUMMARY_PIPELINES,
     SUMMARY_TYPES,
+    TARGET_LANG,
 )
 from .core_objects import (
     BaseSource,
@@ -51,6 +52,7 @@ from .utils import (
     _check_source_lang,
     _check_summary_length,
     _check_summary_pipelines,
+    _check_target_lang,
     _format_lengths,
     _format_pipelines,
     _format_tags,
@@ -256,6 +258,7 @@ class Client:
         source_lang: Optional[str] = None,
         split_long_utterances: Optional[bool] = False,
         summary_lens: Optional[Union[int, List[int]]] = None,
+        target_lang: Optional[str] = None,
         tags: Optional[Union[str, List[str]]] = None,
     ) -> SummarizeJob:
         """Start a Summary job."""
@@ -312,12 +315,18 @@ class Client:
                 You must specify a valid source language. Available languages are: {", ".join(SOURCE_LANG)}.
             """
             )
-        elif source_lang != "en":
+        elif _check_target_lang(target_lang) is False:
+            raise ValueError(
+                f"""
+                You must specify a valid target language. Available languages are: {", ".join(TARGET_LANG)}.
+            """
+            )
+        elif source_lang != "en" or target_lang != "en":
             logger.warning(
                 f"""
-                You have specified {source_lang} as the source language. This is currently in beta and may not
-                be as accurate as the English model. We are working to improve the accuracy of the non-English
-                models. If you have any feedback, please contact us at info@wordcab.com.
+                Languages outside `en` are currently in beta and may not be as accurate as the English model. 
+                We are working to improve the accuracy of the non-English models. 
+                If you have any feedback, don't hesitate to get in touch with us at info@wordcab.com.
             """
             )
 
