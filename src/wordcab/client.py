@@ -309,6 +309,10 @@ class Client:
 
         if source_lang is None:
             source_lang = "en"
+        
+        if target_lang is None:
+            target_lang = "en"
+            
         if _check_source_lang(source_lang) is False:
             raise ValueError(
                 f"""
