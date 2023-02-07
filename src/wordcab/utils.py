@@ -21,6 +21,7 @@ from .config import (
     SOURCE_LANG,
     SUMMARY_LENGTHS_RANGE,
     SUMMARY_PIPELINES,
+    TARGET_LANG,
 )
 
 
@@ -39,6 +40,25 @@ def _check_source_lang(lang: str) -> bool:
         True if the source language is valid, False otherwise.
     """
     if lang not in SOURCE_LANG:
+        return False
+    return True
+
+
+def _check_target_lang(lang: str) -> bool:
+    """
+    Check the target language.
+    
+    Parameters
+    ----------
+    lang : str
+        The target language.
+        
+    Returns
+    -------
+    bool
+        True if the target language is valid, False otherwise.
+    """
+    if lang not in TARGET_LANG:
         return False
     return True
 
