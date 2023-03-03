@@ -84,7 +84,7 @@ job = start_summary(
 	source_object=source,
 	display_name="sample_txt",
 	summary_type="no_speaker",
-	summary_length=3,
+	summary_lens=[1, 3],
 	tags=["sample", "text"],
 )
 
