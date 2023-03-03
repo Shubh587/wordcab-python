@@ -74,9 +74,25 @@ def generic_source_json() -> GenericSource:
 
 
 @pytest.fixture
+def generic_url_json() -> GenericSource:
+    """Fixture for a GenericSource object."""
+    return GenericSource(
+        url="https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.json"
+    )
+
+
+@pytest.fixture
 def audio_source() -> AudioSource:
     """Fixture for an AudioSource object."""
     return AudioSource(filepath=Path("tests/sample_1.mp3"))
+
+
+@pytest.fixture
+def audio_url_source() -> AudioSource:
+    """Fixture for an AudioSource object."""
+    return AudioSource(
+        url="https://github.com/Wordcab/wordcab-python/blob/main/tests/sample_1.mp3?raw=true"
+    )
 
 
 @pytest.fixture
@@ -203,7 +219,9 @@ def test_start_summary(
     base_source: BaseSource,
     generic_source_txt: GenericSource,
     generic_source_json: GenericSource,
+    generic_url_json: GenericSource,
     audio_source: AudioSource,
+    audio_url_source: AudioSource,
     in_memory_source: InMemorySource,
     api_key: str,
 ) -> None:
@@ -306,6 +324,24 @@ def test_start_summary(
             only_api=True,
         )
 
+        # Test generic source with url json file
+        json_job = client.start_summary(
+            source_object=generic_url_json,
+            display_name="test-sdk-json-url",
+            summary_type="narrative",
+            summary_lens=3,
+        )
+        assert isinstance(json_job, SummarizeJob)
+        assert json_job.display_name == "test-sdk-json-url"
+        assert json_job.job_name is not None
+        assert json_job.source == "generic"
+        assert json_job.settings == JobSettings(
+            ephemeral_data=False,
+            pipeline="transcribe,summarize",
+            split_long_utterances=False,
+            only_api=True,
+        )
+
         # Test audio source
         audio_job = client.start_summary(
             source_object=audio_source,
@@ -315,6 +351,24 @@ def test_start_summary(
         )
         assert isinstance(audio_job, SummarizeJob)
         assert audio_job.display_name == "test-sdk-audio"
+        assert audio_job.job_name is not None
+        assert audio_job.source == "audio"
+        assert audio_job.settings == JobSettings(
+            ephemeral_data=False,
+            pipeline="transcribe,summarize",
+            split_long_utterances=False,
+            only_api=True,
+        )
+
+        # Test audio url source
+        audio_job = client.start_summary(
+            source_object=audio_url_source,
+            display_name="test-sdk-audio-url",
+            summary_type="narrative",
+            summary_lens=3,
+        )
+        assert isinstance(audio_job, SummarizeJob)
+        assert audio_job.display_name == "test-sdk-audio-url"
         assert audio_job.job_name is not None
         assert audio_job.source == "audio"
         assert audio_job.settings == JobSettings(

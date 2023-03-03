@@ -39,6 +39,9 @@ class BaseSource:
         Path to the local file, by default None.
     url : Optional[str], optional
         URL to the remote file, by default None.
+    url_headers : Optional[Dict[str, str]], optional
+        Headers to retrieve the file from the URL, by default None.
+        Useful if the file requires authentication to be retrieved.
 
     Raises
     ------
@@ -70,6 +73,7 @@ class BaseSource:
 
     filepath: Optional[Union[str, Path]] = field(default=None, repr=False)
     url: Optional[str] = field(default=None, repr=False)
+    url_headers: Optional[Dict[str, str]] = field(default=None, repr=False)
     source: str = field(init=False)
     source_type: str = field(init=False)
     _stem: str = field(init=False, repr=False)
@@ -122,7 +126,11 @@ class BaseSource:
 
     def _load_file_from_url(self) -> requests.Response.content:
         """Load file from URL."""
-        file = requests.get(self.url)
+        if self.url_headers:
+            file = requests.get(self.url, headers=self.url_headers)
+        else:
+            file = requests.get(self.url)
+
         return file.content
 
     def _check_if_url_is_valid(self) -> bool:
