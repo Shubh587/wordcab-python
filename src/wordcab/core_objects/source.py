@@ -20,6 +20,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Union, no_type_check
 
+import requests  # type: ignore
 import validators  # type: ignore
 
 from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS
@@ -107,11 +108,11 @@ class BaseSource:
             self.source_type = "local"
 
         if self.url:
-            if not validators.url(self.url):
-                raise ValueError(
-                    f"Please provide a valid URL. {self.url} is not valid."
-                )
-            self.source_type = "remote"
+            if self._check_if_url_is_valid():
+                filename = self.url.split("/")[-1]
+                self._stem = filename.split(".")[0]
+                self._suffix = f".{filename.split('.')[1].split('?')[0]}"
+                self.source_type = "remote"
 
     @no_type_check
     def _load_file_from_path(self) -> bytes:
@@ -119,9 +120,17 @@ class BaseSource:
         with open(self.filepath, "rb") as f:
             return f.read()
 
-    def _load_file_from_url(self) -> bytes:
+    def _load_file_from_url(self) -> requests.Response.content:
         """Load file from URL."""
-        raise NotImplementedError("Loading files from URLs is not implemented yet.")
+        file = requests.get(self.url)
+        return file.content
+
+    def _check_if_url_is_valid(self) -> bool:
+        """Check if URL is valid."""
+        if not validators.url(self.url):
+            raise ValueError(f"Please provide a valid URL. {self.url} is not valid.")
+
+        return True
 
     def prepare_payload(self) -> Union[str, Dict[str, bytes]]:
         """Prepare payload."""
@@ -263,15 +272,14 @@ class GenericSource(BaseSource):
         """Post-init method."""
         super().__post_init__()
         self.source = "generic"
-        if self.source_type == "local":
-            if self._suffix not in AVAILABLE_GENERIC_FORMATS:
-                raise ValueError(
-                    f"Please provide a valid file format. {self._suffix} is not valid."
-                )
-            else:
-                self.file_object = self._load_file_from_path()
 
-        if self.source_type == "remote":
+        if self._suffix not in AVAILABLE_GENERIC_FORMATS:
+            raise ValueError(
+                f"Please provide a valid file format. {self._suffix} is not valid."
+            )
+        if self.source_type == "local":
+            self.file_object = self._load_file_from_path()
+        elif self.source_type == "remote":
             self.file_object = self._load_file_from_url()
 
     def prepare_payload(self) -> str:
@@ -336,15 +344,13 @@ class AudioSource(BaseSource):
         """Post-init method."""
         super().__post_init__()
         self.source = "audio"
+        if self._suffix not in AVAILABLE_AUDIO_FORMATS:
+            raise ValueError(
+                f"Please provide a valid file format. {self._suffix} is not valid."
+            )
         if self.source_type == "local":
-            if self._suffix not in AVAILABLE_AUDIO_FORMATS:
-                raise ValueError(
-                    f"Please provide a valid file format. {self._suffix} is not valid."
-                )
-            else:
-                self.file_object = self._load_file_from_path()
-
-        if self.source_type == "remote":
+            self.file_object = self._load_file_from_path()
+        elif self.source_type == "remote":
             self.file_object = self._load_file_from_url()
 
     def prepare_payload(self) -> Dict[str, bytes]:
