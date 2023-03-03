@@ -65,16 +65,23 @@ def test_base_source(tmp_path: Path) -> None:
     assert base._stem == Path(path).stem
     assert base._suffix == Path(path).suffix
 
-    base = BaseSource(url="https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.json")
+    base = BaseSource(
+        url="https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.json"
+    )
     assert base.filepath is None
-    assert base.url == "https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.json"
+    assert (
+        base.url
+        == "https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.json"
+    )
     assert base.source_type == "remote"
     assert base._stem == "sample_1"
     assert base._suffix == ".json"
 
     assert hasattr(base, "_load_file_from_path") and callable(base._load_file_from_path)
     assert hasattr(base, "_load_file_from_url") and callable(base._load_file_from_url)
-    assert hasattr(base, "_check_if_url_is_valid") and callable(base._check_if_url_is_valid)
+    assert hasattr(base, "_check_if_url_is_valid") and callable(
+        base._check_if_url_is_valid
+    )
     assert hasattr(base, "prepare_payload")
     with pytest.raises(NotImplementedError):
         base.prepare_payload()
@@ -147,7 +154,10 @@ def test_generic_source_with_url() -> None:
         url="https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.txt"
     )
     assert generic_source.filepath is None
-    assert generic_source.url == "https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.txt"
+    assert (
+        generic_source.url
+        == "https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.txt"
+    )
     assert generic_source.source_type == "remote"
     assert generic_source._stem == "sample_1"
     assert generic_source._suffix == ".txt"
@@ -165,12 +175,15 @@ def test_generic_source_with_url() -> None:
         "Accept": "application/json",
         "Content-Type": "application/json",
     }
-    
+
     generic_source = GenericSource(
         url="https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.json"
     )
     assert generic_source.filepath is None
-    assert generic_source.url == "https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.json"
+    assert (
+        generic_source.url
+        == "https://raw.githubusercontent.com/Wordcab/wordcab-python/main/tests/sample_1.json"
+    )
     assert generic_source.source_type == "remote"
     assert generic_source._stem == "sample_1"
     assert generic_source._suffix == ".json"
@@ -216,7 +229,7 @@ def test_audio_source(tmp_path: Path) -> None:
 
     with pytest.raises(ValueError):
         AudioSource(filepath=Path(aac_path))
-    
+
     url = "https://github.com/Wordcab/wordcab-python/blob/main/tests/sample_1.mp3?raw=true"
     audio_source = AudioSource(url=url)
     assert audio_source.filepath is None

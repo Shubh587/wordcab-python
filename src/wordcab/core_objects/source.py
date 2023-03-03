@@ -16,11 +16,11 @@
 
 import json
 import logging
-import requests  # type: ignore
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Union, no_type_check
 
+import requests  # type: ignore
 import validators  # type: ignore
 
 from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS
@@ -124,17 +124,15 @@ class BaseSource:
         """Load file from URL."""
         file = requests.get(self.url)
         return file.content
-    
+
     def _check_if_url_is_valid(self) -> bool:
         """Check if URL is valid."""
         if not validators.url(self.url):
-            raise ValueError(
-                f"Please provide a valid URL. {self.url} is not valid."
-            )
-            
+            raise ValueError(f"Please provide a valid URL. {self.url} is not valid.")
+
         headers = requests.head(self.url).headers
         content_type = headers.get("content-type")
-        
+
         if "text" in content_type or "html" in content_type:
             raise ValueError(
                 f"Please provide a valid URL. {self.url} is not valid. No file found."
@@ -288,7 +286,7 @@ class GenericSource(BaseSource):
                 f"Please provide a valid file format. {self._suffix} is not valid."
             )
         if self.source_type == "local":
-                self.file_object = self._load_file_from_path()
+            self.file_object = self._load_file_from_path()
         elif self.source_type == "remote":
             self.file_object = self._load_file_from_url()
 
@@ -359,7 +357,7 @@ class AudioSource(BaseSource):
                 f"Please provide a valid file format. {self._suffix} is not valid."
             )
         if self.source_type == "local":
-                self.file_object = self._load_file_from_path()
+            self.file_object = self._load_file_from_path()
         elif self.source_type == "remote":
             self.file_object = self._load_file_from_url()
 
