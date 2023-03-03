@@ -131,9 +131,9 @@ class BaseSource:
             raise ValueError(f"Please provide a valid URL. {self.url} is not valid.")
 
         headers = requests.head(self.url).headers
-        content_type = headers.get("content-type")
+        downloadable = "attachment" in headers.get("content-disposition", "")
 
-        if "text" in content_type or "html" in content_type:
+        if not downloadable:
             raise ValueError(
                 f"Please provide a valid URL. {self.url} is not valid. No file found."
             )
