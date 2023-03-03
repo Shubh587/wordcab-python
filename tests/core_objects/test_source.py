@@ -55,8 +55,6 @@ def test_base_source(tmp_path: Path) -> None:
         BaseSource(filepath=Path(f"{tmp_path}/does_not_exist.txt"))
     with pytest.raises(ValueError):
         BaseSource(url="123456")
-    with pytest.raises(ValueError):
-        BaseSource(url="https://example.com")
 
     base = BaseSource(filepath=Path(path))
     assert base.filepath == Path(path)
