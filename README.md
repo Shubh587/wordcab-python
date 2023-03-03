@@ -84,7 +84,7 @@ job = start_summary(
 	source_object=source,
 	display_name="sample_txt",
 	summary_type="no_speaker",
-	summary_length=3,
+	summary_lens=[1, 3],
 	tags=["sample", "text"],
 )
 
@@ -108,7 +108,7 @@ for k, v in summary.__dict__.items():
 # Get the summary as one block of text
 for k, v in summary.summary:
 	print(f"Summary Length: {k}")
-	print(f"Summary: {v['structured_summary'].summary}")
+	print(f"Summary: {v['structured_summary'][0].summary}")
 ```
 
 ### Documentation
