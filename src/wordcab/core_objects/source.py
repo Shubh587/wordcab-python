@@ -16,7 +16,7 @@
 
 import json
 import logging
-import requests
+import requests  # type: ignore
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Union, no_type_check
@@ -120,7 +120,7 @@ class BaseSource:
         with open(self.filepath, "rb") as f:
             return f.read()
 
-    def _load_file_from_url(self) -> bytes:
+    def _load_file_from_url(self) -> requests.Response.content:
         """Load file from URL."""
         file = requests.get(self.url)
         return file.content
