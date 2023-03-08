@@ -276,7 +276,9 @@ def retrieve_job(
 
 
 @no_type_check
-def delete_job(job_name: str, api_key: Optional[str] = None) -> Dict[str, str]:
+def delete_job(
+    job_name: str, warning: bool = True, api_key: Optional[str] = None
+) -> Dict[str, str]:
     """
     Delete a job by name and all associated data (including the transcript).
 
@@ -287,6 +289,8 @@ def delete_job(job_name: str, api_key: Optional[str] = None) -> Dict[str, str]:
     ----------
     job_name: str
         The name of the job to delete.
+    warning: bool
+        Whether to show a warning before deleting the job. The default is True.
     api_key : str, optional
         The API key to use. The default is None. If None, the API key will be
         automatically retrieved from the environment variable WORDCAB_API_KEY.
@@ -296,7 +300,9 @@ def delete_job(job_name: str, api_key: Optional[str] = None) -> Dict[str, str]:
     Dict[str, str]
         A dictionary containing the name of the deleted job.
     """
-    return request(method="delete_job", job_name=job_name, api_key=api_key)
+    return request(
+        method="delete_job", job_name=job_name, warning=warning, api_key=api_key
+    )
 
 
 @no_type_check
