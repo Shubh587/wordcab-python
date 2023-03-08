@@ -470,7 +470,7 @@ class Client:
             raise ValueError(r.text)
 
     @no_type_check
-    def delete_job(self, job_name: str) -> Dict[str, str]:
+    def delete_job(self, job_name: str, warning: bool = True) -> Dict[str, str]:
         """Delete a job."""
         headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -482,7 +482,8 @@ class Client:
         )
 
         if r.status_code == 200:
-            logger.warning(f"Job {job_name} deleted.")
+            if warning:
+                logger.warning(f"Job {job_name} deleted.")
             return r.json()
         else:
             raise ValueError(r.text)
