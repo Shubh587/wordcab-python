@@ -114,8 +114,8 @@ class BaseSource:
         if self.url:
             if self._check_if_url_is_valid():
                 filename = self.url.split("/")[-1]
-                self._stem = filename.split(".")[-1]
-                self._suffix = f".{filename.split('.')[1].split('?')[0]}"
+                self._stem = filename.split(".")[0]
+                self._suffix = f".{filename.split('.')[-1].split('?')[0]}"
                 self.source_type = "remote"
 
     @no_type_check
