@@ -32,6 +32,30 @@ logger = logging.getLogger(__name__)
 
 
 @pytest.fixture
+def dummy_next_steps() -> NextSteps:
+    """Fixture for a dummy NextSteps object."""
+    return NextSteps(
+        associated_speakers=["A", "B"],
+        text="This is a next step.",
+    )
+
+
+@pytest.fixture
+def dummy_context() -> Context:
+    """Fixture for a dummy Context object."""
+    return Context(
+        discussion_points=["This is a discussion point."],
+        issue="This is an issue.",
+        keywords=["keyword1", "keyword2"],
+        next_steps=NextSteps(
+            associated_speakers=["A", "B"],
+            text="This is a next step.",
+        ),
+        purpose="This is a purpose.",
+    )
+
+
+@pytest.fixture
 def dummy_structured_summary() -> StructuredSummary:
     """Fixture for a dummy StructuredSummary object."""
     return StructuredSummary(
@@ -128,6 +152,23 @@ def dummy_list_summaries() -> ListSummaries:
     return ListSummaries(page_count=3, next_page="https://next_page.com", results=[])
 
 
+def test_next_steps(dummy_next_steps: NextSteps) -> None:
+    """Test the NextSteps object."""
+    assert dummy_next_steps.associated_speakers == ["A", "B"]
+    assert dummy_next_steps.text == "This is a next step."
+
+
+def test_context(dummy_context: Context) -> None:
+    """Test the Context object."""
+    assert dummy_context.discussion_points == ["This is a discussion point."]
+    assert dummy_context.issue == "This is an issue."
+    assert dummy_context.keywords == ["keyword1", "keyword2"]
+    assert isinstance(dummy_context.next_steps, NextSteps)
+    assert dummy_context.next_steps.associated_speakers == ["A", "B"]
+    assert dummy_context.next_steps.text == "This is a next step."
+    assert dummy_context.purpose == "This is a purpose."
+
+
 def test_empty_structured_summary(
     dummy_structured_summary: StructuredSummary,
 ) -> None:
@@ -218,7 +259,7 @@ def test_full_base_summary(dummy_full_base_summary: BaseSummary) -> None:
         "test": {
             "structured_summary": [
                 StructuredSummary(
-                    "test", "test", "00:00:10", None, "00:00:00", None, 10, 0
+                    "test", None, "test", "00:00:10", None, "00:00:00", None, 10, 0
                 )
             ]
         }
