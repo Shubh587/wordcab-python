@@ -38,6 +38,7 @@ LIST_JOBS_ORDER_BY = [
     "-time_started",
     "-time_completed",
 ]
+REQUEST_TIMEOUT = 30
 SOURCE_LANG = ["de", "en", "es", "fr", "it", "sv"]
 SOURCE_OBJECT_MAPPING = {
     "generic": "GenericSource",
@@ -63,6 +64,6 @@ SUMMARIZE_AVAILABLE_STATUS = [
 ]
 SUMMARY_LENGTHS_RANGE = [1, 5]
 SUMMARY_PIPELINES = ["transcribe", "summarize"]
-SUMMARY_TYPES = ["conversational", "narrative", "no_speaker", "reason_conclusion"]
+SUMMARY_TYPES = ["conversational", "narrative", "no_speaker"]
 TARGET_LANG = ["de", "en", "es", "fr", "it", "sv"]
 WORDCAB_TOKEN_FOLDER = "~/.wordcab/token"  # noqa: S105
