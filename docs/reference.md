@@ -180,17 +180,7 @@ The core objects are used to represent the data returned by the API but also to 
 ```
 
 ```{eval-rst}
-.. autoclass:: wordcab.core_objects.ConclusionSummary
-   :members:
-```
-
-```{eval-rst}
 .. autoclass:: wordcab.core_objects.ListSummaries
-   :members:
-```
-
-```{eval-rst}
-.. autoclass:: wordcab.core_objects.ReasonSummary
    :members:
 ```
 

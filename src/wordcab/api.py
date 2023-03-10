@@ -177,7 +177,7 @@ def start_summary(
     display_name : str
         The display name of the summary. This is useful for retrieving the job later.
     summary_type : str
-        The type of summary to create. You can choose from "conversational", "narrative", "reason_conclusion" or
+        The type of summary to create. You can choose from "conversational", "narrative", or
         "no_speaker". More information can be found here: https://docs.wordcab.com/docs/summary-types
     ephemeral_data : bool
         Whether to delete the data after the summary is created. The default is False. If False, the data will be

@@ -44,22 +44,6 @@ class StructuredSummary:
 
 
 @dataclass
-class ReasonSummary:
-    """Reason summary object."""
-
-    summary: str
-    stop_index: int
-
-
-@dataclass
-class ConclusionSummary:
-    """Conclusion summary object."""
-
-    summary: str
-    stop_index: int
-
-
-@dataclass
 class BaseSummary:
     """Summary object."""
 
