@@ -24,7 +24,7 @@ from typing import Dict, List, Optional, Union, no_type_check
 import requests  # type: ignore
 import validators  # type: ignore
 
-from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS
+from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS, REQUEST_TIMEOUT
 
 
 logger = logging.getLogger(__name__)
@@ -128,9 +128,11 @@ class BaseSource:
     def _load_file_from_url(self) -> requests.Response.content:
         """Load file from URL."""
         if self.url_headers:
-            file = requests.get(self.url, headers=self.url_headers)
+            file = requests.get(
+                self.url, headers=self.url_headers, timeout=REQUEST_TIMEOUT
+            )
         else:
-            file = requests.get(self.url)
+            file = requests.get(self.url, timeout=REQUEST_TIMEOUT)
 
         return file.content
 

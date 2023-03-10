@@ -293,7 +293,7 @@ def test_start_summary(
         txt_job = client.start_summary(
             source_object=generic_source_txt,
             display_name="test-sdk-txt",
-            summary_type="reason_conclusion",
+            summary_type="no_speaker",
         )
         assert isinstance(txt_job, SummarizeJob)
         assert txt_job.display_name == "test-sdk-txt"

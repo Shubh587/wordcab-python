@@ -22,6 +22,7 @@ import requests  # type: ignore
 from .config import (
     EXTRACT_PIPELINES,
     LIST_JOBS_ORDER_BY,
+    REQUEST_TIMEOUT,
     SOURCE_LANG,
     SOURCE_OBJECT_MAPPING,
     SUMMARY_LENGTHS_RANGE,
@@ -33,14 +34,12 @@ from .core_objects import (
     BaseSource,
     BaseSummary,
     BaseTranscript,
-    ConclusionSummary,
     ExtractJob,
     InMemorySource,
     JobSettings,
     ListJobs,
     ListSummaries,
     ListTranscripts,
-    ReasonSummary,
     Stats,
     StructuredSummary,
     SummarizeJob,
@@ -75,6 +74,7 @@ class Client:
             to the Wordcab CLI and set the environment variable.
             """
             )
+        self.timeout = REQUEST_TIMEOUT
 
     def __enter__(self) -> "Client":
         """Enter the client context."""
@@ -131,7 +131,10 @@ class Client:
             params["tags"] = _format_tags(tags)
 
         r = requests.get(
-            "https://wordcab.com/api/v1/me", headers=headers, params=params
+            "https://wordcab.com/api/v1/me",
+            headers=headers,
+            params=params,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -222,6 +225,7 @@ class Client:
                 headers=headers,
                 params=params,
                 files=payload,
+                timeout=self.timeout,
             )
         else:
             r = requests.post(
@@ -229,6 +233,7 @@ class Client:
                 headers=headers,
                 params=params,
                 data=payload,
+                timeout=self.timeout,
             )
 
         if r.status_code == 201:
@@ -268,13 +273,11 @@ class Client:
             )
 
         if summary_type == "reason_conclusion":
-            if summary_lens:
-                logger.warning(
-                    """
-                    You have specified a summary length for a reason_conclusion summary but reason_conclusion summaries
-                    do not use a summary length. The summary_lens parameter will be ignored.
+            raise ValueError(
                 """
-                )
+                The summary type 'reason_conclusion' has been removed. You can use `brief` instead.
+            """
+            )
         else:
             if summary_lens is None:
                 logger.warning(
@@ -372,7 +375,7 @@ class Client:
             "split_long_utterances": str(split_long_utterances).lower(),
             "summary_type": summary_type,
         }
-        if summary_type != "reason_conclusion" and summary_lens:
+        if summary_lens:
             params["summary_lens"] = _format_lengths(summary_lens)
         if tags:
             params["tags"] = _format_tags(tags)
@@ -388,6 +391,7 @@ class Client:
                 headers=headers,
                 params=params,
                 files=payload,
+                timeout=self.timeout,
             )
         else:
             r = requests.post(
@@ -395,6 +399,7 @@ class Client:
                 headers=headers,
                 params=params,
                 data=payload,
+                timeout=self.timeout,
             )
 
         if r.status_code == 201:
@@ -432,7 +437,10 @@ class Client:
         params = {"page_size": page_size, "order_by": order_by}
 
         r = requests.get(
-            "https://wordcab.com/api/v1/jobs", headers=headers, params=params
+            "https://wordcab.com/api/v1/jobs",
+            headers=headers,
+            params=params,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -458,7 +466,11 @@ class Client:
             "Accept": "application/json",
         }
 
-        r = requests.get(f"https://wordcab.com/api/v1/jobs/{job_name}", headers=headers)
+        r = requests.get(
+            f"https://wordcab.com/api/v1/jobs/{job_name}",
+            headers=headers,
+            timeout=self.timeout,
+        )
 
         if r.status_code == 200:
             data = r.json()
@@ -478,7 +490,9 @@ class Client:
         }
 
         r = requests.delete(
-            f"https://wordcab.com/api/v1/jobs/{job_name}", headers=headers
+            f"https://wordcab.com/api/v1/jobs/{job_name}",
+            headers=headers,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -497,7 +511,10 @@ class Client:
         params = {"page_size": page_size}
 
         r = requests.get(
-            "https://wordcab.com/api/v1/transcripts", headers=headers, params=params
+            "https://wordcab.com/api/v1/transcripts",
+            headers=headers,
+            params=params,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -520,7 +537,9 @@ class Client:
         }
 
         r = requests.get(
-            f"https://wordcab.com/api/v1/transcripts/{transcript_id}", headers=headers
+            f"https://wordcab.com/api/v1/transcripts/{transcript_id}",
+            headers=headers,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -546,6 +565,7 @@ class Client:
             f"https://wordcab.com/api/v1/transcripts/{transcript_id}",
             headers=headers,
             json={"speaker_map": speaker_map},
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -563,7 +583,10 @@ class Client:
         params = {"page_size": page_size}
 
         r = requests.get(
-            "https://wordcab.com/api/v1/summaries", headers=headers, params=params
+            "https://wordcab.com/api/v1/summaries",
+            headers=headers,
+            params=params,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -584,7 +607,9 @@ class Client:
         }
 
         r = requests.get(
-            f"https://wordcab.com/api/v1/summaries/{summary_id}", headers=headers
+            f"https://wordcab.com/api/v1/summaries/{summary_id}",
+            headers=headers,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -593,26 +618,15 @@ class Client:
             summary = BaseSummary(**data)
             summaries: Dict[
                 str,
-                Union[
-                    Dict[str, List[StructuredSummary]],
-                    Union[ConclusionSummary, ReasonSummary],
-                ],
+                Dict[str, List[StructuredSummary]],
             ] = {}
-            if summary.summary_type == "reason_conclusion":
-                summaries["reason_summary"] = ReasonSummary(
-                    **structured_summaries["reason_summary"]
-                )
-                summaries["conclusion_summary"] = ConclusionSummary(
-                    **structured_summaries["conclusion_summary"]
-                )
-            else:
-                for key, value in structured_summaries.items():
-                    summaries[key] = {
-                        "structured_summary": [
-                            StructuredSummary(**items)
-                            for items in value["structured_summary"]
-                        ]
-                    }
+            for key, value in structured_summaries.items():
+                summaries[key] = {
+                    "structured_summary": [
+                        StructuredSummary(**items)
+                        for items in value["structured_summary"]
+                    ]
+                }
             summary.summary = summaries
             return summary
         else:
