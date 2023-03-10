@@ -25,10 +25,30 @@ logger = logging.getLogger(__name__)
 
 
 @dataclass
+class NextSteps:
+    """Next steps object."""
+
+    text: str
+    associated_speakers: Optional[List[str]] = field(default=None)
+
+
+@dataclass
+class Context:
+    """Context object."""
+
+    issue: Optional[str] = field(default=None)
+    purpose: Optional[str] = field(default=None)
+    keywords: Optional[List[str]] = field(default=None)
+    next_steps: Optional[NextSteps] = field(default=None)
+    discussion_points: Optional[List[str]] = field(default=None)
+
+
+@dataclass
 class StructuredSummary:
     """Structured summary object."""
 
     summary: str
+    context: Optional[Context] = field(default=None)
     summary_html: Optional[str] = field(default=None)
     end: Optional[str] = field(default=None)
     end_index: Optional[int] = field(default=None)
