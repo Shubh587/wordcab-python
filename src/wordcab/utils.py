@@ -17,12 +17,37 @@
 from typing import List, Union
 
 from .config import (
+    CONTEXT_ELEMENTS,
     EXTRACT_PIPELINES,
     SOURCE_LANG,
     SUMMARY_LENGTHS_RANGE,
     SUMMARY_PIPELINES,
     TARGET_LANG,
 )
+
+
+def _check_context_elements(elements: Union[str, List[str]]) -> bool:
+    """
+    Check the context elements.
+
+    Parameters
+    ----------
+    elements : Union[str, List[str]]
+        The context elements.
+
+    Returns
+    -------
+    bool
+        True if the context elements are valid, False otherwise.
+    """
+    if isinstance(elements, str):
+        elements = [elements]
+
+    for element in elements:
+        if element not in CONTEXT_ELEMENTS:
+            return False
+
+    return True
 
 
 def _check_source_lang(lang: str) -> bool:
@@ -135,6 +160,26 @@ def _check_extract_pipelines(pipelines: Union[str, List[str]]) -> bool:
     return True
 
 
+def _format_context_elements(elements: Union[str, List[str]]) -> str:
+    """
+    Format the context.
+
+    Parameters
+    ----------
+    elements : Union[str, List[str]]
+        The context elements.
+
+    Returns
+    -------
+    str
+        The formatted context.
+    """
+    if isinstance(elements, str):
+        return elements
+
+    return ",".join(elements)
+
+
 def _format_lengths(lengths: Union[int, List[int]]) -> str:
     """
     Format the lengths.
@@ -151,6 +196,7 @@ def _format_lengths(lengths: Union[int, List[int]]) -> str:
     """
     if isinstance(lengths, int):
         return str(lengths)
+
     return ",".join([str(length) for length in lengths])
 
 
@@ -170,6 +216,7 @@ def _format_pipelines(pipelines: Union[str, List[str]]) -> str:
     """
     if isinstance(pipelines, str):
         return pipelines
+
     return ",".join(pipelines)
 
 
@@ -189,4 +236,5 @@ def _format_tags(tags: Union[str, List[str]]) -> str:
     """
     if isinstance(tags, str):
         return tags
+
     return ",".join(tags)

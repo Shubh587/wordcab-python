@@ -19,13 +19,43 @@ from typing import List, Union
 import pytest
 
 from wordcab.utils import (
+    _check_context_elements,
     _check_source_lang,
     _check_summary_length,
     _check_summary_pipelines,
+    _format_context_elements,
     _format_lengths,
     _format_pipelines,
     _format_tags,
 )
+
+
+@pytest.mark.parametrize(
+    "elements", ["test_element", ["element1", "element2"], ["test"]]
+)
+def test_format_context_elements(elements: Union[str, List[str]]) -> None:
+    """Test format context elements."""
+    if isinstance(elements, str):
+        assert _format_context_elements(elements=elements) == elements
+    else:
+        assert _format_context_elements(elements=elements) == ",".join(elements)
+
+
+@pytest.mark.parametrize(
+    "elements",
+    ["next_steps", ["keywords"], ["discussion_points", "next_steps", "issue"]],
+)
+def test_correct_check_context_elements(elements: Union[str, List[str]]) -> None:
+    """Test correct context elements."""
+    assert _check_context_elements(elements=elements) is True
+
+
+@pytest.mark.parametrize(
+    "elements", ["test_element", ["element1", "element2"], ["kwords"], [1, 2]]
+)
+def test_wrong_check_context_elements(elements: Union[str, List[str]]) -> None:
+    """Test wrong context elements."""
+    assert _check_context_elements(elements=elements) is False
 
 
 @pytest.mark.parametrize("lang", ["en", "es", "de", "fr", "it"])
