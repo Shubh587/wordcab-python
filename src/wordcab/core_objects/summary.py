@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,7 +28,10 @@ logger = logging.getLogger(__name__)
 class StructuredSummary:
     """Structured summary object."""
 
-    summary: str
+    summary: Union[str, Dict[str, str]]
+    context: Optional[
+        Dict[str, Union[str, List[str], Dict[str, Union[str, List[str]]]]]
+    ] = field(default=None)
     summary_html: Optional[str] = field(default=None)
     end: Optional[str] = field(default=None)
     end_index: Optional[int] = field(default=None)

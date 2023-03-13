@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -263,6 +263,7 @@ def test_api_start_summary(api_key: str) -> None:
         source_object=source_object,
         display_name="test-summary-api",
         summary_type="conversational",
+        context=["keywords", "issue", "purpose"],
         api_key=api_key,
     )
     assert isinstance(job, SummarizeJob)
