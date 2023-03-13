@@ -164,18 +164,16 @@ def test_structured_summary_with_context(
         "keyword1",
         "keyword2",
     ]
+    assert dummy_structured_summary_with_context.context["next_steps"] is not None
+    assert isinstance(dummy_structured_summary_with_context.context["next_steps"], dict)
+    assert dummy_structured_summary_with_context.context["next_steps"][
+        "associated_speakers"
+    ] == ["A", "B"]
     assert (
-        dummy_structured_summary_with_context.context["next_steps"] is not None
-        and isinstance(
-            dummy_structured_summary_with_context.context["next_steps"], dict
-        )
-        and dummy_structured_summary_with_context.context["next_steps"][
-            "associated_speakers"
-        ]
-        == ["A", "B"]
-        and dummy_structured_summary_with_context.context["next_steps"]["text"]
+        dummy_structured_summary_with_context.context["next_steps"]["text"]
         == "This is a next step."
     )
+
     assert dummy_structured_summary_with_context.context["discussion_points"] == [
         "This is a discussion point."
     ]

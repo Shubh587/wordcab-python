@@ -16,7 +16,7 @@
 
 import os
 from pathlib import Path
-from typing import Optional
+from typing import List, Optional
 
 import pytest
 
@@ -102,7 +102,7 @@ def base_source() -> BaseSource:
 
 
 @pytest.fixture
-def context_elements() -> list:
+def context_elements() -> List[str]:
     """Fixture for a list of context elements."""
     return ["keywords", "issue", "purpose", "discussion_points", "next_steps"]
 
@@ -229,7 +229,7 @@ def test_start_summary(
     audio_source: AudioSource,
     audio_url_source: AudioSource,
     in_memory_source: InMemorySource,
-    context_elements: list,
+    context_elements: List[str],
     api_key: str,
 ) -> None:
     """Test client start_summary method."""

@@ -66,6 +66,7 @@ def _check_source_lang(lang: str) -> bool:
     """
     if lang not in SOURCE_LANG:
         return False
+
     return True
 
 
@@ -85,6 +86,7 @@ def _check_target_lang(lang: str) -> bool:
     """
     if lang not in TARGET_LANG:
         return False
+
     return True
 
 
