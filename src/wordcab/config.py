@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,9 +14,13 @@
 
 """Wordcab API Config variables."""
 
+from pathlib import Path
+
+
 AVAILABLE_AUDIO_FORMATS = [".flac", ".m4a", ".mp3", ".mpga", ".ogg", ".wav"]
 AVAILABLE_GENERIC_FORMATS = [".json", ".txt"]
 AVAILABLE_PLAN = ["free", "metered", "paid"]
+CONTEXT_ELEMENTS = ["discussion_points", "issue", "keywords", "next_steps", "purpose"]
 EXTRACT_AVAILABLE_STATUS = [
     "Deleted",
     "Error",
@@ -38,7 +42,8 @@ LIST_JOBS_ORDER_BY = [
     "-time_started",
     "-time_completed",
 ]
-SOURCE_LANG = ["de", "en", "es", "fr", "it", "sv"]
+REQUEST_TIMEOUT = 30
+SOURCE_LANG = ["de", "en", "es", "fr", "it", "pt", "sv"]
 SOURCE_OBJECT_MAPPING = {
     "generic": "GenericSource",
     "audio": "AudioSource",
@@ -63,6 +68,6 @@ SUMMARIZE_AVAILABLE_STATUS = [
 ]
 SUMMARY_LENGTHS_RANGE = [1, 5]
 SUMMARY_PIPELINES = ["transcribe", "summarize"]
-SUMMARY_TYPES = ["conversational", "narrative", "no_speaker", "reason_conclusion"]
-TARGET_LANG = ["de", "en", "es", "fr", "it", "sv"]
-WORDCAB_TOKEN_FOLDER = "~/.wordcab/token"  # noqa: S105
+SUMMARY_TYPES = ["brief", "conversational", "narrative", "no_speaker"]
+TARGET_LANG = ["de", "en", "es", "fr", "it", "pt", "sv"]
+WORDCAB_TOKEN_FOLDER = Path.home() / ".wordcab" / "token"  # noqa: S105

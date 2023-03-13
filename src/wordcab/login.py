@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ from typing import Optional
 
 import requests  # type: ignore
 
-from .config import WORDCAB_TOKEN_FOLDER
+from .config import REQUEST_TIMEOUT, WORDCAB_TOKEN_FOLDER
 
 
 logger = logging.getLogger(__name__)
@@ -97,7 +97,9 @@ def get_token() -> Optional[str]:
 def _check_valid_credentials(account: str, token: str) -> bool:
     """Check if the credentials are valid."""
     headers = {"Authorization": f"Bearer {token}"}
-    r = requests.get("https://wordcab.com/api/v1/me", headers=headers)
+    r = requests.get(
+        "https://wordcab.com/api/v1/me", headers=headers, timeout=REQUEST_TIMEOUT
+    )
     if r.status_code == 200:
         if r.json()["account_email"] == account:
             return True

@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -247,6 +247,26 @@ def test_audio_source(tmp_path: Path) -> None:
     assert audio_source.url_headers == headers
     assert audio_source.source_type == "remote"
     assert audio_source._stem == "sample_1"
+    assert audio_source._suffix == ".mp3"
+    assert audio_source.file_object is not None
+    assert hasattr(audio_source, "prepare_payload") and callable(
+        audio_source.prepare_payload
+    )
+    assert audio_source.prepare_payload() == {"audio_file": audio_source.file_object}
+    assert hasattr(audio_source, "prepare_headers") and callable(
+        audio_source.prepare_headers
+    )
+    assert audio_source.prepare_headers() == {}
+
+    # Test filename with spaces and dots
+    url = "https://example.com/test%20file%20with%20dots.mp3"
+    headers = {"Accept": "application/json", "Content-Type": "application/json"}
+    audio_source = AudioSource(url=url, url_headers=headers)
+    assert audio_source.filepath is None
+    assert audio_source.url == url
+    assert audio_source.url_headers == headers
+    assert audio_source.source_type == "remote"
+    assert audio_source._stem == "test file with dots"
     assert audio_source._suffix == ".mp3"
     assert audio_source.file_object is not None
     assert hasattr(audio_source, "prepare_payload") and callable(

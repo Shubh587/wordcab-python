@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 
 import json
 import logging
+import urllib.parse
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Union, no_type_check
@@ -23,7 +24,7 @@ from typing import Dict, List, Optional, Union, no_type_check
 import requests  # type: ignore
 import validators  # type: ignore
 
-from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS
+from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS, REQUEST_TIMEOUT
 
 
 logger = logging.getLogger(__name__)
@@ -113,9 +114,9 @@ class BaseSource:
 
         if self.url:
             if self._check_if_url_is_valid():
-                filename = self.url.split("/")[-1]
-                self._stem = filename.split(".")[0]
-                self._suffix = f".{filename.split('.')[1].split('?')[0]}"
+                filename = urllib.parse.unquote(self.url.split("/")[-1])
+                self._stem = ".".join(filename.split(".")[:-1])
+                self._suffix = f".{filename.split('.')[-1].split('?')[0]}"
                 self.source_type = "remote"
 
     @no_type_check
@@ -127,9 +128,11 @@ class BaseSource:
     def _load_file_from_url(self) -> requests.Response.content:
         """Load file from URL."""
         if self.url_headers:
-            file = requests.get(self.url, headers=self.url_headers)
+            file = requests.get(
+                self.url, headers=self.url_headers, timeout=REQUEST_TIMEOUT
+            )
         else:
-            file = requests.get(self.url)
+            file = requests.get(self.url, timeout=REQUEST_TIMEOUT)
 
         return file.content
 

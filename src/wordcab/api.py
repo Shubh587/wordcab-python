@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -157,6 +157,7 @@ def start_summary(
     source_object: Union[BaseSource, InMemorySource],
     display_name: str,
     summary_type: str,
+    context: Optional[Union[str, List[str]]] = None,
     ephemeral_data: bool = False,
     only_api: bool = True,
     pipelines: Union[str, List[str]] = ["transcribe", "summarize"],  # noqa: B006
@@ -177,8 +178,12 @@ def start_summary(
     display_name : str
         The display name of the summary. This is useful for retrieving the job later.
     summary_type : str
-        The type of summary to create. You can choose from "conversational", "narrative", "reason_conclusion" or
+        The type of summary to create. You can choose from "conversational", "narrative", or
         "no_speaker". More information can be found here: https://docs.wordcab.com/docs/summary-types
+    context : str or list of str, optional
+        The context elements to retrieve from the transcript. The default is None.
+        Context elements you can retrieve are: `issue`, `purpose`, `keywords`, `next_steps`, and `discussion_points`.
+        You can retrieve one or more of these elements.
     ephemeral_data : bool
         Whether to delete the data after the summary is created. The default is False. If False, the data will be
         kept on Wordcab's servers. You can delete the data at any time, check the documentation here:
@@ -212,6 +217,7 @@ def start_summary(
         source_object=source_object,
         display_name=display_name,
         summary_type=summary_type,
+        context=context,
         ephemeral_data=ephemeral_data,
         only_api=only_api,
         pipelines=pipelines,
@@ -276,7 +282,9 @@ def retrieve_job(
 
 
 @no_type_check
-def delete_job(job_name: str, api_key: Optional[str] = None) -> Dict[str, str]:
+def delete_job(
+    job_name: str, warning: bool = True, api_key: Optional[str] = None
+) -> Dict[str, str]:
     """
     Delete a job by name and all associated data (including the transcript).
 
@@ -287,6 +295,8 @@ def delete_job(job_name: str, api_key: Optional[str] = None) -> Dict[str, str]:
     ----------
     job_name: str
         The name of the job to delete.
+    warning: bool
+        Whether to show a warning before deleting the job. The default is True.
     api_key : str, optional
         The API key to use. The default is None. If None, the API key will be
         automatically retrieved from the environment variable WORDCAB_API_KEY.
@@ -296,7 +306,9 @@ def delete_job(job_name: str, api_key: Optional[str] = None) -> Dict[str, str]:
     Dict[str, str]
         A dictionary containing the name of the deleted job.
     """
-    return request(method="delete_job", job_name=job_name, api_key=api_key)
+    return request(
+        method="delete_job", job_name=job_name, warning=warning, api_key=api_key
+    )
 
 
 @no_type_check

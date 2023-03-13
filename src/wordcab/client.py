@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,8 +20,10 @@ from typing import Dict, List, Optional, Union, no_type_check
 import requests  # type: ignore
 
 from .config import (
+    CONTEXT_ELEMENTS,
     EXTRACT_PIPELINES,
     LIST_JOBS_ORDER_BY,
+    REQUEST_TIMEOUT,
     SOURCE_LANG,
     SOURCE_OBJECT_MAPPING,
     SUMMARY_LENGTHS_RANGE,
@@ -33,14 +35,12 @@ from .core_objects import (
     BaseSource,
     BaseSummary,
     BaseTranscript,
-    ConclusionSummary,
     ExtractJob,
     InMemorySource,
     JobSettings,
     ListJobs,
     ListSummaries,
     ListTranscripts,
-    ReasonSummary,
     Stats,
     StructuredSummary,
     SummarizeJob,
@@ -48,11 +48,13 @@ from .core_objects import (
 )
 from .login import get_token
 from .utils import (
+    _check_context_elements,
     _check_extract_pipelines,
     _check_source_lang,
     _check_summary_length,
     _check_summary_pipelines,
     _check_target_lang,
+    _format_context_elements,
     _format_lengths,
     _format_pipelines,
     _format_tags,
@@ -75,6 +77,7 @@ class Client:
             to the Wordcab CLI and set the environment variable.
             """
             )
+        self.timeout = REQUEST_TIMEOUT
 
     def __enter__(self) -> "Client":
         """Enter the client context."""
@@ -131,7 +134,10 @@ class Client:
             params["tags"] = _format_tags(tags)
 
         r = requests.get(
-            "https://wordcab.com/api/v1/me", headers=headers, params=params
+            "https://wordcab.com/api/v1/me",
+            headers=headers,
+            params=params,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -158,7 +164,8 @@ class Client:
         if _check_extract_pipelines(pipelines) is False:
             raise ValueError(
                 f"""
-                You must specify a valid list of pipelines. Available pipelines are: {", ".join(EXTRACT_PIPELINES)}.
+                You must specify a valid list of pipelines.
+                Available pipelines are: {", ".join(EXTRACT_PIPELINES[:-1])} and {EXTRACT_PIPELINES[-1]}.
             """
             )
         if (
@@ -222,6 +229,7 @@ class Client:
                 headers=headers,
                 params=params,
                 files=payload,
+                timeout=self.timeout,
             )
         else:
             r = requests.post(
@@ -229,6 +237,7 @@ class Client:
                 headers=headers,
                 params=params,
                 data=payload,
+                timeout=self.timeout,
             )
 
         if r.status_code == 201:
@@ -252,6 +261,7 @@ class Client:
         source_object: Union[BaseSource, InMemorySource],
         display_name: str,
         summary_type: str,
+        context: Optional[Union[str, List[str]]] = None,
         ephemeral_data: Optional[bool] = False,
         only_api: Optional[bool] = True,
         pipelines: Union[str, List[str]] = ["transcribe", "summarize"],  # noqa: B006
@@ -268,13 +278,11 @@ class Client:
             )
 
         if summary_type == "reason_conclusion":
-            if summary_lens:
-                logger.warning(
-                    """
-                    You have specified a summary length for a reason_conclusion summary but reason_conclusion summaries
-                    do not use a summary length. The summary_lens parameter will be ignored.
+            raise ValueError(
                 """
-                )
+                The summary type 'reason_conclusion' has been removed. You can use `brief` instead.
+            """
+            )
         else:
             if summary_lens is None:
                 logger.warning(
@@ -292,7 +300,8 @@ class Client:
         if _check_summary_pipelines(pipelines) is False:
             raise ValueError(
                 f"""
-                You must specify a valid list of pipelines. Available pipelines are: {", ".join(SUMMARY_PIPELINES)}.
+                You must specify a valid list of pipelines.
+                Available pipelines are: {", ".join(SUMMARY_PIPELINES[:-1])} and {SUMMARY_PIPELINES[-1]}.
             """
             )
 
@@ -307,6 +316,14 @@ class Client:
             """
             )
 
+        if _check_context_elements(context) is False:
+            raise ValueError(
+                f"""
+                You must specify valid context elements. Context elements must be a string or a list of strings.
+                Here are the available context elements: {", ".join(CONTEXT_ELEMENTS[:-1])} and {CONTEXT_ELEMENTS[-1]}.
+            """
+            )
+
         if source_lang is None:
             source_lang = "en"
 
@@ -316,13 +333,15 @@ class Client:
         if _check_source_lang(source_lang) is False:
             raise ValueError(
                 f"""
-                You must specify a valid source language. Available languages are: {", ".join(SOURCE_LANG)}.
+                You must specify a valid source language.
+                Available languages are: {", ".join(SOURCE_LANG[:-1])} or {SOURCE_LANG[-1]}.
             """
             )
         elif _check_target_lang(target_lang) is False:
             raise ValueError(
                 f"""
-                You must specify a valid target language. Available languages are: {", ".join(TARGET_LANG)}.
+                You must specify a valid target language.
+                Available languages are: {", ".join(TARGET_LANG[:-1])} or {TARGET_LANG[-1]}.
             """
             )
         elif source_lang != "en" or target_lang != "en":
@@ -372,7 +391,9 @@ class Client:
             "split_long_utterances": str(split_long_utterances).lower(),
             "summary_type": summary_type,
         }
-        if summary_type != "reason_conclusion" and summary_lens:
+        if context:
+            params["context"] = _format_context_elements(context)
+        if summary_lens:
             params["summary_lens"] = _format_lengths(summary_lens)
         if tags:
             params["tags"] = _format_tags(tags)
@@ -388,6 +409,7 @@ class Client:
                 headers=headers,
                 params=params,
                 files=payload,
+                timeout=self.timeout,
             )
         else:
             r = requests.post(
@@ -395,6 +417,7 @@ class Client:
                 headers=headers,
                 params=params,
                 data=payload,
+                timeout=self.timeout,
             )
 
         if r.status_code == 201:
@@ -432,7 +455,10 @@ class Client:
         params = {"page_size": page_size, "order_by": order_by}
 
         r = requests.get(
-            "https://wordcab.com/api/v1/jobs", headers=headers, params=params
+            "https://wordcab.com/api/v1/jobs",
+            headers=headers,
+            params=params,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -458,7 +484,11 @@ class Client:
             "Accept": "application/json",
         }
 
-        r = requests.get(f"https://wordcab.com/api/v1/jobs/{job_name}", headers=headers)
+        r = requests.get(
+            f"https://wordcab.com/api/v1/jobs/{job_name}",
+            headers=headers,
+            timeout=self.timeout,
+        )
 
         if r.status_code == 200:
             data = r.json()
@@ -470,7 +500,7 @@ class Client:
             raise ValueError(r.text)
 
     @no_type_check
-    def delete_job(self, job_name: str) -> Dict[str, str]:
+    def delete_job(self, job_name: str, warning: bool = True) -> Dict[str, str]:
         """Delete a job."""
         headers = {
             "Authorization": f"Bearer {self.api_key}",
@@ -478,11 +508,14 @@ class Client:
         }
 
         r = requests.delete(
-            f"https://wordcab.com/api/v1/jobs/{job_name}", headers=headers
+            f"https://wordcab.com/api/v1/jobs/{job_name}",
+            headers=headers,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
-            logger.warning(f"Job {job_name} deleted.")
+            if warning:
+                logger.warning(f"Job {job_name} deleted.")
             return r.json()
         else:
             raise ValueError(r.text)
@@ -496,7 +529,10 @@ class Client:
         params = {"page_size": page_size}
 
         r = requests.get(
-            "https://wordcab.com/api/v1/transcripts", headers=headers, params=params
+            "https://wordcab.com/api/v1/transcripts",
+            headers=headers,
+            params=params,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -519,7 +555,9 @@ class Client:
         }
 
         r = requests.get(
-            f"https://wordcab.com/api/v1/transcripts/{transcript_id}", headers=headers
+            f"https://wordcab.com/api/v1/transcripts/{transcript_id}",
+            headers=headers,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -545,6 +583,7 @@ class Client:
             f"https://wordcab.com/api/v1/transcripts/{transcript_id}",
             headers=headers,
             json={"speaker_map": speaker_map},
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -562,7 +601,10 @@ class Client:
         params = {"page_size": page_size}
 
         r = requests.get(
-            "https://wordcab.com/api/v1/summaries", headers=headers, params=params
+            "https://wordcab.com/api/v1/summaries",
+            headers=headers,
+            params=params,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -583,7 +625,9 @@ class Client:
         }
 
         r = requests.get(
-            f"https://wordcab.com/api/v1/summaries/{summary_id}", headers=headers
+            f"https://wordcab.com/api/v1/summaries/{summary_id}",
+            headers=headers,
+            timeout=self.timeout,
         )
 
         if r.status_code == 200:
@@ -592,26 +636,15 @@ class Client:
             summary = BaseSummary(**data)
             summaries: Dict[
                 str,
-                Union[
-                    Dict[str, List[StructuredSummary]],
-                    Union[ConclusionSummary, ReasonSummary],
-                ],
+                Dict[str, List[StructuredSummary]],
             ] = {}
-            if summary.summary_type == "reason_conclusion":
-                summaries["reason_summary"] = ReasonSummary(
-                    **structured_summaries["reason_summary"]
-                )
-                summaries["conclusion_summary"] = ConclusionSummary(
-                    **structured_summaries["conclusion_summary"]
-                )
-            else:
-                for key, value in structured_summaries.items():
-                    summaries[key] = {
-                        "structured_summary": [
-                            StructuredSummary(**items)
-                            for items in value["structured_summary"]
-                        ]
-                    }
+            for key, value in structured_summaries.items():
+                summaries[key] = {
+                    "structured_summary": [
+                        StructuredSummary(**items)
+                        for items in value["structured_summary"]
+                    ]
+                }
             summary.summary = summaries
             return summary
         else:
