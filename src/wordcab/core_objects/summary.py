@@ -32,7 +32,7 @@ class StructuredSummary:
     context: Optional[
         Dict[str, Union[str, List[str], Dict[str, Union[str, List[str]]]]]
     ] = field(default=None)
-    summary_html: Optional[str] = field(default=None)
+    summary_html: Optional[Union[str, Dict[str, str]]] = field(default=None)
     end: Optional[str] = field(default=None)
     end_index: Optional[int] = field(default=None)
     start: Optional[str] = field(default=None)
