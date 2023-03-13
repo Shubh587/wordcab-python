@@ -16,7 +16,7 @@
 
 import os
 from pathlib import Path
-from typing import Optional
+from typing import List, Optional
 
 import pytest
 
@@ -99,6 +99,12 @@ def audio_url_source() -> AudioSource:
 def base_source() -> BaseSource:
     """Fixture for a wrong BaseSource object."""
     return BaseSource(filepath=Path("tests/sample_1.txt"))
+
+
+@pytest.fixture
+def context_elements() -> List[str]:
+    """Fixture for a list of context elements."""
+    return ["keywords", "issue", "purpose", "discussion_points", "next_steps"]
 
 
 def test_client_succeeds(client: Client) -> None:
@@ -223,6 +229,7 @@ def test_start_summary(
     audio_source: AudioSource,
     audio_url_source: AudioSource,
     in_memory_source: InMemorySource,
+    context_elements: List[str],
     api_key: str,
 ) -> None:
     """Test client start_summary method."""
@@ -294,6 +301,24 @@ def test_start_summary(
             source_object=generic_source_txt,
             display_name="test-sdk-txt",
             summary_type="no_speaker",
+        )
+        assert isinstance(txt_job, SummarizeJob)
+        assert txt_job.display_name == "test-sdk-txt"
+        assert txt_job.job_name is not None
+        assert txt_job.source == "generic"
+        assert txt_job.settings == JobSettings(
+            ephemeral_data=False,
+            pipeline="transcribe,summarize",
+            split_long_utterances=False,
+            only_api=True,
+        )
+
+        # Test generic source with txt file and context
+        txt_job = client.start_summary(
+            source_object=generic_source_txt,
+            display_name="test-sdk-txt",
+            summary_type="narrative",
+            context=context_elements,
         )
         assert isinstance(txt_job, SummarizeJob)
         assert txt_job.display_name == "test-sdk-txt"
