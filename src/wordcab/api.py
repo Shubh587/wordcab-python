@@ -1,4 +1,4 @@
-# Copyright 2022 The Wordcab Team. All rights reserved.
+# Copyright 2022-2023 The Wordcab Team. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -157,6 +157,7 @@ def start_summary(
     source_object: Union[BaseSource, InMemorySource],
     display_name: str,
     summary_type: str,
+    context: Optional[Union[str, List[str]]] = None,
     ephemeral_data: bool = False,
     only_api: bool = True,
     pipelines: Union[str, List[str]] = ["transcribe", "summarize"],  # noqa: B006
@@ -179,6 +180,10 @@ def start_summary(
     summary_type : str
         The type of summary to create. You can choose from "conversational", "narrative", or
         "no_speaker". More information can be found here: https://docs.wordcab.com/docs/summary-types
+    context : str or list of str, optional
+        The context elements to retrieve from the transcript. The default is None.
+        Context elements you can retrieve are: `issue`, `purpose`, `keywords`, `next_steps`, and `discussion_points`.
+        You can retrieve one or more of these elements.
     ephemeral_data : bool
         Whether to delete the data after the summary is created. The default is False. If False, the data will be
         kept on Wordcab's servers. You can delete the data at any time, check the documentation here:
@@ -212,6 +217,7 @@ def start_summary(
         source_object=source_object,
         display_name=display_name,
         summary_type=summary_type,
+        context=context,
         ephemeral_data=ephemeral_data,
         only_api=only_api,
         pipelines=pipelines,

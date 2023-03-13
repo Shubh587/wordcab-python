@@ -687,14 +687,14 @@ pipenv = ["pipenv"]
 
 [[package]]
 name = "exceptiongroup"
-version = "1.1.0"
+version = "1.1.1"
 description = "Backport of PEP 654 (exception groups)"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "exceptiongroup-1.1.0-py3-none-any.whl", hash = "sha256:327cbda3da756e2de031a3107b81ab7b3770a602c4d16ca618298c526f4bec1e"},
-    {file = "exceptiongroup-1.1.0.tar.gz", hash = "sha256:bcb67d800a4497e1b404c2dd44fca47d3b7a5e5433dbab67f96c1a685cdfdf23"},
+    {file = "exceptiongroup-1.1.1-py3-none-any.whl", hash = "sha256:232c37c63e4f682982c8b6459f33a8981039e5fb8756b2074364e5055c498c9e"},
+    {file = "exceptiongroup-1.1.1.tar.gz", hash = "sha256:d484c3090ba2889ae2928419117447a14daf3c1231d5e30d0aae34f354f01785"},
 ]
 
 [package.extras]
@@ -1860,18 +1860,15 @@ test = ["pytest", "pytest-console-scripts", "pytest-tornasync"]
 
 [[package]]
 name = "packaging"
-version = "21.3"
+version = "23.0"
 description = "Core utilities for Python packages"
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 files = [
-    {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
-    {file = "packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},
+    {file = "packaging-23.0-py3-none-any.whl", hash = "sha256:714ac14496c3e68c99c29b00845f7a2b85f3bb6f1078fd9f72fd20f0570002b2"},
+    {file = "packaging-23.0.tar.gz", hash = "sha256:b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"},
 ]
-
-[package.dependencies]
-pyparsing = ">=2.0.2,<3.0.5 || >3.0.5"
 
 [[package]]
 name = "pandocfilters"
@@ -2200,21 +2197,6 @@ files = [
 plugins = ["importlib-metadata"]
 
 [[package]]
-name = "pyparsing"
-version = "3.0.9"
-description = "pyparsing module - Classes and methods to define and execute parsing grammars"
-category = "dev"
-optional = false
-python-versions = ">=3.6.8"
-files = [
-    {file = "pyparsing-3.0.9-py3-none-any.whl", hash = "sha256:5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"},
-    {file = "pyparsing-3.0.9.tar.gz", hash = "sha256:2b020ecf7d21b687f219b71ecad3631f644a47f01403fa1d1036b0c6416d70fb"},
-]
-
-[package.extras]
-diagrams = ["jinja2", "railroad-diagrams"]
-
-[[package]]
 name = "pyrsistent"
 version = "0.19.3"
 description = "Persistent/Functional/Immutable data structures"
@@ -2511,14 +2493,14 @@ cffi = {version = "*", markers = "implementation_name == \"pypy\""}
 
 [[package]]
 name = "qtconsole"
-version = "5.4.0"
+version = "5.4.1"
 description = "Jupyter Qt console"
 category = "dev"
 optional = false
 python-versions = ">= 3.7"
 files = [
-    {file = "qtconsole-5.4.0-py3-none-any.whl", hash = "sha256:be13560c19bdb3b54ed9741a915aa701a68d424519e8341ac479a91209e694b2"},
-    {file = "qtconsole-5.4.0.tar.gz", hash = "sha256:57748ea2fd26320a0b77adba20131cfbb13818c7c96d83fafcb110ff55f58b35"},
+    {file = "qtconsole-5.4.1-py3-none-any.whl", hash = "sha256:bae8c7e10170cdcdcaf7e6d53ad7d6a7412249b9b8310a0eaa6b6f3b260f32db"},
+    {file = "qtconsole-5.4.1.tar.gz", hash = "sha256:f67a03f40f722e13261791280f73068dbaf9dafcc335cbba644ccc8f892640e5"},
 ]
 
 [package.dependencies]
@@ -2526,6 +2508,7 @@ ipykernel = ">=4.1"
 ipython-genutils = "*"
 jupyter-client = ">=4.1"
 jupyter-core = "*"
+packaging = "*"
 pygments = "*"
 pyzmq = ">=17.1"
 qtpy = ">=2.0.1"
@@ -2703,20 +2686,20 @@ files = [
 
 [[package]]
 name = "safety"
-version = "2.3.5"
+version = "2.3.4"
 description = "Checks installed dependencies for known vulnerabilities and licenses."
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "safety-2.3.5-py3-none-any.whl", hash = "sha256:2227fcac1b22b53c1615af78872b48348661691450aa25d6704a5504dbd1f7e2"},
-    {file = "safety-2.3.5.tar.gz", hash = "sha256:a60c11f8952f412cbb165d70cb1f673a3b43a2ba9a93ce11f97e6a4de834aa3a"},
+    {file = "safety-2.3.4-py3-none-any.whl", hash = "sha256:6224dcd9b20986a2b2c5e7acfdfba6bca42bb11b2783b24ed04f32317e5167ea"},
+    {file = "safety-2.3.4.tar.gz", hash = "sha256:b9e74e794e82f54d11f4091c5d820c4d2d81de9f953bf0b4f33ac8bc402ae72c"},
 ]
 
 [package.dependencies]
 Click = ">=8.0.2"
 dparse = ">=0.6.2"
-packaging = ">=21.0,<22.0"
+packaging = ">=21.0"
 requests = "*"
 "ruamel.yaml" = ">=0.17.21"
 setuptools = ">=19.3"
