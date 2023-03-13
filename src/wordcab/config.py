@@ -43,7 +43,7 @@ LIST_JOBS_ORDER_BY = [
     "-time_completed",
 ]
 REQUEST_TIMEOUT = 30
-SOURCE_LANG = ["de", "en", "es", "fr", "it", "sv"]
+SOURCE_LANG = ["de", "en", "es", "fr", "it", "pt", "sv"]
 SOURCE_OBJECT_MAPPING = {
     "generic": "GenericSource",
     "audio": "AudioSource",
@@ -69,5 +69,5 @@ SUMMARIZE_AVAILABLE_STATUS = [
 SUMMARY_LENGTHS_RANGE = [1, 5]
 SUMMARY_PIPELINES = ["transcribe", "summarize"]
 SUMMARY_TYPES = ["conversational", "narrative", "no_speaker"]
-TARGET_LANG = ["de", "en", "es", "fr", "it", "sv"]
+TARGET_LANG = ["de", "en", "es", "fr", "it", "pt", "sv"]
 WORDCAB_TOKEN_FOLDER = Path.home() / ".wordcab" / "token"  # noqa: S105
