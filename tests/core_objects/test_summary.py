@@ -19,40 +19,10 @@ from typing import List
 
 import pytest
 
-from wordcab.core_objects import (
-    BaseSummary,
-    Context,
-    ListSummaries,
-    NextSteps,
-    StructuredSummary,
-)
+from wordcab.core_objects import BaseSummary, ListSummaries, StructuredSummary
 
 
 logger = logging.getLogger(__name__)
-
-
-@pytest.fixture
-def dummy_next_steps() -> NextSteps:
-    """Fixture for a dummy NextSteps object."""
-    return NextSteps(
-        associated_speakers=["A", "B"],
-        text="This is a next step.",
-    )
-
-
-@pytest.fixture
-def dummy_context() -> Context:
-    """Fixture for a dummy Context object."""
-    return Context(
-        discussion_points=["This is a discussion point."],
-        issue="This is an issue.",
-        keywords=["keyword1", "keyword2"],
-        next_steps=NextSteps(
-            associated_speakers=["A", "B"],
-            text="This is a next step.",
-        ),
-        purpose="This is a purpose.",
-    )
 
 
 @pytest.fixture
@@ -89,16 +59,16 @@ def dummy_structured_summary_with_context() -> StructuredSummary:
         summary_html="<p>This is a test.</p>",
         timestamp_end=409000,
         timestamp_start=0,
-        context=Context(
-            issue="This is an issue.",
-            purpose="This is a purpose.",
-            keywords=["keyword1", "keyword2"],
-            next_steps=NextSteps(
-                text="This is a next step.",
-                associated_speakers=["A", "B"],
-            ),
-            discussion_points=["This is a discussion point."],
-        ),
+        context={
+            "issue": "This is an issue.",
+            "purpose": "This is a purpose.",
+            "keywords": ["keyword1", "keyword2"],
+            "next_steps": {
+                "text": "This is a next step.",
+                "associated_speakers": ["A", "B"],
+            },
+            "discussion_points": ["This is a discussion point."],
+        },
     )
 
 
@@ -152,23 +122,6 @@ def dummy_list_summaries() -> ListSummaries:
     return ListSummaries(page_count=3, next_page="https://next_page.com", results=[])
 
 
-def test_next_steps(dummy_next_steps: NextSteps) -> None:
-    """Test the NextSteps object."""
-    assert dummy_next_steps.associated_speakers == ["A", "B"]
-    assert dummy_next_steps.text == "This is a next step."
-
-
-def test_context(dummy_context: Context) -> None:
-    """Test the Context object."""
-    assert dummy_context.discussion_points == ["This is a discussion point."]
-    assert dummy_context.issue == "This is an issue."
-    assert dummy_context.keywords == ["keyword1", "keyword2"]
-    assert isinstance(dummy_context.next_steps, NextSteps)
-    assert dummy_context.next_steps.associated_speakers == ["A", "B"]
-    assert dummy_context.next_steps.text == "This is a next step."
-    assert dummy_context.purpose == "This is a purpose."
-
-
 def test_empty_structured_summary(
     dummy_structured_summary: StructuredSummary,
 ) -> None:
@@ -202,24 +155,28 @@ def test_structured_summary_with_context(
 ) -> None:
     """Test the StructuredSummary object with context."""
     assert dummy_structured_summary_with_context.context is not None
-    assert isinstance(dummy_structured_summary_with_context.context, Context)
-    assert dummy_structured_summary_with_context.context.issue == "This is an issue."
-    assert dummy_structured_summary_with_context.context.purpose == "This is a purpose."
-    assert dummy_structured_summary_with_context.context.keywords == [
+    assert isinstance(dummy_structured_summary_with_context.context, dict)
+    assert dummy_structured_summary_with_context.context["issue"] == "This is an issue."
+    assert (
+        dummy_structured_summary_with_context.context["purpose"] == "This is a purpose."
+    )
+    assert dummy_structured_summary_with_context.context["keywords"] == [
         "keyword1",
         "keyword2",
     ]
     assert (
-        dummy_structured_summary_with_context.context.next_steps is not None
+        dummy_structured_summary_with_context.context["next_steps"] is not None
         and isinstance(
-            dummy_structured_summary_with_context.context.next_steps, NextSteps
+            dummy_structured_summary_with_context.context["next_steps"], dict
         )
-        and dummy_structured_summary_with_context.context.next_steps.associated_speakers
+        and dummy_structured_summary_with_context.context["next_steps"][
+            "associated_speakers"
+        ]
         == ["A", "B"]
-        and dummy_structured_summary_with_context.context.next_steps.text
+        and dummy_structured_summary_with_context.context["next_steps"]["text"]
         == "This is a next step."
     )
-    assert dummy_structured_summary_with_context.context.discussion_points == [
+    assert dummy_structured_summary_with_context.context["discussion_points"] == [
         "This is a discussion point."
     ]
 
