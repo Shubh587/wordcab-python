@@ -174,7 +174,7 @@ def test_summarize_available_status() -> None:
 
 def test_summary_lengths_range() -> None:
     """Test the SUMMARY_LENGTHS_RANGE constant."""
-    assert isinstance(SUMMARY_LENGTHS_RANGE, tuple)
+    assert isinstance(SUMMARY_LENGTHS_RANGE, list)
     assert len(SUMMARY_LENGTHS_RANGE) == 2
     assert all(isinstance(item, int) for item in SUMMARY_LENGTHS_RANGE)
     assert SUMMARY_LENGTHS_RANGE == [1, 5]
@@ -206,5 +206,6 @@ def test_target_lang() -> None:
 
 def test_wordcab_token_folder() -> None:
     """Test the WORDCAB_TOKEN_FOLDER constant."""
-    assert isinstance(WORDCAB_TOKEN_FOLDER, str)
-    assert WORDCAB_TOKEN_FOLDER == Path.home() / ".wordcab" / "token"
+    assert isinstance(WORDCAB_TOKEN_FOLDER, Path)
+    full_path = Path.home() / ".wordcab" / "token"
+    assert WORDCAB_TOKEN_FOLDER == full_path
