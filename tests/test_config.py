@@ -132,7 +132,7 @@ def test_source_lang() -> None:
     assert isinstance(SOURCE_LANG, list)
     assert len(SOURCE_LANG) > 0
     assert all(isinstance(item, str) for item in SOURCE_LANG)
-    assert SOURCE_LANG == ["de", "en", "es", "fr", "it", "pt", "sv"]
+    assert SOURCE_LANG == ["de", "en", "es", "fr", "it", "nl", "pt", "sv"]
 
 
 def test_source_object_mapping() -> None:

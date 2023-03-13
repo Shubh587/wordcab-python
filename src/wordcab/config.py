@@ -43,7 +43,7 @@ LIST_JOBS_ORDER_BY = [
     "-time_completed",
 ]
 REQUEST_TIMEOUT = 30
-SOURCE_LANG = ["de", "en", "es", "fr", "it", "pt", "sv"]
+SOURCE_LANG = ["de", "en", "es", "fr", "it", "nl", "pt", "sv"]
 SOURCE_OBJECT_MAPPING = {
     "generic": "GenericSource",
     "audio": "AudioSource",
