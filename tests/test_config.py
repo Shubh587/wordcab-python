@@ -193,7 +193,7 @@ def test_summary_types() -> None:
     assert isinstance(SUMMARY_TYPES, list)
     assert len(SUMMARY_TYPES) > 0
     assert all(isinstance(item, str) for item in SUMMARY_TYPES)
-    assert SUMMARY_TYPES == ["conversational", "narrative", "no_speaker"]
+    assert SUMMARY_TYPES == ["brief", "conversational", "narrative", "no_speaker"]
 
 
 def test_target_lang() -> None:
