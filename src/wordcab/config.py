@@ -68,6 +68,6 @@ SUMMARIZE_AVAILABLE_STATUS = [
 ]
 SUMMARY_LENGTHS_RANGE = [1, 5]
 SUMMARY_PIPELINES = ["transcribe", "summarize"]
-SUMMARY_TYPES = ["conversational", "narrative", "no_speaker"]
+SUMMARY_TYPES = ["brief", "conversational", "narrative", "no_speaker"]
 TARGET_LANG = ["de", "en", "es", "fr", "it", "pt", "sv"]
 WORDCAB_TOKEN_FOLDER = Path.home() / ".wordcab" / "token"  # noqa: S105
