@@ -328,7 +328,7 @@ class Client:
             source_lang = "en"
 
         if target_lang is None:
-            target_lang = "en"
+            target_lang = source_lang
 
         if _check_source_lang(source_lang) is False:
             raise ValueError(
@@ -388,6 +388,7 @@ class Client:
             "only_api": str(only_api).lower(),
             "pipeline": pipelines,
             "source_lang": source_lang,
+            "target_lang": target_lang,
             "split_long_utterances": str(split_long_utterances).lower(),
             "summary_type": summary_type,
         }
