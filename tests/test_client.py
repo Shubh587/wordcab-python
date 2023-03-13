@@ -353,7 +353,7 @@ def test_start_summary(
         json_job = client.start_summary(
             source_object=generic_url_json,
             display_name="test-sdk-json-url",
-            summary_type="narrative",
+            summary_type="brief",
             summary_lens=3,
         )
         assert isinstance(json_job, SummarizeJob)
