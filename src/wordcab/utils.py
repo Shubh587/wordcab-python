@@ -14,7 +14,7 @@
 
 """Wordcab API Utils functions."""
 
-from typing import List, Union
+from typing import List, Optional, Union
 
 from .config import (
     CONTEXT_ELEMENTS,
@@ -26,13 +26,13 @@ from .config import (
 )
 
 
-def _check_context_elements(elements: Union[str, List[str]]) -> bool:
+def _check_context_elements(elements: Optional[Union[str, List[str]]]) -> bool:
     """
     Check the context elements.
 
     Parameters
     ----------
-    elements : Union[str, List[str]]
+    elements : Optional[Union[str, List[str]]]
         The context elements.
 
     Returns
@@ -40,6 +40,9 @@ def _check_context_elements(elements: Union[str, List[str]]) -> bool:
     bool
         True if the context elements are valid, False otherwise.
     """
+    if elements is None:
+        return True
+
     if isinstance(elements, str):
         elements = [elements]
 
