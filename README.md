@@ -26,15 +26,14 @@
 
 # What is Wordcab?
 
-+ **Summarize any business communications at scale with Wordcab's API.**
-+ **Wordcab** is a summarization service that provides a simple API to summarize any `audio`, `text`, or `JSON` file.
-+ It also includes compatibility with famous transcripts platforms like 
+- **Summarize any business communications at scale with Wordcab's API.**
+- **Wordcab** is a summarization service that provides a simple API to summarize any `audio`, `text`, or `JSON` file.
+- It also includes compatibility with famous transcripts platforms like
   - [![AssemblyAI](https://img.shields.io/badge/AssemblyAI-blue)](https://www.assemblyai.com/)
   - [![Deepgram](https://img.shields.io/badge/Deepgram-green)](https://deepgram.com/)
   - [![Rev.ai](https://img.shields.io/badge/Rev.ai-orange)](https://www.rev.ai/)
   - [![Otter.ai](https://img.shields.io/badge/Otter.ai-purple)](https://otter.ai/)
   - [![Sonix.ai](https://img.shields.io/badge/Sonix.ai-yellow)](https://sonix.ai/)
-
 
 # Getting started
 
@@ -45,13 +44,12 @@ right away.
 
 # Requirements
 
-- OS: 
+- OS:
   - ![Linux](https://img.shields.io/badge/-Linux-orange?style=flat-square&logo=linux&logoColor=white)
   - ![Mac](https://img.shields.io/badge/-Mac-blue?style=flat-square&logo=apple&logoColor=white)
   - ![Windows](https://img.shields.io/badge/-Windows-blue?style=flat-square&logo=windows&logoColor=white)
 - Python:
   - ![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue)
-
 
 # Installation
 
@@ -65,11 +63,7 @@ Start using the API with any python script right away!
 
 # Usage
 
-## Quick video demo
-
-[<img src="https://cdn.loom.com/sessions/thumbnails/25150a30c593467fa1632145ff2dea6f-with-play.gif" width="50%">](https://www.loom.com/embed/25150a30c593467fa1632145ff2dea6f "Quick Python Package Demo")
-
-### Start Summary full pipeline
+## Start Summary full pipeline
 
 ```python
 import time
@@ -90,7 +84,7 @@ source = InMemorySource(obj=transcript)
 job = start_summary(
 	source_object=source,
 	display_name="sample_txt",
-	summary_type="no_speaker",
+	summary_type="narrative",
 	summary_lens=[1, 3],
 	tags=["sample", "text"],
 )
@@ -113,7 +107,7 @@ for k, v in summary.__dict__.items():
     print(f"{k}: {v}")
 
 # Get the summary as one block of text
-for k, v in summary.summary:
+for k, v in summary.summary.items():
 	print(f"Summary Length: {k}")
 	print(f"Summary: {v['structured_summary'][0].summary}")
 ```
@@ -129,9 +123,9 @@ To learn more, see the [Contributor Guide].
 
 # License
 
-+ Distributed under the terms of the [![Apache 2.0 License Badge](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+- Distributed under the terms of the [![Apache 2.0 License Badge](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-+ _Wordcab Python SDK_ is free and open source software.
+- _Wordcab Python SDK_ is free and open source software.
 
 # Issues
 
