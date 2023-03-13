@@ -73,6 +73,22 @@ def dummy_structured_summary_with_context() -> StructuredSummary:
 
 
 @pytest.fixture
+def dummy_structured_summary_brief_type() -> StructuredSummary:
+    """Fixture for a dummy StructuredSummary object with brief summary type."""
+    return StructuredSummary(
+        end="00:06:49",
+        start="00:00:00",
+        summary={"title": "This is a test.", "brief_summary": "This is a test."},
+        summary_html={
+            "title": "<p>This is a test.</p>",
+            "brief_summary": "<p>This is a test.</p>",
+        },
+        timestamp_end=409000,
+        timestamp_start=0,
+    )
+
+
+@pytest.fixture
 def dummy_empty_base_summary() -> BaseSummary:
     """Fixture for a dummy BaseSummary object."""
     return BaseSummary(
@@ -177,6 +193,26 @@ def test_structured_summary_with_context(
     assert dummy_structured_summary_with_context.context["discussion_points"] == [
         "This is a discussion point."
     ]
+
+
+def test_structured_summary_brief_type(
+    dummy_structured_summary_brief_type: StructuredSummary,
+) -> None:
+    """Test the StructuredSummary object with brief summary type."""
+    assert dummy_structured_summary_brief_type.context is None
+    assert dummy_structured_summary_brief_type.end == "00:06:49"
+    assert dummy_structured_summary_brief_type.start == "00:00:00"
+    assert dummy_structured_summary_brief_type.summary == {
+        "title": "This is a test.",
+        "brief_summary": "This is a test.",
+    }
+    assert dummy_structured_summary_brief_type.summary_html == {
+        "title": "<p>This is a test.</p>",
+        "brief_summary": "<p>This is a test.</p>",
+    }
+    assert dummy_structured_summary_brief_type.timestamp_end == 409000
+    assert dummy_structured_summary_brief_type.timestamp_start == 0
+    assert dummy_structured_summary_brief_type.transcript_segment is None
 
 
 def test_empty_base_summary(dummy_empty_base_summary: BaseSummary) -> None:

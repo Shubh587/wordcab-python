@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 class StructuredSummary:
     """Structured summary object."""
 
-    summary: str
+    summary: Union[str, Dict[str, str]]
     context: Optional[
         Dict[str, Union[str, List[str], Dict[str, Union[str, List[str]]]]]
     ] = field(default=None)
