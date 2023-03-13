@@ -263,6 +263,7 @@ def test_api_start_summary(api_key: str) -> None:
         source_object=source_object,
         display_name="test-summary-api",
         summary_type="conversational",
+        context=["keywords", "issue", "purpose"],
         api_key=api_key,
     )
     assert isinstance(job, SummarizeJob)
