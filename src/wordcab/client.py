@@ -170,8 +170,10 @@ class Client:
             """
             )
         if (
-            isinstance(source_object, BaseSource) is False
-            and isinstance(source_object, InMemorySource) is False
+            isinstance(
+                source_object, (BaseSource, InMemorySource, WordcabTranscriptSource)
+            )
+            is False
         ):
             raise ValueError(
                 """
@@ -307,8 +309,10 @@ class Client:
             )
 
         if (
-            isinstance(source_object, BaseSource) is False
-            and isinstance(source_object, InMemorySource) is False
+            isinstance(
+                source_object, (BaseSource, InMemorySource, WordcabTranscriptSource)
+            )
+            is False
         ):
             raise ValueError(
                 """
