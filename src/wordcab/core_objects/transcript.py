@@ -28,29 +28,12 @@ class TranscriptUtterance:
 
     text: str
     speaker: str
-    end: str
-    start: str
-    timestamp_end: int
-    timestamp_start: int
-
-    def __post_init__(self) -> None:
-        """Post-init method."""
-        if not isinstance(self.text, str):
-            raise TypeError(
-                f"TranscriptUtterance.text must be a string, not {type(self.text)}"
-            )
-
-        if not isinstance(self.speaker, str):
-            raise TypeError(
-                f"TranscriptUtterance.speaker must be a string, not {type(self.speaker)}"
-            )
-
-        if self.timestamp_end < self.timestamp_start:
-            raise ValueError(
-                f"""
-                TranscriptUtterance.end_index must be greater than or equal to TranscriptUtterance.start_index,
-                not {self.timestamp_end} < {self.timestamp_start}"""
-            )
+    end: Optional[str] = field(default=None)
+    end_index: Optional[int] = field(default=None)
+    start: Optional[str] = field(default=None)
+    start_index: Optional[int] = field(default=None)
+    timestamp_end: Optional[int] = field(default=None)
+    timestamp_start: Optional[int] = field(default=None)
 
 
 @dataclass

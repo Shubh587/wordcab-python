@@ -15,7 +15,7 @@
 """Test suite for the transcript dataclasses."""
 
 import logging
-from typing import Dict, List, Union, no_type_check
+from typing import Dict, Union
 
 import pytest
 
@@ -32,7 +32,9 @@ def dummy_transcript_utterance() -> TranscriptUtterance:
         text="This is a test.",
         speaker="A",
         start="00:00:00",
+        start_index=0,
         end="00:00:10",
+        end_index=10,
         timestamp_start=0,
         timestamp_end=10,
     )
@@ -42,7 +44,7 @@ def dummy_transcript_utterance() -> TranscriptUtterance:
 def dummy_empty_transcript() -> BaseTranscript:
     """Fixture for a dummy BaseTranscript object."""
     utterances = [
-        TranscriptUtterance("This is a test", "A", "00:00:10", "00:00:00", 10, 0)
+        TranscriptUtterance("This is a test", "A", "00:00:10", 10, "00:00:00", 0, 10, 0)
         for _ in range(10)
     ]
     return BaseTranscript(
@@ -55,7 +57,7 @@ def dummy_empty_transcript() -> BaseTranscript:
 def dummy_full_transcript() -> BaseTranscript:
     """Fixture for a dummy BaseTranscript object."""
     utterances = [
-        TranscriptUtterance("This is a test", "A", "00:00:10", "00:00:00", 10, 0)
+        TranscriptUtterance("This is a test", "A", "00:00:10", 10, "00:00:00", 0, 10, 0)
         for _ in range(10)
     ]
     return BaseTranscript(
@@ -94,37 +96,17 @@ def test_transcript_utterance(dummy_transcript_utterance: TranscriptUtterance) -
     assert dummy_transcript_utterance.timestamp_start == 0
     assert dummy_transcript_utterance.timestamp_end == 10
     assert dummy_transcript_utterance.start == "00:00:00"
+    assert dummy_transcript_utterance.start_index == 0
     assert dummy_transcript_utterance.end == "00:00:10"
+    assert dummy_transcript_utterance.end_index == 10
     assert isinstance(dummy_transcript_utterance, TranscriptUtterance)
-
-
-@no_type_check
-@pytest.mark.parametrize(
-    "utterance",
-    [
-        [1, "A", "00:00:00", "00:00:10", 0, 10],
-        ["This is a test", 1, "00:00:00", "00:00:10", 0, 10],
-        ["This is a test", "A", "00:00:00", "00:00:10", 10, 0],
-    ],
-)
-def test_wrong_transcript_utterance(utterance: List[Union[str, int]]) -> None:
-    """Test the TranscriptUtterance object."""
-    with pytest.raises((TypeError, ValueError)):
-        TranscriptUtterance(
-            text=utterance[0],
-            speaker=utterance[1],
-            start=utterance[2],
-            end=utterance[3],
-            timestamp_start=utterance[4],
-            timestamp_end=utterance[5],
-        )
 
 
 def test_transcript(dummy_empty_transcript: BaseTranscript) -> None:
     """Test the BaseTranscript object."""
     assert dummy_empty_transcript.transcript_id == "transcript_456789"
     assert dummy_empty_transcript.transcript == [
-        TranscriptUtterance("This is a test", "A", "00:00:10", "00:00:00", 10, 0)
+        TranscriptUtterance("This is a test", "A", "00:00:10", 10, "00:00:00", 0, 10, 0)
         for _ in range(10)
     ]
     assert isinstance(dummy_empty_transcript, BaseTranscript)
@@ -136,7 +118,9 @@ def test_transcript(dummy_empty_transcript: BaseTranscript) -> None:
     assert dummy_empty_transcript.transcript[0].text == "This is a test"
     assert dummy_empty_transcript.transcript[0].speaker == "A"
     assert dummy_empty_transcript.transcript[0].start == "00:00:00"
+    assert dummy_empty_transcript.transcript[0].start_index == 0
     assert dummy_empty_transcript.transcript[0].end == "00:00:10"
+    assert dummy_empty_transcript.transcript[0].end_index == 10
     assert dummy_empty_transcript.transcript[0].timestamp_start == 0
     assert dummy_empty_transcript.transcript[0].timestamp_end == 10
 
@@ -157,7 +141,7 @@ def test_full_transcript(dummy_full_transcript: BaseTranscript) -> None:
     """Test the BaseTranscript object."""
     assert dummy_full_transcript.transcript_id == "transcript_456789"
     assert dummy_full_transcript.transcript == [
-        TranscriptUtterance("This is a test", "A", "00:00:10", "00:00:00", 10, 0)
+        TranscriptUtterance("This is a test", "A", "00:00:10", 10, "00:00:00", 0, 10, 0)
         for _ in range(10)
     ]
     assert isinstance(dummy_full_transcript, BaseTranscript)
@@ -185,7 +169,9 @@ def test_full_transcript(dummy_full_transcript: BaseTranscript) -> None:
     assert dummy_full_transcript.transcript[0].text == "This is a test"
     assert dummy_full_transcript.transcript[0].speaker == "A"
     assert dummy_full_transcript.transcript[0].start == "00:00:00"
+    assert dummy_full_transcript.transcript[0].start_index == 0
     assert dummy_full_transcript.transcript[0].end == "00:00:10"
+    assert dummy_full_transcript.transcript[0].end_index == 10
     assert dummy_full_transcript.transcript[0].timestamp_start == 0
     assert dummy_full_transcript.transcript[0].timestamp_end == 10
 
