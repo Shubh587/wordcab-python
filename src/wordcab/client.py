@@ -45,6 +45,7 @@ from .core_objects import (
     StructuredSummary,
     SummarizeJob,
     TranscriptUtterance,
+    WordcabTranscriptSource,
 )
 from .login import get_token
 from .utils import (
@@ -147,7 +148,7 @@ class Client:
 
     def start_extract(  # noqa: C901
         self,
-        source_object: Union[BaseSource, InMemorySource],
+        source_object: Union[BaseSource, InMemorySource, WordcabTranscriptSource],
         display_name: str,
         ephemeral_data: Optional[bool] = False,
         only_api: Optional[bool] = True,
@@ -207,7 +208,7 @@ class Client:
         headers["Authorization"] = f"Bearer {self.api_key}"
 
         pipelines = _format_pipelines(pipelines)
-        params: Dict[str, str] = {
+        params: Dict[str, Union[str, None]] = {
             "source": source,
             "display_name": display_name,
             "ephemeral_data": str(ephemeral_data).lower(),
@@ -258,7 +259,7 @@ class Client:
 
     def start_summary(  # noqa: C901
         self,
-        source_object: Union[BaseSource, InMemorySource],
+        source_object: Union[BaseSource, InMemorySource, WordcabTranscriptSource],
         display_name: str,
         summary_type: str,
         context: Optional[Union[str, List[str]]] = None,
@@ -381,7 +382,7 @@ class Client:
         headers["Authorization"] = f"Bearer {self.api_key}"
 
         pipelines = _format_pipelines(pipelines)
-        params: Dict[str, str] = {
+        params: Dict[str, Union[str, None]] = {
             "source": source,
             "display_name": display_name,
             "ephemeral_data": str(ephemeral_data).lower(),

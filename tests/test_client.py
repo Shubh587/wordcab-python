@@ -37,6 +37,7 @@ from wordcab.core_objects import (
     StructuredSummary,
     SummarizeJob,
     TranscriptUtterance,
+    WordcabTranscriptSource,
 )
 
 
@@ -221,15 +222,9 @@ def test_start_extract(
         # )
 
 
-def test_start_summary(
+def test_start_summary_errors(
     base_source: BaseSource,
     generic_source_txt: GenericSource,
-    generic_source_json: GenericSource,
-    generic_url_json: GenericSource,
-    audio_source: AudioSource,
-    audio_url_source: AudioSource,
-    in_memory_source: InMemorySource,
-    context_elements: List[str],
     api_key: str,
 ) -> None:
     """Test client start_summary method."""
@@ -278,7 +273,10 @@ def test_start_summary(
                 summary_lens=3,
             )
 
-        # Test in memory source
+
+def test_summary_in_memory(in_memory_source: InMemorySource, api_key: str) -> None:
+    """Test client start_summary method with in-memory source."""
+    with Client(api_key=api_key) as client:
         in_memory_job = client.start_summary(
             source_object=in_memory_source,
             display_name="test-sdk-in-memory",
@@ -296,7 +294,10 @@ def test_start_summary(
             only_api=True,
         )
 
-        # Test generic source with txt file
+
+def test_summary_generic_txt(generic_source_txt: GenericSource, api_key: str) -> None:
+    """Test client start_summary method with generic text source."""
+    with Client(api_key=api_key) as client:
         txt_job = client.start_summary(
             source_object=generic_source_txt,
             display_name="test-sdk-txt",
@@ -313,7 +314,12 @@ def test_start_summary(
             only_api=True,
         )
 
-        # Test generic source with txt file and context
+
+def test_start_summary_generic_context(
+    context_elements: List[str], generic_source_txt: GenericSource, api_key: str
+) -> None:
+    """Test client start_summary method with generic text source."""
+    with Client(api_key=api_key) as client:
         txt_job = client.start_summary(
             source_object=generic_source_txt,
             display_name="test-sdk-txt",
@@ -331,7 +337,12 @@ def test_start_summary(
             only_api=True,
         )
 
-        # Test generic source with json file
+
+def test_start_summary_generic_json(
+    generic_source_json: GenericSource, api_key: str
+) -> None:
+    """Test client start_summary method with generic json source."""
+    with Client(api_key=api_key) as client:
         json_job = client.start_summary(
             source_object=generic_source_json,
             display_name="test-sdk-json",
@@ -349,7 +360,12 @@ def test_start_summary(
             only_api=True,
         )
 
-        # Test generic source with url json file
+
+def test_start_summary_generic_url(
+    generic_url_json: GenericSource, api_key: str
+) -> None:
+    """Test client start_summary method with generic url source."""
+    with Client(api_key=api_key) as client:
         json_job = client.start_summary(
             source_object=generic_url_json,
             display_name="test-sdk-json-url",
@@ -367,7 +383,10 @@ def test_start_summary(
             only_api=True,
         )
 
-        # Test audio source
+
+def test_start_summary_audio(audio_source: AudioSource, api_key: str) -> None:
+    """Test client start_summary method with audio source."""
+    with Client(api_key=api_key) as client:
         audio_job = client.start_summary(
             source_object=audio_source,
             display_name="test-sdk-audio",
@@ -385,7 +404,10 @@ def test_start_summary(
             only_api=True,
         )
 
-        # Test audio url source
+
+def test_start_summary_audio_url(audio_url_source: AudioSource, api_key: str) -> None:
+    """Test client start_summary method with audio url source."""
+    with Client(api_key=api_key) as client:
         audio_job = client.start_summary(
             source_object=audio_url_source,
             display_name="test-sdk-audio-url",
@@ -397,6 +419,29 @@ def test_start_summary(
         assert audio_job.job_name is not None
         assert audio_job.source == "audio"
         assert audio_job.settings == JobSettings(
+            ephemeral_data=False,
+            pipeline="transcribe,summarize",
+            split_long_utterances=False,
+            only_api=True,
+        )
+
+
+def test_start_summary_wordcab_transcript(api_key: str) -> None:
+    """Test client start_summary method with WordcabTranscriptSource."""
+    with Client(api_key=api_key) as client:
+        wordcab_transcript_job = client.start_summary(
+            source_object=WordcabTranscriptSource(
+                transcript_id="generic_transcript_MXzewRcYCnJXKFTLewMYC53uTNyWCEeo"
+            ),
+            display_name="test-sdk-wordcab-transcript",
+            summary_type="narrative",
+            summary_lens=1,
+        )
+        assert isinstance(wordcab_transcript_job, SummarizeJob)
+        assert wordcab_transcript_job.display_name == "test-sdk-wordcab-transcript"
+        assert wordcab_transcript_job.job_name is not None
+        assert wordcab_transcript_job.source == "wordcab_transcript"
+        assert wordcab_transcript_job.settings == JobSettings(
             ephemeral_data=False,
             pipeline="transcribe,summarize",
             split_long_utterances=False,
