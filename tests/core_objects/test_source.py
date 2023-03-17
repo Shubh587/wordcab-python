@@ -305,18 +305,19 @@ def test_in_memory_source() -> None:
     }
 
 
+def test_wordcab_transcript_source() -> None:
+    """Test the WordcabTranscriptSource object."""
+    source_obj = WordcabTranscriptSource(transcript_id="test")
+
+    assert source_obj.transcript_id == "test"
+    assert source_obj.source == "wordcab_transcript"
+    assert source_obj.__repr__() == "WordcabTranscriptSource(transcript_id=test)"
+
+
 def test_signed_url_source() -> None:
     """Test the SignedURLSource object."""
     with pytest.raises(NotImplementedError):
         SignedURLSource(url="https://example.com")
-
-
-def test_wordcab_transcript_source() -> None:
-    """Test the WordcabTranscriptSource object."""
-    with pytest.raises(NotImplementedError):
-        WordcabTranscriptSource(url="https://example.com", transcript_id="123456")
-    with pytest.raises(ValueError):
-        WordcabTranscriptSource(url="https://example.com")
 
 
 def test_rev_source() -> None:

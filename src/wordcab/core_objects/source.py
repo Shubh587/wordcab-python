@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass
 class BaseSource:
-    """Base class for all source objects except for InMemorySource. It is not meant to be used directly.
+    """Base class for AudioSource and GenericSource objects. It is not meant to be used directly.
 
     Parameters
     ----------
@@ -377,20 +377,32 @@ class AudioSource(BaseSource):
 
 
 @dataclass
-class WordcabTranscriptSource(BaseSource):
+class WordcabTranscriptSource:
     """Wordcab transcript source object."""
 
     transcript_id: Optional[str] = field(default=None)
+    source: str = field(init=False)
 
     def __post_init__(self) -> None:
         """Post-init method."""
-        super().__post_init__()
         if self.transcript_id is None:
             raise ValueError(
                 "Please provide a `transcript_id` to initialize a WordcabTranscriptSource object."
             )
         self.source = "wordcab_transcript"
-        raise NotImplementedError("Wordcab transcript source is not implemented yet.")
+
+    def __repr__(self) -> str:
+        """Representation method."""
+        return f"WordcabTranscriptSource(transcript_id={self.transcript_id})"
+
+    def prepare_payload(self) -> None:
+        """Prepare payload for API request."""
+        return None
+
+    def prepare_headers(self) -> Dict[str, str]:
+        """Prepare headers for API request."""
+        self.headers = {"Accept": "application/json"}
+        return self.headers
 
 
 @dataclass

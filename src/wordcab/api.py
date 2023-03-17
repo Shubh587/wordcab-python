@@ -28,6 +28,7 @@ from .core_objects import (
     ListTranscripts,
     Stats,
     SummarizeJob,
+    WordcabTranscriptSource,
 )
 
 
@@ -94,7 +95,7 @@ def get_stats(
 
 @no_type_check
 def start_extract(
-    source_object: Union[BaseSource, InMemorySource],
+    source_object: Union[BaseSource, InMemorySource, WordcabTranscriptSource],
     display_name: str,
     ephemeral_data: Optional[bool] = False,
     only_api: Optional[bool] = True,
@@ -113,7 +114,7 @@ def start_extract(
 
     Parameters
     ----------
-    source_object : BaseSource or InMemorySource
+    source_object : BaseSource, InMemorySource or WordcabTranscriptSource
         The source object to use for the extraction job.
     display_name : str
         The display name of the extraction job. This is useful for retrieving the job later.
@@ -154,7 +155,7 @@ def start_extract(
 
 @no_type_check
 def start_summary(
-    source_object: Union[BaseSource, InMemorySource],
+    source_object: Union[BaseSource, InMemorySource, WordcabTranscriptSource],
     display_name: str,
     summary_type: str,
     context: Optional[Union[str, List[str]]] = None,
@@ -173,7 +174,7 @@ def start_summary(
 
     Parameters
     ----------
-    source_object : BaseSource or InMemorySource
+    source_object : BaseSource, InMemorySource or WordcabTranscriptSource
         The source object to summarize.
     display_name : str
         The display name of the summary. This is useful for retrieving the job later.
