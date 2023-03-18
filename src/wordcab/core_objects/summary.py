@@ -170,19 +170,13 @@ class BaseSummary:
         for i in range(total_summary):
             txt += f"[{i + 1}/{total_summary}]"
 
-            if self.summary_type == "brief":
-                summary = structured_summaries[i].summary
+            summary = structured_summaries[i].summary
 
-                if isinstance(summary, dict):
-                    title = summary["title"]
-                    summary = summary["brief_summary"]
+            if isinstance(summary, dict):
+                txt += f"Title: {summary['title']}\nSummary: {summary['brief_summary']}\n\n"
 
-                txt += f"Title: {title}\nSummary: {summary}\n\n"
-            else:
-                summary = structured_summaries[i].summary
-
-                if isinstance(summary, str):
-                    txt += f"{self._textwrap(summary)}\n\n"
+            if isinstance(summary, str):
+                txt += f"{self._textwrap(summary)}\n\n"
 
             if add_context:
                 context_items = structured_summaries[i].context
