@@ -171,17 +171,31 @@ class BaseSummary:
             txt += f"[{i + 1}/{total_summary}]"
 
             if self.summary_type == "brief":
-                txt += f"Title: {self._textwrap(structured_summaries[i].summary['title'])}\n"
-                txt += f"Summary: {self._textwrap(structured_summaries[i].summary['brief_summary'])}\n\n"
-            else:
-                txt += f"{self._textwrap(structured_summaries[i].summary)}\n\n"
+                summary = structured_summaries[i].summary
 
-            if add_context and structured_summaries[i].context:
-                txt += f"{self._get_context_items(structured_summaries[i].context)}\n\n"
+                if isinstance(summary, dict):
+                    title = summary["title"]
+                    summary = summary["brief_summary"]
+
+                txt += f"Title: {title}\nSummary: {summary}\n\n"
+            else:
+                summary = structured_summaries[i].summary
+
+                if isinstance(summary, str):
+                    txt += f"{self._textwrap(summary)}\n\n"
+
+            if add_context:
+                context_items = structured_summaries[i].context
+
+                if context_items is not None:
+                    txt += f"{self._get_context_items(context_items)}\n\n"
 
         return txt
 
-    def _get_context_items(self, context: Dict[str, Any]) -> str:
+    def _get_context_items(
+        self,
+        context: Dict[str, Union[str, List[str], Dict[str, Union[str, List[str]]]]],
+    ) -> str:
         """Get the context items."""
         context_items = ""
 
