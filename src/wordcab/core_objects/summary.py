@@ -15,11 +15,11 @@
 """Wordcab API Summary object."""
 
 import logging
-import textwrap
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Union
 
 from ..config import SUMMARY_TYPES
+from .utils import _get_context_items, _textwrap
 
 
 logger = logging.getLogger(__name__)
@@ -133,100 +133,14 @@ class BaseSummary:
         summaries: Dict[str, Any] = {}
 
         for summary_len in self.summary:
-            summaries[summary_len] = self._format_summary(
+            summaries[summary_len] = _format_summary(
                 self.summary[summary_len]["structured_summary"],
+                self.summary_type,
                 summary_len,
                 add_context,
             )
 
         return summaries
-
-    def _format_summary(
-        self,
-        structured_summaries: List[StructuredSummary],
-        summary_len: str,
-        add_context: Optional[bool] = False,
-    ) -> str:
-        """
-        Format the summary in an human readable format.
-
-        Parameters
-        ----------
-        structured_summaries : List[StructuredSummary]
-            The structured summary object.
-        summary_len : str
-            The summary length.
-        add_context : bool, optional
-            If True, add the context items to the summary. By default False.
-
-        Returns
-        -------
-        str
-            The summary formatted in an human readable format.
-        """
-        total_summary = len(structured_summaries)
-
-        txt = f"{self.summary_type} - length: {summary_len}\n\n"
-        for i in range(total_summary):
-            txt += f"[{i + 1}/{total_summary}]\n"
-
-            summary = structured_summaries[i].summary
-
-            if isinstance(summary, dict):
-                txt += f"Title: {summary['title']}\nSummary: {summary['brief_summary']}\n\n"
-
-            if isinstance(summary, str):
-                txt += f"{self._textwrap(summary)}\n\n"
-
-            if add_context:
-                context_items = structured_summaries[i].context
-
-                if context_items is not None:
-                    txt += f"{self._get_context_items(context_items)}\n\n"
-
-        return txt
-
-    def _get_context_items(
-        self,
-        context: Dict[str, Union[str, List[str], Dict[str, Union[str, List[str]]]]],
-    ) -> str:
-        """Get the context items."""
-        context_items = ""
-
-        if "issue" in context:
-            context_items += f"Issue: {context['issue']}\n"
-
-        if "purpose" in context:
-            context_items += f"Purpose: {context['purpose']}\n"
-
-        if "next_steps" in context:
-            context_items += f"Next steps: {context['next_steps']}\n"
-
-        if "discussion_points" in context:
-            context_items += f"Discussion points: {context['discussion_points']}\n"
-
-        if "keywords" in context:
-            context_items += f"Keywords: {context['keywords']}\n"
-
-        return context_items
-
-    def _textwrap(self, text_to_wrap: str, width: int = 80) -> str:
-        """
-        Return a formatted string with the text wrapped to the specified width using textwrap.
-
-        Parameters
-        ----------
-        text_to_wrap : str
-            The text to wrap.
-        width : int
-            The width to wrap the text to, by default 80.
-
-        Returns
-        -------
-        str
-            The formatted string with the text wrapped to the specified width.
-        """
-        return "\n".join(textwrap.wrap(text_to_wrap, width=width))
 
 
 @dataclass
@@ -236,3 +150,51 @@ class ListSummaries:
     page_count: int
     next_page: str
     results: List[BaseSummary]
+
+
+def _format_summary(
+    structured_summaries: List[StructuredSummary],
+    summary_type: str,
+    summary_len: str,
+    add_context: Optional[bool] = False,
+) -> str:
+    """
+    Format the summary in an human readable format.
+
+    Parameters
+    ----------
+    structured_summaries : list
+        The structured summaries list.
+    summary_type : str
+        The summary type.
+    summary_len : str
+        The summary length.
+    add_context : bool, optional
+        If True, add the context items to the summary. By default False.
+
+    Returns
+    -------
+    str
+        The summary formatted in an human readable format.
+    """
+    total_summary = len(structured_summaries)
+
+    txt = f"{summary_type} - length: {summary_len}\n\n"
+    for i in range(total_summary):
+        txt += f"[{i + 1}/{total_summary}]\n"
+
+        summary = structured_summaries[i].summary
+
+        if isinstance(summary, dict):
+            txt += f"Title: {summary['title']}\nSummary: {summary['brief_summary']}\n\n"
+
+        if isinstance(summary, str):
+            txt += f"{_textwrap(summary)}\n\n"
+
+        if add_context:
+            context_items = structured_summaries[i].context
+
+            if context_items is not None:
+                txt += f"{_get_context_items(context_items)}\n\n"
+
+    return txt
