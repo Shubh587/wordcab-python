@@ -168,7 +168,7 @@ class BaseSummary:
 
         txt = f"{self.summary_type} - length: {summary_len}\n\n"
         for i in range(total_summary):
-            txt += f"[{i + 1}/{total_summary}]"
+            txt += f"[{i + 1}/{total_summary}]\n"
 
             summary = structured_summaries[i].summary
 
