@@ -351,13 +351,6 @@ def test_full_base_summary(dummy_full_base_summary: BaseSummary) -> None:
     assert dummy_full_base_summary.time_started == "2021-01-01T00:00:00"
     assert dummy_full_base_summary.time_completed == "2021-01-01T00:10:00"
 
-    assert hasattr(dummy_full_base_summary, "get_summaries") and callable(
-        dummy_empty_base_summary.get_summaries
-    )
-    assert hasattr(dummy_full_base_summary, "get_formatted_summaries") and callable(
-        dummy_empty_base_summary.get_formatted_summaries
-    )
-
 
 def test_base_summary_get_summaries(conv_summary: BaseSummary) -> None:
     """Test the BaseSummary object get_summaries method."""

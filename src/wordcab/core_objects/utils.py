@@ -15,11 +15,11 @@
 """Wordcab core objects utils functions."""
 
 import textwrap
-from typing import Dict, List, Union
+from typing import Any, Dict
 
 
 def _get_context_items(
-    context: Dict[str, Union[str, List[str], Dict[str, Union[str, List[str]]]]],
+    context: Dict[str, Any],
 ) -> str:
     """Get the context items."""
     context_items = ""

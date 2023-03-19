@@ -132,6 +132,12 @@ class BaseSummary:
 
         summaries: Dict[str, Any] = {}
 
+        if self.summary is None:
+            raise ValueError("No summary available.")
+
+        if self.summary_type is None:
+            raise ValueError("No summary type found.")
+
         for summary_len in self.summary:
             summaries[summary_len] = _format_summary(
                 self.summary[summary_len]["structured_summary"],

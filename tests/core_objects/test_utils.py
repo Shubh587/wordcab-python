@@ -15,6 +15,7 @@
 """Test suite for the core objects utils functions."""
 
 import textwrap
+from typing import Any, Dict
 
 from wordcab.core_objects.utils import _get_context_items, _textwrap
 
@@ -56,9 +57,15 @@ def test_multiple_context_items() -> None:
     context = {
         "issue": "This is an issue",
         "purpose": "This is a purpose",
-        "next_steps": "These are next steps",
-        "discussion_points": "These are discussion points",
-        "keywords": "These are keywords",
+        "next_steps": {
+            "text": "These are next steps",
+            "associated_speakers": ["SPEAKER B"],
+        },
+        "discussion_points": [
+            "These are discussion points",
+            "These are more discussion points",
+        ],
+        "keywords": ["These are keywords", "These are more keywords"],
     }
 
     result = _get_context_items(context)
@@ -75,7 +82,7 @@ def test_multiple_context_items() -> None:
 
 def test_no_context_items() -> None:
     """Test that _get_context_items returns an empty string when there are no context items."""
-    context = {}
+    context: Dict[str, Any] = {}
 
     result = _get_context_items(context)
 
