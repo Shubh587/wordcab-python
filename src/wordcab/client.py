@@ -443,7 +443,10 @@ class Client:
             raise ValueError(r.text)
 
     def list_jobs(
-        self, page_size: Optional[int] = 100, order_by: Optional[str] = "-time_started"
+        self,
+        page_size: Optional[int] = 100,
+        page_number: Optional[int] = None,
+        order_by: Optional[str] = "-time_started",
     ) -> ListJobs:
         """List all jobs."""
         if order_by not in LIST_JOBS_ORDER_BY:
@@ -459,6 +462,9 @@ class Client:
             "Accept": "application/json",
         }
         params = {"page_size": page_size, "order_by": order_by}
+
+        if page_number is not None:
+            params["page"] = page_number
 
         r = requests.get(
             "https://wordcab.com/api/v1/jobs",
@@ -526,13 +532,18 @@ class Client:
         else:
             raise ValueError(r.text)
 
-    def list_transcripts(self, page_size: Optional[int] = 100) -> ListTranscripts:
+    def list_transcripts(
+        self, page_size: Optional[int] = 100, page_number: Optional[int] = None
+    ) -> ListTranscripts:
         """List all transcripts."""
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Accept": "application/json",
         }
         params = {"page_size": page_size}
+
+        if page_number is not None:
+            params["page"] = page_number
 
         r = requests.get(
             "https://wordcab.com/api/v1/transcripts",
@@ -598,13 +609,18 @@ class Client:
         else:
             raise ValueError(r.text)
 
-    def list_summaries(self, page_size: Optional[int] = 100) -> ListSummaries:
+    def list_summaries(
+        self, page_size: Optional[int] = 100, page_number: Optional[int] = None
+    ) -> ListSummaries:
         """List all summaries."""
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Accept": "application/json",
         }
         params = {"page_size": page_size}
+
+        if page_number is not None:
+            params["page"] = page_number
 
         r = requests.get(
             "https://wordcab.com/api/v1/summaries",

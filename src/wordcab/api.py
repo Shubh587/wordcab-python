@@ -233,7 +233,10 @@ def start_summary(
 
 @no_type_check
 def list_jobs(
-    page_size: int = 100, order_by: str = "-time_started", api_key: Optional[str] = None
+    page_size: int = 100,
+    page_number: Optional[int] = None,
+    order_by: str = "-time_started",
+    api_key: Optional[str] = None,
 ) -> ListJobs:
     """
     Retrieve a list of jobs.
@@ -242,6 +245,8 @@ def list_jobs(
     ----------
     page_size : int
         The number of jobs to retrieve per page. The default is 100.
+    page_number : int, optional
+        The page number to retrieve. The default is None. If None, the first page will be retrieved.
     order_by : str
         The order to retrieve the jobs in. The default is "-time_started".
     api_key : str, optional
@@ -255,7 +260,11 @@ def list_jobs(
         SummarizeJob or ExtractJob objects.
     """
     return request(
-        method="list_jobs", page_size=page_size, order_by=order_by, api_key=api_key
+        method="list_jobs",
+        page_size=page_size,
+        page_number=page_number,
+        order_by=order_by,
+        api_key=api_key,
     )
 
 
@@ -314,7 +323,9 @@ def delete_job(
 
 @no_type_check
 def list_transcripts(
-    page_size: int = 100, api_key: Optional[str] = None
+    page_size: int = 100,
+    page_number: Optional[int] = None,
+    api_key: Optional[str] = None,
 ) -> ListTranscripts:
     """
     Retrieve a list of transcripts.
@@ -323,6 +334,8 @@ def list_transcripts(
     ----------
     page_size : int
         The number of transcripts to retrieve per page. The default is 100.
+    page_number : int, optional
+        The page number to retrieve. The default is None. If None, the first page will be retrieved.
     api_key : str, optional
         The API key to use. The default is None. If None, the API key will be
         automatically retrieved from the environment variable WORDCAB_API_KEY.
@@ -332,7 +345,12 @@ def list_transcripts(
     ListTranscripts
         The list transcripts object containing the list of transcripts.
     """
-    return request(method="list_transcripts", page_size=page_size, api_key=api_key)
+    return request(
+        method="list_transcripts",
+        page_size=page_size,
+        page_number=page_number,
+        api_key=api_key,
+    )
 
 
 @no_type_check
@@ -392,7 +410,9 @@ def change_speaker_labels(
 
 @no_type_check
 def list_summaries(
-    page_size: int = 100, api_key: Optional[str] = None
+    page_size: int = 100,
+    page_number: Optional[int] = None,
+    api_key: Optional[str] = None,
 ) -> ListSummaries:
     """
     Retrieve a list of summaries.
@@ -401,6 +421,8 @@ def list_summaries(
     ----------
     page_size : int
         The number of summaries to retrieve per page. The default is 100.
+    page_number : int, optional
+        The page number to retrieve. The default is None. If None, the first page will be retrieved.
     api_key : str, optional
         The API key to use. The default is None. If None, the API key will be
         automatically retrieved from the environment variable WORDCAB_API_KEY.
@@ -410,7 +432,12 @@ def list_summaries(
     ListSummaries
         The list summaries object containing the list of summaries.
     """
-    return request(method="list_summaries", page_size=page_size, api_key=api_key)
+    return request(
+        method="list_summaries",
+        page_size=page_size,
+        page_number=page_number,
+        api_key=api_key,
+    )
 
 
 @no_type_check
