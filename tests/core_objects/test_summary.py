@@ -133,6 +133,96 @@ def dummy_full_base_summary() -> BaseSummary:
 
 
 @pytest.fixture
+def brief_summary() -> BaseSummary:
+    """Fixture for a dummy BaseSummary object with a brief summary type."""
+    brief_summary = BaseSummary(
+        job_status="SummaryComplete",
+        summary_id="summary_123456",
+        summary_type="brief",
+        summary={
+            "1": {
+                "structured_summary": [
+                    StructuredSummary(
+                        summary={
+                            "title": "This is a title.",
+                            "brief_summary": "This is a summary.",
+                        }
+                    )
+                ]
+            },
+            "3": {
+                "structured_summary": [
+                    StructuredSummary(
+                        summary={
+                            "title": "This is a title.",
+                            "brief_summary": "This is a summary.",
+                        }
+                    ),
+                    StructuredSummary(
+                        summary={
+                            "title": "This is another title.",
+                            "brief_summary": "This is another summary.",
+                        }
+                    ),
+                ]
+            },
+            "5": {
+                "structured_summary": [
+                    StructuredSummary(
+                        summary={
+                            "title": "This is a title.",
+                            "brief_summary": "This is a summary.",
+                        }
+                    ),
+                    StructuredSummary(
+                        summary={
+                            "title": "This is another title.",
+                            "brief_summary": "This is another summary.",
+                        }
+                    ),
+                    StructuredSummary(
+                        summary={
+                            "title": "This is a third title.",
+                            "brief_summary": "This is a third summary.",
+                        }
+                    ),
+                ]
+            },
+        },
+    )
+
+    return brief_summary
+
+
+@pytest.fixture
+def conv_summary() -> BaseSummary:
+    """Fixture for a dummy BaseSummary object with a conversation summary type."""
+    conv_summary = BaseSummary(
+        job_status="SummaryComplete",
+        summary_id="summary_123456",
+        summary_type="conversational",
+        summary={
+            "1": {"structured_summary": [StructuredSummary(summary="This is a test.")]},
+            "3": {
+                "structured_summary": [
+                    StructuredSummary(summary="This is a test."),
+                    StructuredSummary(summary="This is another test."),
+                ]
+            },
+            "5": {
+                "structured_summary": [
+                    StructuredSummary(summary="This is a test."),
+                    StructuredSummary(summary="This is another test."),
+                    StructuredSummary(summary="This is a third test."),
+                ]
+            },
+        },
+    )
+
+    return conv_summary
+
+
+@pytest.fixture
 def dummy_list_summaries() -> ListSummaries:
     """Fixture for a dummy ListSummaries object."""
     return ListSummaries(page_count=3, next_page="https://next_page.com", results=[])
@@ -260,6 +350,79 @@ def test_full_base_summary(dummy_full_base_summary: BaseSummary) -> None:
     assert dummy_full_base_summary.transcript_id == "transcript_123456"
     assert dummy_full_base_summary.time_started == "2021-01-01T00:00:00"
     assert dummy_full_base_summary.time_completed == "2021-01-01T00:10:00"
+
+
+def test_base_summary_get_summaries(conv_summary: BaseSummary) -> None:
+    """Test the BaseSummary object get_summaries method."""
+    summaries = conv_summary.get_summaries()
+
+    assert len(summaries) == 3
+    assert isinstance(summaries, dict)
+    assert summaries["1"] == ["This is a test."]
+    assert summaries["3"] == ["This is a test.", "This is another test."]
+    assert summaries["5"] == [
+        "This is a test.",
+        "This is another test.",
+        "This is a third test.",
+    ]
+
+
+def test_base_summary_get_summaries_brief(brief_summary: BaseSummary) -> None:
+    """Test the BaseSummary object get_summaries method with brief summary type."""
+    summaries = brief_summary.get_summaries()
+
+    assert len(summaries) == 3
+    assert isinstance(summaries, dict)
+    assert summaries["1"] == [["This is a title.", "This is a summary."]]
+    assert summaries["3"] == [
+        ["This is a title.", "This is a summary."],
+        ["This is another title.", "This is another summary."],
+    ]
+    assert summaries["5"] == [
+        ["This is a title.", "This is a summary."],
+        ["This is another title.", "This is another summary."],
+        ["This is a third title.", "This is a third summary."],
+    ]
+
+
+def test_base_summary_get_formatted_summaries(conv_summary: BaseSummary) -> None:
+    """Test the BaseSummary object get_formatted_summaries method."""
+    summaries = conv_summary.get_formatted_summaries()
+
+    assert len(summaries) == 3
+    assert isinstance(summaries, dict)
+    assert summaries["1"] == "conversational - length: 1\n\n[1/1]\nThis is a test.\n\n"
+    assert (
+        summaries["3"]
+        == "conversational - length: 3\n\n[1/2]\nThis is a test.\n\n[2/2]\nThis is another test.\n\n"
+    )
+    assert (
+        summaries["5"] == "conversational - length: 5\n\n"
+        "[1/3]\nThis is a test.\n\n[2/3]\nThis is another test.\n\n[3/3]\nThis is a third test.\n\n"
+    )
+
+
+def test_base_summary_get_formatted_summaries_brief(brief_summary: BaseSummary) -> None:
+    """Test the BaseSummary object get_formatted_summaries method with brief summary type."""
+    summaries = brief_summary.get_formatted_summaries()
+
+    assert len(summaries) == 3
+    assert isinstance(summaries, dict)
+    assert (
+        summaries["1"]
+        == "brief - length: 1\n\n[1/1]\nTitle: This is a title.\nSummary: This is a summary.\n\n"
+    )
+    assert (
+        summaries["3"] == "brief - length: 3\n\n"
+        "[1/2]\nTitle: This is a title.\nSummary: This is a summary.\n\n"
+        "[2/2]\nTitle: This is another title.\nSummary: This is another summary.\n\n"
+    )
+    assert (
+        summaries["5"] == "brief - length: 5\n\n"
+        "[1/3]\nTitle: This is a title.\nSummary: This is a summary.\n\n"
+        "[2/3]\nTitle: This is another title.\nSummary: This is another summary.\n\n"
+        "[3/3]\nTitle: This is a third title.\nSummary: This is a third summary.\n\n"
+    )
 
 
 @pytest.mark.parametrize(

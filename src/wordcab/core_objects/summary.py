@@ -19,6 +19,7 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Union
 
 from ..config import SUMMARY_TYPES
+from .utils import _get_context_items, _textwrap
 
 
 logger = logging.getLogger(__name__)
@@ -77,6 +78,76 @@ class BaseSummary:
             if self.time_started == self.time_completed:
                 raise ValueError("time_started and time_completed must be different")
 
+    def get_summaries(self) -> Dict[str, List[Union[str, List[str]]]]:
+        """
+        Get the summaries as a dictionary with the summary length as key and the summaries as values.
+
+        Returns
+        -------
+        Dict[str, List[Union[str, List[str]]]]
+            The summaries as a dictionnary with the summary length as key and the summaries as values.
+            If the summary type is brief, the summaries are returned as a list of list of str,
+            otherwise they are returned as a list of str.
+        """
+        if self.summary is None:
+            return {}
+
+        summaries: Dict[str, Any] = {}
+
+        for summary_len in self.summary:
+            summaries_list = [
+                s.summary for s in self.summary[summary_len]["structured_summary"]
+            ]
+
+            if self.summary_type == "brief":
+                summaries_list = [
+                    [s["title"], s["brief_summary"]] for s in summaries_list
+                ]
+
+            summaries[summary_len] = summaries_list
+
+        return summaries
+
+    def get_formatted_summaries(
+        self, add_context: Optional[bool] = False
+    ) -> Dict[str, str]:
+        """Format the summaries in an human readable format.
+
+        Return the summaries as a dictionary in an human readable format with the summary length as key
+        and the summaries as values.
+
+        Parameters
+        ----------
+        add_context : bool, optional
+            If True, add the context items to the summary, by default False.
+
+        Returns
+        -------
+        Dict[str, str]
+            The summaries as a dictionary with the summary length as key and the summaries as values formatted
+            in an human readable format.
+        """
+        if self.summary is None:
+            return {}
+
+        summaries: Dict[str, Any] = {}
+
+        if self.summary is None:
+            raise ValueError("No summary available.")
+
+        if self.summary_type is None:
+            raise ValueError("No summary type found.")
+
+        for summary_len in self.summary:
+            summaries[summary_len] = _format_summary(
+                self.summary[summary_len]["structured_summary"],
+                self.summary_type,
+                summary_len,
+                add_context,
+            )
+
+        return summaries
+
 
 @dataclass
 class ListSummaries:
@@ -85,3 +156,51 @@ class ListSummaries:
     page_count: int
     next_page: str
     results: List[BaseSummary]
+
+
+def _format_summary(
+    structured_summaries: List[StructuredSummary],
+    summary_type: str,
+    summary_len: str,
+    add_context: Optional[bool] = False,
+) -> str:
+    """
+    Format the summary in an human readable format.
+
+    Parameters
+    ----------
+    structured_summaries : list
+        The structured summaries list.
+    summary_type : str
+        The summary type.
+    summary_len : str
+        The summary length.
+    add_context : bool, optional
+        If True, add the context items to the summary. By default False.
+
+    Returns
+    -------
+    str
+        The summary formatted in an human readable format.
+    """
+    total_summary = len(structured_summaries)
+
+    txt = f"{summary_type} - length: {summary_len}\n\n"
+    for i in range(total_summary):
+        txt += f"[{i + 1}/{total_summary}]\n"
+
+        summary = structured_summaries[i].summary
+
+        if isinstance(summary, dict):
+            txt += f"Title: {summary['title']}\nSummary: {summary['brief_summary']}\n\n"
+
+        if isinstance(summary, str):
+            txt += f"{_textwrap(summary)}\n\n"
+
+        if add_context:
+            context_items = structured_summaries[i].context
+
+            if context_items is not None:
+                txt += f"{_get_context_items(context_items)}\n\n"
+
+    return txt
