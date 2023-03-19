@@ -73,9 +73,9 @@ def test_multiple_context_items() -> None:
     expected_result = (
         "Issue: This is an issue\n"
         "Purpose: This is a purpose\n"
-        "Next steps: These are next steps\n"
-        "Discussion points: These are discussion points\n"
-        "Keywords: These are keywords\n"
+        "Next steps: {'text': 'These are next steps', 'associated_speakers': ['SPEAKER B']}\n"
+        "Discussion points: ['These are discussion points', 'These are more discussion points']\n"
+        "Keywords: ['These are keywords', 'These are more keywords']\n"
     )
     assert expected_result == result
 
