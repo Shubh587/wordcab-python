@@ -458,6 +458,7 @@ def test_list_jobs(api_key: str) -> None:
         assert list_jobs.page_count is not None
         assert isinstance(list_jobs.page_count, int)
         assert list_jobs.next_page is not None
+        assert list_jobs.next_page == "https://wordcab.com/api/v1/jobs?page=2"
         assert isinstance(list_jobs.next_page, str)
         assert list_jobs.results is not None
         assert isinstance(list_jobs.results, list)
@@ -468,6 +469,22 @@ def test_list_jobs(api_key: str) -> None:
             client.list_jobs(order_by="+time_started")
         with pytest.raises(ValueError):
             client.list_jobs(order_by="+time_completed")
+
+
+def test_list_jobs_page_number(api_key: str) -> None:
+    """Test client list_jobs method with page number."""
+    with Client(api_key=api_key) as client:
+        nb = 3
+        list_jobs = client.list_jobs(page_number=nb)
+        assert list_jobs is not None
+        assert isinstance(list_jobs, ListJobs)
+        assert list_jobs.page_count is not None
+        assert isinstance(list_jobs.page_count, int)
+        assert list_jobs.next_page is not None
+        assert isinstance(list_jobs.next_page, str)
+        assert list_jobs.next_page == f"https://wordcab.com/api/v1/jobs?page={nb + 1}"
+        assert list_jobs.results is not None
+        assert isinstance(list_jobs.results, list)
 
 
 def test_retrieve_job(api_key: str) -> None:
@@ -523,6 +540,33 @@ def test_list_transcripts(api_key: str) -> None:
         assert isinstance(list_transcripts.page_count, int)
         assert list_transcripts.next_page is not None
         assert isinstance(list_transcripts.next_page, str)
+        assert list_transcripts.results is not None
+        assert isinstance(list_transcripts.results, list)
+        for transcript in list_transcripts.results:
+            assert isinstance(transcript, BaseTranscript)
+            assert transcript.transcript_id is not None
+            assert isinstance(transcript.transcript_id, str)
+            assert transcript.job_id_set is not None
+            assert isinstance(transcript.job_id_set, list)
+            assert transcript.summary_id_set is not None
+            assert isinstance(transcript.summary_id_set, list)
+
+
+def test_list_transcripts_page_number(api_key: str) -> None:
+    """Test client list_transcripts method with page number."""
+    with Client(api_key=api_key) as client:
+        nb = 2
+        list_transcripts = client.list_transcripts(page_number=nb)
+        assert list_transcripts is not None
+        assert isinstance(list_transcripts, ListTranscripts)
+        assert list_transcripts.page_count is not None
+        assert isinstance(list_transcripts.page_count, int)
+        assert list_transcripts.next_page is not None
+        assert isinstance(list_transcripts.next_page, str)
+        assert (
+            list_transcripts.next_page
+            == f"https://wordcab.com/api/v1/transcripts?page={nb + 1}"
+        )
         assert list_transcripts.results is not None
         assert isinstance(list_transcripts.results, list)
         for transcript in list_transcripts.results:
@@ -607,6 +651,29 @@ def test_list_summaries(api_key: str) -> None:
         assert isinstance(list_summaries.page_count, int)
         assert list_summaries.next_page is not None
         assert isinstance(list_summaries.next_page, str)
+        assert list_summaries.results is not None
+        assert isinstance(list_summaries.results, list)
+        for summary in list_summaries.results:
+            assert isinstance(summary, BaseSummary)
+            assert summary.summary_id is not None
+            assert summary.job_status is not None
+
+
+def test_list_summaries_page_number(api_key: str) -> None:
+    """Test client list_summaries method with page number."""
+    with Client(api_key=api_key) as client:
+        nb = 2
+        list_summaries = client.list_summaries(page_number=nb)
+        assert list_summaries is not None
+        assert isinstance(list_summaries, ListSummaries)
+        assert list_summaries.page_count is not None
+        assert isinstance(list_summaries.page_count, int)
+        assert list_summaries.next_page is not None
+        assert isinstance(list_summaries.next_page, str)
+        assert (
+            list_summaries.next_page
+            == f"https://wordcab.com/api/v1/summaries?page={nb + 1}"
+        )
         assert list_summaries.results is not None
         assert isinstance(list_summaries.results, list)
         for summary in list_summaries.results:
