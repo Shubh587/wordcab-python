@@ -1,12 +1,12 @@
 # Bump the version number for release
-bumpversion-patch:
+bump-patch:
 	poetry version patch
 	python update_version.py
 
-bumpversion-minor:
+bump-minor:
 	poetry version minor
 	python update_version.py
 
-bumpversion-major:
+bump-major:
 	poetry version major
 	python update_version.py
