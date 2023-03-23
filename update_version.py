@@ -27,8 +27,8 @@ if previous_version and toml_version:
 
     else:
         content = init_content.replace(
-            f"__version__ = {previous_version.group(1)!r}",
-            f"__version__ = {toml_version.group(1)!r}",
+            f'__version__ = "{previous_version.group(1)}"',  # noqa: B907
+            f'__version__ = "{toml_version.group(1)}"',  # noqa: B907
         )
 
         with open(init_file, "w") as f:
