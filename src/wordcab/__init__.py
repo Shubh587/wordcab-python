@@ -48,3 +48,5 @@ __all__ = [
     "start_extract",
     "start_summary",
 ]
+
+__version__ = "0.6.3"
