@@ -100,8 +100,6 @@ def test_no_context_items() -> None:
 def test_get_assembly_utterances_valid() -> None:
     """Test that _get_assembly_utterances returns the utterances from a valid AssemblyAI json file."""
     assembly_json: Dict[str, List[Dict[str, Union[int, str]]]] = {
-        "id": "123",
-        "url": "https://example.com",
         "utterances": [
             {"speaker": 0, "elements": "Hello world."},
             {"speaker": 0, "elements": "How are you?"},
