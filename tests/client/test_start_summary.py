@@ -22,6 +22,7 @@ from wordcab.client import Client
 from wordcab.core_objects import (
     AudioSource,
     BaseSource,
+    DeepgramSource,
     GenericSource,
     InMemorySource,
     JobSettings,
@@ -250,6 +251,29 @@ def test_start_summary_wordcab_transcript(api_key: str) -> None:
         assert wordcab_transcript_job.job_name is not None
         assert wordcab_transcript_job.source == "wordcab_transcript"
         assert wordcab_transcript_job.settings == JobSettings(
+            ephemeral_data=False,
+            pipeline="transcribe,summarize",
+            split_long_utterances=False,
+            only_api=True,
+        )
+
+
+def test_start_summary_deepgram_transcript(api_key: str) -> None:
+    """Test client start_summary method with DeepgramSource."""
+    with Client(api_key=api_key) as client:
+        dg_transcript_job = client.start_summary(
+            source_object=DeepgramSource(
+                filepath="tests/deepgram_sample.json",
+            ),
+            display_name="test-sdk-dg-transcript",
+            summary_type="narrative",
+            summary_lens=1,
+        )
+        assert isinstance(dg_transcript_job, SummarizeJob)
+        assert dg_transcript_job.display_name == "test-sdk-dg-transcript"
+        assert dg_transcript_job.job_name is not None
+        assert dg_transcript_job.source == "deepgram"
+        assert dg_transcript_job.settings == JobSettings(
             ephemeral_data=False,
             pipeline="transcribe,summarize",
             split_long_utterances=False,

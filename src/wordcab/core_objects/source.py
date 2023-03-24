@@ -478,7 +478,7 @@ class DeepgramSource(BaseSource):
     def prepare_payload(self) -> str:
         """Prepare payload for API request."""
         self.payload = json.dumps(
-            {"transcript": _get_deepgram_utterances(json.loads(self.file_object))}
+            _get_deepgram_utterances(json.loads(self.file_object))
         )
         return self.payload
 

@@ -352,7 +352,7 @@ def test_deepgram_source() -> None:
     assert dg_source.file_object is not None
     assert hasattr(dg_source, "prepare_payload") and callable(dg_source.prepare_payload)
     assert dg_source.prepare_payload() == json.dumps(
-        {"transcript": _get_deepgram_utterances(json.loads(dg_source.file_object))}
+        _get_deepgram_utterances(json.loads(dg_source.file_object))
     )
     assert hasattr(dg_source, "prepare_headers") and callable(dg_source.prepare_headers)
     assert dg_source.prepare_headers() == {
