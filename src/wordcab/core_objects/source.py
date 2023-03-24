@@ -25,6 +25,7 @@ import requests  # type: ignore
 import validators  # type: ignore
 
 from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS, REQUEST_TIMEOUT
+from .utils import _get_deepgram_utterances
 
 
 logger = logging.getLogger(__name__)
@@ -378,7 +379,32 @@ class AudioSource(BaseSource):
 
 @dataclass
 class WordcabTranscriptSource:
-    """Wordcab transcript source object."""
+    """
+    Wordcab transcript source object using a Wordcab transcript ID.
+
+    Parameters
+    ----------
+    transcript_id : str
+        The Wordcab transcript ID to use as input.
+
+    Raises
+    ------
+    ValueError
+        If the `transcript_id` is not provided.
+
+    Examples
+    --------
+    >>> from wordcab.core_objects import WordcabTranscriptSource
+
+    >>> wordcab_transcript_source = WordcabTranscriptSource(transcript_id="transcript_12345")
+    >>> wordcab_transcript_source
+    WordcabTranscriptSource(transcript_id=transcript_12345)
+
+    Returns
+    -------
+    WordcabTranscriptSource
+        The Wordcab transcript source object.
+    """
 
     transcript_id: Optional[str] = field(default=None)
     source: str = field(init=False)
@@ -438,7 +464,31 @@ class DeepgramSource(BaseSource):
         """Post-init method."""
         super().__post_init__()
         self.source = "deepgram"
-        raise NotImplementedError("Deepgram source is not implemented yet.")
+
+        if self._suffix != ".json":
+            raise ValueError(
+                f"Please provide a valid Deepgram file format. {self._suffix} is not valid, it should be .json."
+            )
+
+        if self.source_type == "local":
+            self.file_object = self._load_file_from_path()
+        elif self.source_type == "remote":
+            self.file_object = self._load_file_from_url()
+
+    def prepare_payload(self) -> str:
+        """Prepare payload for API request."""
+        self.payload = json.dumps(
+            _get_deepgram_utterances(json.loads(self.file_object))
+        )
+        return self.payload
+
+    def prepare_headers(self) -> Dict[str, str]:
+        """Prepare headers for API request."""
+        self.headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        }
+        return self.headers
 
 
 @dataclass

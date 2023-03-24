@@ -14,7 +14,7 @@
 
 """Wordcab API Utils functions."""
 
-from typing import List, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 from .config import (
     CONTEXT_ELEMENTS,
@@ -23,7 +23,44 @@ from .config import (
     SUMMARY_LENGTHS_RANGE,
     SUMMARY_PIPELINES,
     TARGET_LANG,
+    TRANSCRIPT_SPEAKER_MAPPING,
 )
+from .core_objects.utils import _get_deepgram_utterances
+
+
+def format_deepgram_source(deepgram_json: Dict[str, Any]) -> List[str]:
+    """
+    Format the Deepgram json object to a list of strings.
+
+    Parameters
+    ----------
+    deepgram_json : Dict[str, Any]
+        The Deepgram json object.
+
+    Returns
+    -------
+    List[str]
+        The formatted list of strings.
+    """
+    utterances = _get_deepgram_utterances(deepgram_json)
+
+    final_utterances: List[str] = []
+    utt_to_add: str = ""
+
+    for utt in utterances:
+        if not utt_to_add:
+            utt_to_add = f"SPEAKER {TRANSCRIPT_SPEAKER_MAPPING[int(utt['speaker'])]}: {utt['transcript']}"
+        else:
+            if utt["speaker"] == utterances[utterances.index(utt) - 1]["speaker"]:
+                utt_to_add = f"{utt_to_add} {utt['transcript']}"
+            else:
+                final_utterances.append(utt_to_add)
+                utt_to_add = f"SPEAKER {TRANSCRIPT_SPEAKER_MAPPING[int(utt['speaker'])]}: {utt['transcript']}"
+
+    if utt_to_add:
+        final_utterances.append(utt_to_add)
+
+    return final_utterances
 
 
 def _check_context_elements(elements: Optional[Union[str, List[str]]]) -> bool:

@@ -27,6 +27,7 @@ from wordcab.utils import (
     _format_lengths,
     _format_pipelines,
     _format_tags,
+    format_deepgram_source,
 )
 
 
@@ -136,3 +137,17 @@ def test_format_tags(tags: Union[str, List[str]]) -> None:
         assert _format_tags(tags=tags) == tags
     else:
         assert _format_tags(tags=tags) == ",".join(tags)
+
+
+def test_format_deepgram_source_valid() -> None:
+    """Test with valid input."""
+    deepgram_json = {
+        "results": {
+            "utterances": [
+                {"speaker": 0, "transcript": "Hello world."},
+                {"speaker": 1, "transcript": "How are you?"},
+            ]
+        }
+    }
+    expected_output = ["SPEAKER A: Hello world.", "SPEAKER B: How are you?"]
+    assert format_deepgram_source(deepgram_json) == expected_output
