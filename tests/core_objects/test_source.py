@@ -32,6 +32,7 @@ from wordcab.core_objects import (
     VTTSource,
     WordcabTranscriptSource,
 )
+from wordcab.core_objects.utils import _get_deepgram_utterances
 
 
 def test_available_audio_formats() -> None:
@@ -340,5 +341,21 @@ def test_assembly_ai_source() -> None:
 
 def test_deepgram_source() -> None:
     """Test the DeepgramSource object."""
-    with pytest.raises(NotImplementedError):
-        DeepgramSource(url="https://example.com")
+    path = "tests/deepgram_sample.json"
+    dg_source = DeepgramSource(filepath=Path(path))
+
+    assert dg_source.filepath == Path(path)
+    assert dg_source.url is None
+    assert dg_source.source_type == "local"
+    assert dg_source._stem == Path(path).stem
+    assert dg_source._suffix == Path(path).suffix
+    assert dg_source.file_object is not None
+    assert hasattr(dg_source, "prepare_payload") and callable(dg_source.prepare_payload)
+    assert dg_source.prepare_payload() == json.dumps(
+        {"transcript": _get_deepgram_utterances(json.loads(dg_source.file_object))}
+    )
+    assert hasattr(dg_source, "prepare_headers") and callable(dg_source.prepare_headers)
+    assert dg_source.prepare_headers() == {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+    }

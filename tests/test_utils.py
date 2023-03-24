@@ -151,23 +151,3 @@ def test_format_deepgram_source_valid():
     }
     expected_output = ["SPEAKER A: Hello world.", "SPEAKER B: How are you?"]
     assert format_deepgram_source(deepgram_json) == expected_output
-
-
-def test_format_deepgram_source_missing_results():
-    """Test with missing 'results' key in input."""
-    deepgram_json = {}
-    with pytest.raises(
-        ValueError,
-        match="No results found in Deepgram json object. Please check there is a 'results' key.",
-    ):
-        format_deepgram_source(deepgram_json)
-
-
-def test_format_deepgram_source_missing_utterances():
-    """Test with missing 'utterances' key in input."""
-    deepgram_json = {"results": {}}
-    with pytest.raises(
-        ValueError,
-        match="No utterances found in Deepgram json object. Please check there is a 'utterances' key.",
-    ):
-        format_deepgram_source(deepgram_json)

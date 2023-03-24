@@ -25,6 +25,7 @@ from .config import (
     TARGET_LANG,
     TRANSCRIPT_SPEAKER_MAPPING,
 )
+from .core_objects.utils import _get_deepgram_utterances
 
 
 def format_deepgram_source(deepgram_json: Dict[str, Any]) -> List[str]:
@@ -41,19 +42,7 @@ def format_deepgram_source(deepgram_json: Dict[str, Any]) -> List[str]:
     List[str]
         The formatted list of strings.
     """
-    results = deepgram_json.pop("results", None)
-
-    if results is None:
-        raise ValueError(
-            "No results found in Deepgram json object. Please check there is a 'results' key."
-        )
-
-    utterances = results.pop("utterances", None)
-
-    if utterances is None:
-        raise ValueError(
-            "No utterances found in Deepgram json object. Please check there is a 'utterances' key."
-        )
+    utterances = _get_deepgram_utterances(deepgram_json)
 
     final_utterances: List[str] = []
     utt_to_add: str = ""

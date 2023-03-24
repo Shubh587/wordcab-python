@@ -17,7 +17,13 @@
 import textwrap
 from typing import Any, Dict
 
-from wordcab.core_objects.utils import _get_context_items, _textwrap
+import pytest
+
+from wordcab.core_objects.utils import (
+    _get_context_items,
+    _get_deepgram_utterances,
+    _textwrap,
+)
 
 
 def test_textwrap_default_width() -> None:
@@ -87,3 +93,37 @@ def test_no_context_items() -> None:
     result = _get_context_items(context)
 
     assert "" == result
+
+
+def test_get_deepgram_utterances_valid() -> None:
+    """Test that _get_deepgram_utterances returns the utterances from a valid Deepgram json file."""
+    deepgram_json = {
+        "results": {
+            "utterances": [
+                {"speaker": 0, "transcript": "Hello world."},
+                {"speaker": 0, "transcript": "How are you?"},
+            ]
+        }
+    }
+    expected_output = deepgram_json["results"]["utterances"]
+    assert _get_deepgram_utterances(deepgram_json) == expected_output
+
+
+def test_get_deepgram_utterances_missing_results() -> None:
+    """Test that _get_deepgram_utterances raises a ValueError when the input json is missing the 'results' key."""
+    deepgram_json = {}
+    with pytest.raises(
+        ValueError,
+        match="No results key found. Verify the Deepgram json file you are using.",
+    ):
+        _get_deepgram_utterances(deepgram_json)
+
+
+def test_get_deepgram_utterances_missing_utterances():
+    """Test that _get_deepgram_utterances raises a ValueError when the input json is missing the 'utterances' key."""
+    deepgram_json = {"results": {}}
+    with pytest.raises(
+        ValueError,
+        match="No utterances key found. Verify the Deepgram json file you are using.",
+    ):
+        _get_deepgram_utterances(deepgram_json)
