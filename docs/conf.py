@@ -1,6 +1,6 @@
 """Sphinx configuration."""
 
-import toml
+import toml  # type: ignore
 
 
 with open("../pyproject.toml") as f:
