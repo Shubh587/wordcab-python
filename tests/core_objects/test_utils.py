@@ -22,6 +22,7 @@ import pytest
 from wordcab.core_objects.utils import (
     _get_context_items,
     _get_deepgram_utterances,
+    _get_rev_monologues,
     _textwrap,
 )
 
@@ -127,3 +128,26 @@ def test_get_deepgram_utterances_missing_utterances() -> None:
         match="No utterances key found. Verify the Deepgram json file you are using.",
     ):
         _get_deepgram_utterances(deepgram_json)
+
+
+def test_get_rev_monologues_valid() -> None:
+    """Test that _get_rev_monologues returns the monologues from a valid Rev json file."""
+    rev_json: Dict[str, List[Dict[str, Union[int, str]]]] = {
+        "monologues": [
+            {"speaker": 0, "elements": "Hello world."},
+            {"speaker": 1, "elements": "How are you?"},
+            {"speaker": 0, "elements": "I am fine."},
+        ]
+    }
+    expected_output = rev_json["monologues"]
+    assert _get_rev_monologues(rev_json) == expected_output
+
+
+def test_get_rev_monologues_missing_monologues() -> None:
+    """Test that _get_rev_monologues raises a ValueError when the input json is missing the 'monologues' key."""
+    rev_json: Dict[str, str] = {}
+    with pytest.raises(
+        ValueError,
+        match="No monologues key found. Verify the Rev json file you are using.",
+    ):
+        _get_rev_monologues(rev_json)

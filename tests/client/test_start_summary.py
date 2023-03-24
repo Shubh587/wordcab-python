@@ -26,6 +26,7 @@ from wordcab.core_objects import (
     GenericSource,
     InMemorySource,
     JobSettings,
+    RevSource,
     SummarizeJob,
     WordcabTranscriptSource,
 )
@@ -274,6 +275,29 @@ def test_start_summary_deepgram_transcript(api_key: str) -> None:
         assert dg_transcript_job.job_name is not None
         assert dg_transcript_job.source == "deepgram"
         assert dg_transcript_job.settings == JobSettings(
+            ephemeral_data=False,
+            pipeline="transcribe,summarize",
+            split_long_utterances=False,
+            only_api=True,
+        )
+
+
+def test_start_summary_rev_transcript(api_key: str) -> None:
+    """Test client start_summary method with RevSource."""
+    with Client(api_key=api_key) as client:
+        rev_transcript_job = client.start_summary(
+            source_object=RevSource(
+                filepath="tests/rev_sample.json",
+            ),
+            display_name="test-sdk-rev-transcript",
+            summary_type="narrative",
+            summary_lens=1,
+        )
+        assert isinstance(rev_transcript_job, SummarizeJob)
+        assert rev_transcript_job.display_name == "test-sdk-rev-transcript"
+        assert rev_transcript_job.job_name is not None
+        assert rev_transcript_job.source == "rev_ai"
+        assert rev_transcript_job.settings == JobSettings(
             ephemeral_data=False,
             pipeline="transcribe,summarize",
             split_long_utterances=False,

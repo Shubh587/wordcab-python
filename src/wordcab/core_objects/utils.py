@@ -61,6 +61,18 @@ def _get_deepgram_utterances(deepgram_json: Dict[str, Any]) -> Any:
     return utterances
 
 
+def _get_rev_monologues(rev_json: Dict[str, Any]) -> Any:
+    """Get the Rev.ai monologues."""
+    monologues = rev_json.pop("monologues", None)
+
+    if monologues is None:
+        raise ValueError(
+            "No monologues key found. Verify the Rev.ai json file you are using."
+        )
+
+    return monologues
+
+
 def _textwrap(text_to_wrap: str, width: int = 80) -> str:
     """
     Return a formatted string with the text wrapped to the specified width using textwrap.
