@@ -340,7 +340,7 @@ def test_rev_source() -> None:
         rev_source.prepare_payload
     )
     assert rev_source.prepare_payload() == json.dumps(
-        _get_rev_monologues(json.load(rev_source.file_object))
+        _get_rev_monologues(json.loads(rev_source.file_object))
     )
     assert hasattr(rev_source, "prepare_headers") and callable(
         rev_source.prepare_headers
@@ -387,7 +387,7 @@ def test_assembly_ai_source() -> None:
     assert a_source.file_object is not None
     assert hasattr(a_source, "prepare_payload") and callable(a_source.prepare_payload)
     assert a_source.prepare_payload() == json.dumps(
-        _get_assembly_utterances(json.load(a_source.file_object))
+        _get_assembly_utterances(json.loads(a_source.file_object))
     )
     assert hasattr(a_source, "prepare_headers") and callable(a_source.prepare_headers)
     assert a_source.prepare_headers() == {

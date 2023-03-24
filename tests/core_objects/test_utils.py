@@ -115,7 +115,7 @@ def test_get_assembly_utterances_missing_utterances() -> None:
     assembly_json: Dict[str, str] = {}
     with pytest.raises(
         ValueError,
-        match="No utterances key found. Verify the Assembly json file you are using.",
+        match="No utterances key found. Verify the AssemblyAI json file you are using.",
     ):
         _get_assembly_utterances(assembly_json)
 
@@ -172,6 +172,6 @@ def test_get_rev_monologues_missing_monologues() -> None:
     rev_json: Dict[str, str] = {}
     with pytest.raises(
         ValueError,
-        match="No monologues key found. Verify the Rev json file you are using.",
+        match="No monologues key found. Verify the Rev.ai json file you are using.",
     ):
         _get_rev_monologues(rev_json)
