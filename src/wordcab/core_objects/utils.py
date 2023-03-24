@@ -42,6 +42,25 @@ def _get_context_items(
     return context_items
 
 
+def _get_deepgram_utterances(deepgram_json: Dict[str, Any]) -> str:
+    """Get the Deepgram utterances."""
+    results = deepgram_json.pop("results", None)
+
+    if results is None:
+        raise ValueError(
+            "No results key found. Verify the Deepgram json file you are using."
+        )
+
+    utterances = results.pop("utterances", None)
+
+    if utterances is None:
+        raise ValueError(
+            "No utterances key found. Verify the Deepgram json file you are using."
+        )
+
+    return utterances
+
+
 def _textwrap(text_to_wrap: str, width: int = 80) -> str:
     """
     Return a formatted string with the text wrapped to the specified width using textwrap.
