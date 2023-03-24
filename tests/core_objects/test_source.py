@@ -353,8 +353,25 @@ def test_rev_source() -> None:
 
 def test_vtt_source() -> None:
     """Test the VTTSource object."""
-    with pytest.raises(NotImplementedError):
-        VTTSource(url="https://example.com")
+    path = "tests/vtt_sample.vtt"
+    vtt_source = VTTSource(filepath=Path(path))
+
+    assert vtt_source.filepath == Path(path)
+    assert vtt_source.url is None
+    assert vtt_source.source_type == "local"
+    assert vtt_source._stem == Path(path).stem
+    assert vtt_source._suffix == Path(path).suffix
+    assert vtt_source.file_object is not None
+    assert hasattr(vtt_source, "prepare_payload") and callable(
+        vtt_source.prepare_payload
+    )
+    assert vtt_source.prepare_payload() == vtt_source.file_object
+    assert hasattr(vtt_source, "prepare_headers") and callable(
+        vtt_source.prepare_headers
+    )
+    assert vtt_source.prepare_headers() == {
+        "Content-Disposition": "attachment; filename=vtt_sample.vtt",
+    }
 
 
 def test_assembly_ai_source() -> None:
