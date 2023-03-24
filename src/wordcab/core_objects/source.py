@@ -148,7 +148,7 @@ class BaseSource:
 
         return True
 
-    def prepare_payload(self) -> Union[str, Dict[str, bytes]]:
+    def prepare_payload(self) -> Union[str, bytes, Dict[str, bytes]]:
         """Prepare payload."""
         raise NotImplementedError("Payload preparation is not implemented yet.")
 
@@ -556,8 +556,33 @@ class RevSource(BaseSource):
 class VTTSource(BaseSource):
     """VTT source object."""
 
+    filename: str = field(init=False)
+
     def __post_init__(self) -> None:
         """Post-init method."""
         super().__post_init__()
         self.source = "vtt"
-        raise NotImplementedError("VTT source is not implemented yet.")
+
+        if self._suffix != ".vtt":
+            raise ValueError(
+                f"Please provide a valid VTT file format. {self._suffix} is not valid, it should be .vtt."
+            )
+
+        if self.source_type == "local":
+            self.file_object = self._load_file_from_path()
+        elif self.source_type == "remote":
+            self.file_object = self._load_file_from_url()
+
+        self.filename = self.filepath.name  # type: ignore
+
+    def prepare_payload(self) -> bytes:
+        """Prepare payload for API request."""
+        self.payload: bytes = self.file_object
+        return self.payload
+
+    def prepare_headers(self) -> Dict[str, str]:
+        """Prepare headers for API request."""
+        self.headers = {
+            "Content-Disposition": f"attachment; filename={self.filename}",
+        }
+        return self.headers
