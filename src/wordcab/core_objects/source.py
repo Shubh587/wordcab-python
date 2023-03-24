@@ -451,7 +451,36 @@ class SignedURLSource(BaseSource):
 
 @dataclass
 class AssemblyAISource(BaseSource):
-    """AssemblyAI source object."""
+    """
+    AssemblyAI source object using a local or remote AssemblyAI JSON file.
+
+    Parameters
+    ----------
+    filepath : Union[str, Path]
+        The path to the local file.
+    url : str
+        The URL to the remote file.
+
+    Raises
+    ------
+    ValueError
+        If the file format is not valid.
+
+    Examples
+    --------
+    >>> from wordcab.core_objects import AssemblyAISource
+
+    >>> assemblyai_source = AssemblyAISource(filepath="path/to/assemblyai/file.json")  # doctest: +SKIP
+    >>> assemblyai_source  # doctest: +SKIP
+    AssemblyAISource(...)
+    >>> assemblyai_source.source  # doctest: +SKIP
+    'assembly_ai'
+
+    Returns
+    -------
+    AssemblyAISource
+        The AssemblyAI source object.
+    """
 
     def __post_init__(self) -> None:
         """Post-init method."""
@@ -486,7 +515,36 @@ class AssemblyAISource(BaseSource):
 
 @dataclass
 class DeepgramSource(BaseSource):
-    """Deepgram source object."""
+    """
+    Deepgram source object using a local or remote Deepgram JSON file.
+
+    Parameters
+    ----------
+    filepath : Union[str, Path]
+        The path to the local file.
+    url : str
+        The URL to the remote file.
+
+    Raises
+    ------
+    ValueError
+        If the file format is not valid.
+
+    Examples
+    --------
+    >>> from wordcab.core_objects import DeepgramSource
+
+    >>> deepgram_source = DeepgramSource(filepath="path/to/deepgram/file.json")  # doctest: +SKIP
+    >>> deepgram_source  # doctest: +SKIP
+    DeepgramSource(...)
+    >>> deepgram_source.source  # doctest: +SKIP
+    'deepgram'
+
+    Returns
+    -------
+    DeepgramSource
+        The Deepgram source object.
+    """
 
     def __post_init__(self) -> None:
         """Post-init method."""
@@ -521,7 +579,36 @@ class DeepgramSource(BaseSource):
 
 @dataclass
 class RevSource(BaseSource):
-    """Rev.ai source object."""
+    """
+    Rev.ai source object using a local or remote Rev.ai JSON file.
+
+    Parameters
+    ----------
+    filepath : Union[str, Path]
+        The path to the local file.
+    url : str
+        The URL to the remote file.
+
+    Raises
+    ------
+    ValueError
+        If the file format is not valid.
+
+    Examples
+    --------
+    >>> from wordcab.core_objects import RevSource
+
+    >>> rev_source = RevSource(filepath="path/to/rev/file.json")  # doctest: +SKIP
+    >>> rev_source  # doctest: +SKIP
+    RevSource(...)
+    >>> rev_source.source  # doctest: +SKIP
+    'rev_ai'
+
+    Returns
+    -------
+    RevSource
+        The Rev.ai source object.
+    """
 
     def __post_init__(self) -> None:
         """Post-init method."""
@@ -554,7 +641,36 @@ class RevSource(BaseSource):
 
 @dataclass
 class VTTSource(BaseSource):
-    """VTT source object."""
+    """
+    VTT source object using a local or remote VTT file.
+
+    Parameters
+    ----------
+    filepath : Union[str, Path]
+        The path to the local file.
+    url : str
+        The URL to the remote file.
+
+    Raises
+    ------
+    ValueError
+        If the file format is not valid.
+
+    Examples
+    --------
+    >>> from wordcab.core_objects import VTTSource
+
+    >>> vtt_source = VTTSource(filepath="path/to/vtt/file.vtt")  # doctest: +SKIP
+    >>> vtt_source  # doctest: +SKIP
+    VTTSource(...)
+    >>> vtt_source.source  # doctest: +SKIP
+    'vtt'
+
+    Returns
+    -------
+    VTTSource
+        The VTT source object.
+    """
 
     filename: str = field(init=False)
 
