@@ -2907,6 +2907,25 @@ docutils = "*"
 sphinx = ">=2.0"
 
 [[package]]
+name = "sphinx-copybutton"
+version = "0.5.1"
+description = "Add a copy button to each of your code cells."
+category = "dev"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "sphinx-copybutton-0.5.1.tar.gz", hash = "sha256:366251e28a6f6041514bfb5439425210418d6c750e98d3a695b73e56866a677a"},
+    {file = "sphinx_copybutton-0.5.1-py3-none-any.whl", hash = "sha256:0842851b5955087a7ec7fc870b622cb168618ad408dee42692e9a5c97d071da8"},
+]
+
+[package.dependencies]
+sphinx = ">=1.8"
+
+[package.extras]
+code-style = ["pre-commit (==2.12.1)"]
+rtd = ["ipython", "myst-nb", "sphinx", "sphinx-book-theme", "sphinx-examples"]
+
+[[package]]
 name = "sphinxcontrib-applehelp"
 version = "1.0.4"
 description = "sphinxcontrib-applehelp is a Sphinx extension which outputs Apple help books"
@@ -3345,4 +3364,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<4.0"
-content-hash = "833399a31329d29cba059fd052d2cdfb90cad432500f130ee2d989591f663f34"
+content-hash = "e89e6015a9f48ab373a28bc003d3119ac4dc4696dc9a063c88fd0730747c71b4"

@@ -102,14 +102,12 @@ summary_id = job.summary_details["summary_id"]
 # Retrieve the summary
 summary = retrieve_summary(summary_id=summary_id)
 
-# Get all information from the retrieved summary
-for k, v in summary.__dict__.items():
-    print(f"{k}: {v}")
+# Get the summary as a human-readable string
+print(summary.get_formatted_summary())
 
-# Get the summary as one block of text
-for k, v in summary.summary.items():
-	print(f"Summary Length: {k}")
-	print(f"Summary: {v['structured_summary'][0].summary}")
+# Save the json object to a file
+with open("wordcab_summary.json", "w") as f:
+	f.write(summary)
 ```
 
 # Documentation
