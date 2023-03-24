@@ -25,7 +25,7 @@ import requests  # type: ignore
 import validators  # type: ignore
 
 from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS, REQUEST_TIMEOUT
-from .utils import _get_deepgram_utterances
+from .utils import _get_deepgram_utterances, _get_rev_monologues
 
 
 logger = logging.getLogger(__name__)
@@ -499,7 +499,29 @@ class RevSource(BaseSource):
         """Post-init method."""
         super().__post_init__()
         self.source = "rev_ai"
-        raise NotImplementedError("Rev.ai source is not implemented yet.")
+
+        if self._suffix != ".json":
+            raise ValueError(
+                f"Please provide a valid Rev.ai file format. {self._suffix} is not valid, it should be .json."
+            )
+
+        if self.source_type == "local":
+            self.file_object = self._load_file_from_path()
+        elif self.source_type == "remote":
+            self.file_object = self._load_file_from_url()
+
+    def prepare_payload(self) -> str:
+        """Prepare payload for API request."""
+        self.payload = json.dumps(_get_rev_monologues(json.loads(self.file_object)))
+        return self.payload
+
+    def prepare_headers(self) -> Dict[str, str]:
+        """Prepare headers for API request."""
+        self.headers = {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        }
+        return self.headers
 
 
 @dataclass

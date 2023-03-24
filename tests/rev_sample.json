@@ -1,0 +1,3011 @@
+{
+  "monologues": [
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Thank",
+          "ts": 0.69,
+          "end_ts": 1.21,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 1.21,
+          "end_ts": 1.29,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "for",
+          "ts": 1.29,
+          "end_ts": 1.45,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "calling",
+          "ts": 1.45,
+          "end_ts": 1.65,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Marthas",
+          "ts": 1.65,
+          "end_ts": 2.25,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Flores",
+          "ts": 2.25,
+          "end_ts": 2.61,
+          "confidence": 0.63
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "How",
+          "ts": 2.61,
+          "end_ts": 2.93,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "may",
+          "ts": 2.93,
+          "end_ts": 3.05,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "I",
+          "ts": 3.05,
+          "end_ts": 3.13,
+          "confidence": 0.88
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "assist",
+          "ts": 3.13,
+          "end_ts": 3.37,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 3.37,
+          "end_ts": 3.61,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Hello",
+          "ts": 3.69,
+          "end_ts": 4.25,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "I'd",
+          "ts": 4.25,
+          "end_ts": 4.57,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "like",
+          "ts": 4.57,
+          "end_ts": 4.73,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "to",
+          "ts": 4.73,
+          "end_ts": 4.89,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "order",
+          "ts": 4.89,
+          "end_ts": 5.13,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "flowers",
+          "ts": 5.13,
+          "end_ts": 5.57,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "and",
+          "ts": 5.59,
+          "end_ts": 6.01,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "I",
+          "ts": 6.01,
+          "end_ts": 6.17,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "think",
+          "ts": 6.17,
+          "end_ts": 6.33,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 6.33,
+          "end_ts": 6.49,
+          "confidence": 0.68
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "have",
+          "ts": 6.49,
+          "end_ts": 6.65,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "what",
+          "ts": 6.65,
+          "end_ts": 6.85,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "I'm",
+          "ts": 6.85,
+          "end_ts": 7.05,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "looking",
+          "ts": 7.05,
+          "end_ts": 7.21,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "for",
+          "ts": 7.21,
+          "end_ts": 7.49,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "I'd",
+          "ts": 7.87,
+          "end_ts": 8.29,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "be",
+          "ts": 8.29,
+          "end_ts": 8.37,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "happy",
+          "ts": 8.37,
+          "end_ts": 8.53,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "to",
+          "ts": 8.53,
+          "end_ts": 8.73,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "take",
+          "ts": 8.73,
+          "end_ts": 8.93,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "care",
+          "ts": 8.93,
+          "end_ts": 9.09,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "of",
+          "ts": 9.09,
+          "end_ts": 9.21,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "your",
+          "ts": 9.21,
+          "end_ts": 9.37,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "order",
+          "ts": 9.37,
+          "end_ts": 9.57,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "May",
+          "ts": 9.57,
+          "end_ts": 9.85,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "I",
+          "ts": 9.85,
+          "end_ts": 9.93,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "have",
+          "ts": 9.93,
+          "end_ts": 10.05,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "your",
+          "ts": 10.05,
+          "end_ts": 10.21,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "name",
+          "ts": 10.21,
+          "end_ts": 10.45,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "please",
+          "ts": 10.45,
+          "end_ts": 10.81,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Randall",
+          "ts": 10.94,
+          "end_ts": 11.61,
+          "confidence": 0.73
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Thomas",
+          "ts": 11.61,
+          "end_ts": 12.13,
+          "confidence": 0.94
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Randall",
+          "ts": 12.46,
+          "end_ts": 13.13,
+          "confidence": 0.89
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Thomas",
+          "ts": 13.13,
+          "end_ts": 13.69,
+          "confidence": 0.93
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Can",
+          "ts": 13.75,
+          "end_ts": 14.17,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 14.17,
+          "end_ts": 14.29,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "spell",
+          "ts": 14.29,
+          "end_ts": 14.53,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "that",
+          "ts": 14.53,
+          "end_ts": 14.77,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "for",
+          "ts": 14.77,
+          "end_ts": 14.97,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "me",
+          "ts": 14.97,
+          "end_ts": 15.13,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Randall",
+          "ts": 15.34,
+          "end_ts": 16.01,
+          "confidence": 0.48
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "R",
+          "ts": 16.68,
+          "end_ts": 16.97,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "a",
+          "ts": 17.0,
+          "end_ts": 17.29,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "n",
+          "ts": 17.29,
+          "end_ts": 17.57,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "d",
+          "ts": 17.84,
+          "end_ts": 18.13,
+          "confidence": 0.32
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "a",
+          "ts": 18.13,
+          "end_ts": 18.33,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "l",
+          "ts": 18.33,
+          "end_ts": 18.57,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "l",
+          "ts": 18.57,
+          "end_ts": 18.77,
+          "confidence": 0.9
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Thomas",
+          "ts": 19.28,
+          "end_ts": 19.89,
+          "confidence": 0.56
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "t",
+          "ts": 20.73,
+          "end_ts": 20.81,
+          "confidence": 0.88
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "h",
+          "ts": 21.21,
+          "end_ts": 21.37,
+          "confidence": 0.91
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "o",
+          "ts": 21.37,
+          "end_ts": 21.65,
+          "confidence": 0.93
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "m",
+          "ts": 22.01,
+          "end_ts": 22.05,
+          "confidence": 0.82
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "a",
+          "ts": 22.05,
+          "end_ts": 22.17,
+          "confidence": 0.88
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "n",
+          "ts": 22.17,
+          "end_ts": 22.33,
+          "confidence": 0.85
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Thank",
+          "ts": 22.65,
+          "end_ts": 23.21,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 23.21,
+          "end_ts": 23.29,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "for",
+          "ts": 23.29,
+          "end_ts": 23.45,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "that",
+          "ts": 23.45,
+          "end_ts": 23.65,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "information",
+          "ts": 23.65,
+          "end_ts": 24.17,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Randall",
+          "ts": 24.17,
+          "end_ts": 24.45,
+          "confidence": 0.84
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "May",
+          "ts": 24.45,
+          "end_ts": 24.85,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "I",
+          "ts": 24.85,
+          "end_ts": 24.93,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "have",
+          "ts": 24.93,
+          "end_ts": 25.05,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "your",
+          "ts": 25.05,
+          "end_ts": 25.21,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "home",
+          "ts": 25.21,
+          "end_ts": 25.45,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "or",
+          "ts": 25.45,
+          "end_ts": 25.65,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "office",
+          "ts": 25.65,
+          "end_ts": 25.97,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "number",
+          "ts": 25.97,
+          "end_ts": 26.25,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Area",
+          "ts": 26.25,
+          "end_ts": 26.61,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "code",
+          "ts": 26.61,
+          "end_ts": 26.97,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "first",
+          "ts": 26.97,
+          "end_ts": 27.33,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Area",
+          "ts": 27.4,
+          "end_ts": 27.89,
+          "confidence": 0.77
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "code",
+          "ts": 27.89,
+          "end_ts": 28.13,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "4 0 9 5 8 6 6 5 0 8 8",
+          "ts": 28.13,
+          "end_ts": 34.09,
+          "confidence": 0.9
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "That's",
+          "ts": 34.36,
+          "end_ts": 34.97,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "4 0 9 8 6 6 5 0 8 8",
+          "ts": 34.97,
+          "end_ts": 38.25,
+          "confidence": 0.86
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Do",
+          "ts": 38.25,
+          "end_ts": 38.57,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 38.57,
+          "end_ts": 38.65,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "have",
+          "ts": 38.65,
+          "end_ts": 38.77,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "a",
+          "ts": 38.77,
+          "end_ts": 38.97,
+          "confidence": 0.72
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "fax",
+          "ts": 38.97,
+          "end_ts": 39.21,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "number",
+          "ts": 39.21,
+          "end_ts": 39.49,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "or",
+          "ts": 39.49,
+          "end_ts": 39.81,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "email",
+          "ts": 39.81,
+          "end_ts": 40.17,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "address",
+          "ts": 40.41,
+          "end_ts": 40.89,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Email",
+          "ts": 41.45,
+          "end_ts": 42.01,
+          "confidence": 0.9
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "is",
+          "ts": 42.01,
+          "end_ts": 42.25,
+          "confidence": 0.77
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "randall",
+          "ts": 42.25,
+          "end_ts": 42.53,
+          "confidence": 0.86
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "dot",
+          "ts": 43.35,
+          "end_ts": 43.77,
+          "confidence": 0.75
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "thomas",
+          "ts": 43.77,
+          "end_ts": 44.09,
+          "confidence": 0.87
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "gmail.com",
+          "ts": 45.05,
+          "end_ts": 46.41,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Randall",
+          "ts": 46.86,
+          "end_ts": 47.53,
+          "confidence": 0.91
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "dot",
+          "ts": 47.79,
+          "end_ts": 48.21,
+          "confidence": 0.81
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "thomas",
+          "ts": 48.21,
+          "end_ts": 48.61,
+          "confidence": 0.84
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "gmail.com",
+          "ts": 48.85,
+          "end_ts": 50.21,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "May",
+          "ts": 50.21,
+          "end_ts": 50.61,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "I",
+          "ts": 50.61,
+          "end_ts": 50.69,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "have",
+          "ts": 50.69,
+          "end_ts": 50.81,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "your",
+          "ts": 50.81,
+          "end_ts": 51.01,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "shipping",
+          "ts": 51.13,
+          "end_ts": 51.25,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "address",
+          "ts": 51.25,
+          "end_ts": 51.81,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "6,800",
+          "ts": 51.93,
+          "end_ts": 53.01,
+          "confidence": 0.91
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Okay",
+          "ts": 53.4,
+          "end_ts": 53.89,
+          "confidence": 0.94
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Gladys",
+          "ts": 54.48,
+          "end_ts": 55.09,
+          "confidence": 0.74
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Avenue",
+          "ts": 55.09,
+          "end_ts": 55.29,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Mont",
+          "ts": 56.57,
+          "end_ts": 56.89,
+          "confidence": 0.82
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Texas",
+          "ts": 56.89,
+          "end_ts": 57.17,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Zip",
+          "ts": 58.15,
+          "end_ts": 58.57,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "code",
+          "ts": 58.57,
+          "end_ts": 58.81,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "8 77 7 0 6",
+          "ts": 58.81,
+          "end_ts": 61.13,
+          "confidence": 0.37
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Gladys",
+          "ts": 61.8,
+          "end_ts": 62.41,
+          "confidence": 0.93
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Avenue",
+          "ts": 62.41,
+          "end_ts": 62.65,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Beaumont",
+          "ts": 63.09,
+          "end_ts": 63.33,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Texas",
+          "ts": 63.33,
+          "end_ts": 63.85,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Zip",
+          "ts": 64.11,
+          "end_ts": 64.53,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "code",
+          "ts": 64.53,
+          "end_ts": 64.73,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "77 706",
+          "ts": 64.73,
+          "end_ts": 66.65,
+          "confidence": 0.62
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Thank",
+          "ts": 66.77,
+          "end_ts": 67.33,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 67.33,
+          "end_ts": 67.45,
+          "confidence": 0.95
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "for",
+          "ts": 67.45,
+          "end_ts": 67.61,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "the",
+          "ts": 67.61,
+          "end_ts": 67.77,
+          "confidence": 0.89
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "information",
+          "ts": 67.77,
+          "end_ts": 68.33,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "What",
+          "ts": 68.44,
+          "end_ts": 68.93,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "products",
+          "ts": 68.93,
+          "end_ts": 69.33,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "were",
+          "ts": 69.33,
+          "end_ts": 69.49,
+          "confidence": 0.83
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 69.49,
+          "end_ts": 69.57,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "interested",
+          "ts": 69.57,
+          "end_ts": 69.85,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "in",
+          "ts": 69.86,
+          "end_ts": 70.21,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "purchasing",
+          "ts": 70.21,
+          "end_ts": 70.73,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Red",
+          "ts": 71.27,
+          "end_ts": 71.69,
+          "confidence": 0.95
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Roses",
+          "ts": 71.69,
+          "end_ts": 72.21,
+          "confidence": 0.95
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "probably",
+          "ts": 72.61,
+          "end_ts": 72.73,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "a",
+          "ts": 72.73,
+          "end_ts": 72.89,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "dozen",
+          "ts": 72.89,
+          "end_ts": 73.09,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "One",
+          "ts": 74.07,
+          "end_ts": 74.49,
+          "confidence": 0.88
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "dozen",
+          "ts": 74.49,
+          "end_ts": 74.69,
+          "confidence": 0.64
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "of",
+          "ts": 74.69,
+          "end_ts": 74.97,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "red",
+          "ts": 74.97,
+          "end_ts": 75.17,
+          "confidence": 0.94
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "roses",
+          "ts": 75.17,
+          "end_ts": 75.61,
+          "confidence": 0.93
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Do",
+          "ts": 75.61,
+          "end_ts": 75.81,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 75.81,
+          "end_ts": 75.89,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "want",
+          "ts": 75.89,
+          "end_ts": 76.05,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "long",
+          "ts": 76.05,
+          "end_ts": 76.37,
+          "confidence": 0.96
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "stems",
+          "ts": 76.37,
+          "end_ts": 76.85,
+          "confidence": 0.9
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Yes",
+          "ts": 76.85,
+          "end_ts": 77.13,
+          "confidence": 0.86
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Sure",
+          "ts": 77.13,
+          "end_ts": 77.41,
+          "confidence": 0.62
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "All",
+          "ts": 77.63,
+          "end_ts": 78.05,
+          "confidence": 0.62
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "right",
+          "ts": 78.05,
+          "end_ts": 78.17,
+          "confidence": 0.79
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Randall",
+          "ts": 78.17,
+          "end_ts": 78.65,
+          "confidence": 0.64
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "let",
+          "ts": 78.83,
+          "end_ts": 79.25,
+          "confidence": 0.78
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "me",
+          "ts": 79.25,
+          "end_ts": 79.37,
+          "confidence": 0.86
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "process",
+          "ts": 79.37,
+          "end_ts": 79.61,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "the",
+          "ts": 79.61,
+          "end_ts": 79.93,
+          "confidence": 0.59
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "order",
+          "ts": 79.93,
+          "end_ts": 80.13,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "One",
+          "ts": 80.13,
+          "end_ts": 80.45,
+          "confidence": 0.93
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "moment",
+          "ts": 80.45,
+          "end_ts": 80.65,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "please",
+          "ts": 80.65,
+          "end_ts": 81.05,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Okay",
+          "ts": 82.64,
+          "end_ts": 83.13,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Randall",
+          "ts": 84.94,
+          "end_ts": 85.61,
+          "confidence": 0.37
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you're",
+          "ts": 85.61,
+          "end_ts": 86.09,
+          "confidence": 0.92
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "ordering",
+          "ts": 86.09,
+          "end_ts": 86.49,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "one",
+          "ts": 86.49,
+          "end_ts": 86.77,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "dozen",
+          "ts": 86.77,
+          "end_ts": 87.09,
+          "confidence": 0.9
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "long",
+          "ts": 87.09,
+          "end_ts": 87.53,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "St",
+          "ts": 87.53,
+          "end_ts": 87.85,
+          "confidence": 0.31
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Red",
+          "ts": 87.85,
+          "end_ts": 88.25,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Roses",
+          "ts": 88.25,
+          "end_ts": 88.73,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "The",
+          "ts": 88.73,
+          "end_ts": 89.01,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "total",
+          "ts": 89.01,
+          "end_ts": 89.17,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "amount",
+          "ts": 89.17,
+          "end_ts": 89.49,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "of",
+          "ts": 89.49,
+          "end_ts": 89.61,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "your",
+          "ts": 89.61,
+          "end_ts": 89.73,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "order",
+          "ts": 89.73,
+          "end_ts": 89.93,
+          "confidence": 0.97
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "is",
+          "ts": 89.93,
+          "end_ts": 90.13,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "$40",
+          "ts": 90.13,
+          "end_ts": 90.73,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "and",
+          "ts": 90.99,
+          "end_ts": 91.41,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "it",
+          "ts": 91.41,
+          "end_ts": 91.53,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "will",
+          "ts": 91.53,
+          "end_ts": 91.73,
+          "confidence": 0.68
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "be",
+          "ts": 91.73,
+          "end_ts": 91.89,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "shipped",
+          "ts": 91.89,
+          "end_ts": 92.17,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "to",
+          "ts": 92.17,
+          "end_ts": 92.41,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "your",
+          "ts": 92.41,
+          "end_ts": 92.53,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "address",
+          "ts": 92.53,
+          "end_ts": 92.85,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "within",
+          "ts": 92.85,
+          "end_ts": 93.13,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "24",
+          "ts": 93.13,
+          "end_ts": 93.65,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "hours",
+          "ts": 93.65,
+          "end_ts": 93.89,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "I",
+          "ts": 94.4,
+          "end_ts": 94.69,
+          "confidence": 0.53
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "assume",
+          "ts": 94.69,
+          "end_ts": 94.97,
+          "confidence": 0.47
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Can",
+          "ts": 94.97,
+          "end_ts": 95.17,
+          "confidence": 0.69
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 95.17,
+          "end_ts": 95.25,
+          "confidence": 0.87
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "deliver",
+          "ts": 95.25,
+          "end_ts": 95.53,
+          "confidence": 0.95
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "my",
+          "ts": 95.53,
+          "end_ts": 95.77,
+          "confidence": 0.76
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "roses",
+          "ts": 95.77,
+          "end_ts": 96.21,
+          "confidence": 0.92
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "again",
+          "ts": 96.21,
+          "end_ts": 96.65,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Within",
+          "ts": 96.72,
+          "end_ts": 97.33,
+          "confidence": 0.81
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "24",
+          "ts": 97.33,
+          "end_ts": 97.85,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "hours",
+          "ts": 97.85,
+          "end_ts": 98.13,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Okay",
+          "ts": 98.68,
+          "end_ts": 99.17,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "no",
+          "ts": 99.17,
+          "end_ts": 99.41,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "problem",
+          "ts": 99.41,
+          "end_ts": 99.61,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Is",
+          "ts": 100.14,
+          "end_ts": 100.49,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "there",
+          "ts": 100.49,
+          "end_ts": 100.57,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "anything",
+          "ts": 100.77,
+          "end_ts": 100.89,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "else",
+          "ts": 100.89,
+          "end_ts": 101.09,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "I",
+          "ts": 101.09,
+          "end_ts": 101.29,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "can",
+          "ts": 101.29,
+          "end_ts": 101.41,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "help",
+          "ts": 101.41,
+          "end_ts": 101.61,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 101.61,
+          "end_ts": 101.77,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "with",
+          "ts": 101.93,
+          "end_ts": 102.09,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "?"
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 1,
+      "elements": [
+        {
+          "type": "text",
+          "value": "Uh",
+          "ts": 102.62,
+          "end_ts": 102.97,
+          "confidence": 0.66
+        },
+        {
+          "type": "punct",
+          "value": ","
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "that's",
+          "ts": 102.97,
+          "end_ts": 103.29,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "all",
+          "ts": 103.29,
+          "end_ts": 103.41,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "for",
+          "ts": 103.41,
+          "end_ts": 103.57,
+          "confidence": 0.95
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "now",
+          "ts": 103.57,
+          "end_ts": 103.73,
+          "confidence": 0.95
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Thanks",
+          "ts": 103.73,
+          "end_ts": 104.09,
+          "confidence": 0.92
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        }
+      ]
+    },
+    {
+      "speaker": 0,
+      "elements": [
+        {
+          "type": "text",
+          "value": "No",
+          "ts": 104.5,
+          "end_ts": 104.85,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "problem",
+          "ts": 104.85,
+          "end_ts": 105.09,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Randall",
+          "ts": 105.09,
+          "end_ts": 105.45,
+          "confidence": 0.78
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Thank",
+          "ts": 105.45,
+          "end_ts": 105.89,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "you",
+          "ts": 105.89,
+          "end_ts": 105.97,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "for",
+          "ts": 105.97,
+          "end_ts": 106.09,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "calling",
+          "ts": 106.09,
+          "end_ts": 106.29,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Marthas",
+          "ts": 106.29,
+          "end_ts": 106.89,
+          "confidence": 0.98
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Flores",
+          "ts": 106.89,
+          "end_ts": 107.21,
+          "confidence": 0.88
+        },
+        {
+          "type": "punct",
+          "value": "."
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "Have",
+          "ts": 107.21,
+          "end_ts": 107.45,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "a",
+          "ts": 107.45,
+          "end_ts": 107.57,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "nice",
+          "ts": 107.57,
+          "end_ts": 107.73,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": " "
+        },
+        {
+          "type": "text",
+          "value": "day",
+          "ts": 107.73,
+          "end_ts": 108.01,
+          "confidence": 0.99
+        },
+        {
+          "type": "punct",
+          "value": "."
+        }
+      ]
+    }
+  ]
+}
