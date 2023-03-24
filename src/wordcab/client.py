@@ -226,7 +226,7 @@ class Client:
         if source == "signed_url" and hasattr(source_object, "signed_url"):
             params["signed_url"] = source_object.signed_url
 
-        if source == "audio":
+        if source == "audio" or source == "vtt":
             r = requests.post(
                 "https://wordcab.com/api/v1/extract",
                 headers=headers,

@@ -29,6 +29,7 @@ from wordcab.core_objects import (
     JobSettings,
     RevSource,
     SummarizeJob,
+    VTTSource,
     WordcabTranscriptSource,
 )
 
@@ -322,6 +323,29 @@ def test_start_summary_assembly_transcript(api_key: str) -> None:
         assert assembly_transcript_job.job_name is not None
         assert assembly_transcript_job.source == "assembly_ai"
         assert assembly_transcript_job.settings == JobSettings(
+            ephemeral_data=False,
+            pipeline="transcribe,summarize",
+            split_long_utterances=False,
+            only_api=True,
+        )
+
+
+def test_start_summary_vtt_transcript(api_key: str) -> None:
+    """Test client start_summary method with VTTSource."""
+    with Client(api_key=api_key) as client:
+        vtt_transcript_job = client.start_summary(
+            source_object=VTTSource(
+                filepath="tests/vtt_sample.vtt",
+            ),
+            display_name="test-sdk-vtt-transcript",
+            summary_type="narrative",
+            summary_lens=1,
+        )
+        assert isinstance(vtt_transcript_job, SummarizeJob)
+        assert vtt_transcript_job.display_name == "test-sdk-vtt-transcript"
+        assert vtt_transcript_job.job_name is not None
+        assert vtt_transcript_job.source == "vtt"
+        assert vtt_transcript_job.settings == JobSettings(
             ephemeral_data=False,
             pipeline="transcribe,summarize",
             split_long_utterances=False,
