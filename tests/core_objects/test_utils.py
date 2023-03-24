@@ -20,6 +20,7 @@ from typing import Any, Dict, List, Union
 import pytest
 
 from wordcab.core_objects.utils import (
+    _get_assembly_utterances,
     _get_context_items,
     _get_deepgram_utterances,
     _get_rev_monologues,
@@ -94,6 +95,29 @@ def test_no_context_items() -> None:
     result = _get_context_items(context)
 
     assert "" == result
+
+
+def test_get_assembly_utterances_valid() -> None:
+    """Test that _get_assembly_utterances returns the utterances from a valid AssemblyAI json file."""
+    assembly_json: Dict[str, List[Dict[str, Union[int, str]]]] = {
+        "utterances": [
+            {"speaker": 0, "elements": "Hello world."},
+            {"speaker": 0, "elements": "How are you?"},
+            {"speaker": 1, "elements": "I am fine."},
+        ],
+    }
+    expected_output = assembly_json["utterances"]
+    assert _get_assembly_utterances(assembly_json) == expected_output
+
+
+def test_get_assembly_utterances_missing_utterances() -> None:
+    """Test that _get_assembly_utterances raises a ValueError when the input json is missing the 'utterances' key."""
+    assembly_json: Dict[str, str] = {}
+    with pytest.raises(
+        ValueError,
+        match="No utterances key found. Verify the Assembly json file you are using.",
+    ):
+        _get_assembly_utterances(assembly_json)
 
 
 def test_get_deepgram_utterances_valid() -> None:

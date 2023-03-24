@@ -20,6 +20,7 @@ import pytest
 
 from wordcab.client import Client
 from wordcab.core_objects import (
+    AssemblyAISource,
     AudioSource,
     BaseSource,
     DeepgramSource,
@@ -298,6 +299,29 @@ def test_start_summary_rev_transcript(api_key: str) -> None:
         assert rev_transcript_job.job_name is not None
         assert rev_transcript_job.source == "rev_ai"
         assert rev_transcript_job.settings == JobSettings(
+            ephemeral_data=False,
+            pipeline="transcribe,summarize",
+            split_long_utterances=False,
+            only_api=True,
+        )
+
+
+def test_start_summary_assembly_transcript(api_key: str) -> None:
+    """Test client start_summary method with AssemblyAISource."""
+    with Client(api_key=api_key) as client:
+        assembly_transcript_job = client.start_summary(
+            source_object=AssemblyAISource(
+                filepath="tests/assembly_sample.json",
+            ),
+            display_name="test-sdk-assembly-transcript",
+            summary_type="narrative",
+            summary_lens=1,
+        )
+        assert isinstance(assembly_transcript_job, SummarizeJob)
+        assert assembly_transcript_job.display_name == "test-sdk-assembly-transcript"
+        assert assembly_transcript_job.job_name is not None
+        assert assembly_transcript_job.source == "assembly_ai"
+        assert assembly_transcript_job.settings == JobSettings(
             ephemeral_data=False,
             pipeline="transcribe,summarize",
             split_long_utterances=False,
