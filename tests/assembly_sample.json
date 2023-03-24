@@ -1,0 +1,3496 @@
+{
+  "id": "rw9uboza4e-b334-4e7a-86f5-1c0b3e0a8f1e",
+  "language_model": "assemblyai_default",
+  "acoustic_model": "assemblyai_default",
+  "language_code": "en_us",
+  "status": "completed",
+  "audio_url": "https://cdn.assemblyai.com/upload/b887259f-5c5e-40fc-b9d5-ad739a324a58",
+  "text": "Thank you for calling Marcus Flores. How may I assist you? Hello. I'd like to order flowers and I think you have what I'm looking for. I'd be happy to take care of your order. May I have your name, please? Randall Thomas. Randall Thomas. Can you spell that for me? Randall randall Thomas. T-H-O-M-A-N. Thank you for that information, Randall. May I have your home or office number? Area code first? Area code 40. Nine, then 866-5088. That's 409-866-5088. Do you have a fax number or email address? My email is Randall Thomas@gmail.com. Randall Thomas@gmail.com. May I have your shipping address? 6800 okay. Gladys Avenue, Beaumont, Texas. Zip code is 77706 Gladys Avenue, Beaumont, Texas. Zip code 7706. Thank you for the information. What products were you interested in purchasing? Red roses. Probably a dozen. One dozen of red roses. Do you want long stems? Sure. All right, Randall, let me process the order. One moment, please. Okay. Randall, you're ordering one dozen long stand red roses. The total amount of your order is $40 and it will be shipped to your address within 24 hours. How soon can you deliver my roses again? Within 24 hours. Okay, no problem. Is there anything else I can help you with? That's all for now. Thanks. No problem. Randall. Thank you for calling martha Flores. Have a nice day. Bye.",
+  "words": [
+    {
+      "text": "Thank",
+      "start": 890,
+      "end": 1006,
+      "confidence": 0.99941,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 1028,
+      "end": 1118,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "for",
+      "start": 1124,
+      "end": 1294,
+      "confidence": 0.99956,
+      "speaker": "A"
+    },
+    {
+      "text": "calling",
+      "start": 1332,
+      "end": 1534,
+      "confidence": 0.99979,
+      "speaker": "A"
+    },
+    {
+      "text": "Marcus",
+      "start": 1572,
+      "end": 1962,
+      "confidence": 0.70064,
+      "speaker": "A"
+    },
+    {
+      "text": "Flores.",
+      "start": 2026,
+      "end": 2506,
+      "confidence": 0.94609,
+      "speaker": "A"
+    },
+    {
+      "text": "How",
+      "start": 2538,
+      "end": 2734,
+      "confidence": 0.79395,
+      "speaker": "A"
+    },
+    {
+      "text": "may",
+      "start": 2772,
+      "end": 2878,
+      "confidence": 0.98,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 2884,
+      "end": 2958,
+      "confidence": 0.68,
+      "speaker": "A"
+    },
+    {
+      "text": "assist",
+      "start": 2964,
+      "end": 3274,
+      "confidence": 0.61709,
+      "speaker": "A"
+    },
+    {
+      "text": "you?",
+      "start": 3322,
+      "end": 3726,
+      "confidence": 0.99,
+      "speaker": "A"
+    },
+    {
+      "text": "Hello.",
+      "start": 3828,
+      "end": 4142,
+      "confidence": 0.97918,
+      "speaker": "B"
+    },
+    {
+      "text": "I'd",
+      "start": 4196,
+      "end": 4378,
+      "confidence": 0.99199,
+      "speaker": "B"
+    },
+    {
+      "text": "like",
+      "start": 4394,
+      "end": 4574,
+      "confidence": 0.98248,
+      "speaker": "B"
+    },
+    {
+      "text": "to",
+      "start": 4612,
+      "end": 4766,
+      "confidence": 1.0,
+      "speaker": "B"
+    },
+    {
+      "text": "order",
+      "start": 4788,
+      "end": 5070,
+      "confidence": 0.99903,
+      "speaker": "B"
+    },
+    {
+      "text": "flowers",
+      "start": 5140,
+      "end": 5706,
+      "confidence": 0.99882,
+      "speaker": "B"
+    },
+    {
+      "text": "and",
+      "start": 5738,
+      "end": 5886,
+      "confidence": 1.0,
+      "speaker": "B"
+    },
+    {
+      "text": "I",
+      "start": 5908,
+      "end": 5998,
+      "confidence": 1.0,
+      "speaker": "B"
+    },
+    {
+      "text": "think",
+      "start": 6004,
+      "end": 6174,
+      "confidence": 0.96835,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 6212,
+      "end": 6366,
+      "confidence": 0.94,
+      "speaker": "B"
+    },
+    {
+      "text": "have",
+      "start": 6388,
+      "end": 6526,
+      "confidence": 0.99921,
+      "speaker": "B"
+    },
+    {
+      "text": "what",
+      "start": 6548,
+      "end": 6686,
+      "confidence": 0.99956,
+      "speaker": "B"
+    },
+    {
+      "text": "I'm",
+      "start": 6708,
+      "end": 6906,
+      "confidence": 0.99239,
+      "speaker": "B"
+    },
+    {
+      "text": "looking",
+      "start": 6938,
+      "end": 7134,
+      "confidence": 0.99996,
+      "speaker": "B"
+    },
+    {
+      "text": "for.",
+      "start": 7172,
+      "end": 7614,
+      "confidence": 0.99682,
+      "speaker": "B"
+    },
+    {
+      "text": "I'd",
+      "start": 7732,
+      "end": 8058,
+      "confidence": 0.42822,
+      "speaker": "A"
+    },
+    {
+      "text": "be",
+      "start": 8074,
+      "end": 8206,
+      "confidence": 0.9504,
+      "speaker": "A"
+    },
+    {
+      "text": "happy",
+      "start": 8228,
+      "end": 8414,
+      "confidence": 0.99965,
+      "speaker": "A"
+    },
+    {
+      "text": "to",
+      "start": 8452,
+      "end": 8606,
+      "confidence": 0.99,
+      "speaker": "A"
+    },
+    {
+      "text": "take",
+      "start": 8628,
+      "end": 8766,
+      "confidence": 0.9996,
+      "speaker": "A"
+    },
+    {
+      "text": "care",
+      "start": 8788,
+      "end": 8926,
+      "confidence": 0.99907,
+      "speaker": "A"
+    },
+    {
+      "text": "of",
+      "start": 8948,
+      "end": 9086,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "your",
+      "start": 9108,
+      "end": 9246,
+      "confidence": 0.99553,
+      "speaker": "A"
+    },
+    {
+      "text": "order.",
+      "start": 9268,
+      "end": 9502,
+      "confidence": 0.99974,
+      "speaker": "A"
+    },
+    {
+      "text": "May",
+      "start": 9556,
+      "end": 9678,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 9684,
+      "end": 9758,
+      "confidence": 0.95,
+      "speaker": "A"
+    },
+    {
+      "text": "have",
+      "start": 9764,
+      "end": 9886,
+      "confidence": 0.95957,
+      "speaker": "A"
+    },
+    {
+      "text": "your",
+      "start": 9908,
+      "end": 10094,
+      "confidence": 0.84084,
+      "speaker": "A"
+    },
+    {
+      "text": "name,",
+      "start": 10132,
+      "end": 10382,
+      "confidence": 0.99993,
+      "speaker": "A"
+    },
+    {
+      "text": "please?",
+      "start": 10436,
+      "end": 10990,
+      "confidence": 0.99994,
+      "speaker": "A"
+    },
+    {
+      "text": "Randall",
+      "start": 11140,
+      "end": 11674,
+      "confidence": 0.58341,
+      "speaker": "B"
+    },
+    {
+      "text": "Thomas.",
+      "start": 11722,
+      "end": 12490,
+      "confidence": 0.77,
+      "speaker": "B"
+    },
+    {
+      "text": "Randall",
+      "start": 12650,
+      "end": 13194,
+      "confidence": 0.56204,
+      "speaker": "A"
+    },
+    {
+      "text": "Thomas.",
+      "start": 13242,
+      "end": 13802,
+      "confidence": 0.58,
+      "speaker": "A"
+    },
+    {
+      "text": "Can",
+      "start": 13866,
+      "end": 13998,
+      "confidence": 0.99981,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 14004,
+      "end": 14126,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "spell",
+      "start": 14148,
+      "end": 14426,
+      "confidence": 0.50742,
+      "speaker": "A"
+    },
+    {
+      "text": "that",
+      "start": 14458,
+      "end": 14702,
+      "confidence": 0.85554,
+      "speaker": "A"
+    },
+    {
+      "text": "for",
+      "start": 14756,
+      "end": 14926,
+      "confidence": 0.99738,
+      "speaker": "A"
+    },
+    {
+      "text": "me?",
+      "start": 14948,
+      "end": 15470,
+      "confidence": 0.99991,
+      "speaker": "A"
+    },
+    {
+      "text": "Randall",
+      "start": 15620,
+      "end": 16442,
+      "confidence": 0.65226,
+      "speaker": "B"
+    },
+    {
+      "text": "randall",
+      "start": 16586,
+      "end": 19200,
+      "confidence": 0.89,
+      "speaker": "B"
+    },
+    {
+      "text": "Thomas.",
+      "start": 19570,
+      "end": 20490,
+      "confidence": 0.98,
+      "speaker": "B"
+    },
+    {
+      "text": "T-H-O-M-A-N.",
+      "start": 20650,
+      "end": 22590,
+      "confidence": 0.74,
+      "speaker": "B"
+    },
+    {
+      "text": "Thank",
+      "start": 22740,
+      "end": 23006,
+      "confidence": 0.99968,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 23028,
+      "end": 23118,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "for",
+      "start": 23124,
+      "end": 23294,
+      "confidence": 0.92866,
+      "speaker": "A"
+    },
+    {
+      "text": "that",
+      "start": 23332,
+      "end": 23534,
+      "confidence": 0.99923,
+      "speaker": "A"
+    },
+    {
+      "text": "information,",
+      "start": 23572,
+      "end": 23918,
+      "confidence": 0.99995,
+      "speaker": "A"
+    },
+    {
+      "text": "Randall.",
+      "start": 24004,
+      "end": 24426,
+      "confidence": 0.99447,
+      "speaker": "A"
+    },
+    {
+      "text": "May",
+      "start": 24458,
+      "end": 24558,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 24564,
+      "end": 24686,
+      "confidence": 0.7,
+      "speaker": "A"
+    },
+    {
+      "text": "have",
+      "start": 24708,
+      "end": 24846,
+      "confidence": 0.99664,
+      "speaker": "A"
+    },
+    {
+      "text": "your",
+      "start": 24868,
+      "end": 25078,
+      "confidence": 0.97575,
+      "speaker": "A"
+    },
+    {
+      "text": "home",
+      "start": 25124,
+      "end": 25334,
+      "confidence": 0.99946,
+      "speaker": "A"
+    },
+    {
+      "text": "or",
+      "start": 25372,
+      "end": 25526,
+      "confidence": 0.96696,
+      "speaker": "A"
+    },
+    {
+      "text": "office",
+      "start": 25548,
+      "end": 25830,
+      "confidence": 0.99195,
+      "speaker": "A"
+    },
+    {
+      "text": "number?",
+      "start": 25900,
+      "end": 26182,
+      "confidence": 0.99883,
+      "speaker": "A"
+    },
+    {
+      "text": "Area",
+      "start": 26236,
+      "end": 26502,
+      "confidence": 0.9941,
+      "speaker": "A"
+    },
+    {
+      "text": "code",
+      "start": 26556,
+      "end": 26870,
+      "confidence": 0.93258,
+      "speaker": "A"
+    },
+    {
+      "text": "first?",
+      "start": 26940,
+      "end": 27366,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "Area",
+      "start": 27468,
+      "end": 27734,
+      "confidence": 0.88984,
+      "speaker": "B"
+    },
+    {
+      "text": "code",
+      "start": 27772,
+      "end": 28022,
+      "confidence": 0.98688,
+      "speaker": "B"
+    },
+    {
+      "text": "40.",
+      "start": 28076,
+      "end": 28486,
+      "confidence": 0.79,
+      "speaker": "B"
+    },
+    {
+      "text": "Nine,",
+      "start": 28508,
+      "end": 29080,
+      "confidence": 0.92,
+      "speaker": "B"
+    },
+    {
+      "text": "then",
+      "start": 29450,
+      "end": 30200,
+      "confidence": 0.56789,
+      "speaker": "B"
+    },
+    {
+      "text": "866-5088.",
+      "start": 30810,
+      "end": 34262,
+      "confidence": 0.82,
+      "speaker": "B"
+    },
+    {
+      "text": "That's",
+      "start": 34396,
+      "end": 34834,
+      "confidence": 0.90136,
+      "speaker": "A"
+    },
+    {
+      "text": "409-866-5088.",
+      "start": 34882,
+      "end": 38330,
+      "confidence": 0.85,
+      "speaker": "A"
+    },
+    {
+      "text": "Do",
+      "start": 38400,
+      "end": 38586,
+      "confidence": 0.80978,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 38608,
+      "end": 38698,
+      "confidence": 0.99,
+      "speaker": "A"
+    },
+    {
+      "text": "have",
+      "start": 38704,
+      "end": 38826,
+      "confidence": 0.99994,
+      "speaker": "A"
+    },
+    {
+      "text": "a",
+      "start": 38848,
+      "end": 38986,
+      "confidence": 0.65,
+      "speaker": "A"
+    },
+    {
+      "text": "fax",
+      "start": 39008,
+      "end": 39334,
+      "confidence": 0.87734,
+      "speaker": "A"
+    },
+    {
+      "text": "number",
+      "start": 39382,
+      "end": 39642,
+      "confidence": 0.99996,
+      "speaker": "A"
+    },
+    {
+      "text": "or",
+      "start": 39696,
+      "end": 39914,
+      "confidence": 0.99991,
+      "speaker": "A"
+    },
+    {
+      "text": "email",
+      "start": 39952,
+      "end": 40250,
+      "confidence": 0.99999,
+      "speaker": "A"
+    },
+    {
+      "text": "address?",
+      "start": 40320,
+      "end": 40986,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "My",
+      "start": 41168,
+      "end": 41514,
+      "confidence": 0.57586,
+      "speaker": "B"
+    },
+    {
+      "text": "email",
+      "start": 41552,
+      "end": 41802,
+      "confidence": 0.99979,
+      "speaker": "B"
+    },
+    {
+      "text": "is",
+      "start": 41856,
+      "end": 42122,
+      "confidence": 0.76282,
+      "speaker": "B"
+    },
+    {
+      "text": "Randall",
+      "start": 42176,
+      "end": 42970,
+      "confidence": 0.87402,
+      "speaker": "B"
+    },
+    {
+      "text": "Thomas@gmail.com.",
+      "start": 43470,
+      "end": 46620,
+      "confidence": 0.71,
+      "speaker": "B"
+    },
+    {
+      "text": "Randall",
+      "start": 46990,
+      "end": 47862,
+      "confidence": 0.71013,
+      "speaker": "A"
+    },
+    {
+      "text": "Thomas@gmail.com.",
+      "start": 48006,
+      "end": 50102,
+      "confidence": 0.83,
+      "speaker": "A"
+    },
+    {
+      "text": "May",
+      "start": 50176,
+      "end": 50366,
+      "confidence": 0.74,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 50388,
+      "end": 50478,
+      "confidence": 0.88,
+      "speaker": "A"
+    },
+    {
+      "text": "have",
+      "start": 50484,
+      "end": 50654,
+      "confidence": 0.83451,
+      "speaker": "A"
+    },
+    {
+      "text": "your",
+      "start": 50692,
+      "end": 50846,
+      "confidence": 0.99972,
+      "speaker": "A"
+    },
+    {
+      "text": "shipping",
+      "start": 50868,
+      "end": 51274,
+      "confidence": 0.99615,
+      "speaker": "A"
+    },
+    {
+      "text": "address?",
+      "start": 51322,
+      "end": 51870,
+      "confidence": 0.99994,
+      "speaker": "A"
+    },
+    {
+      "text": "6800",
+      "start": 52020,
+      "end": 53230,
+      "confidence": 0.86,
+      "speaker": "B"
+    },
+    {
+      "text": "okay.",
+      "start": 53380,
+      "end": 54126,
+      "confidence": 0.67638,
+      "speaker": "B"
+    },
+    {
+      "text": "Gladys",
+      "start": 54308,
+      "end": 54906,
+      "confidence": 0.73876,
+      "speaker": "B"
+    },
+    {
+      "text": "Avenue,",
+      "start": 54938,
+      "end": 55790,
+      "confidence": 0.61652,
+      "speaker": "B"
+    },
+    {
+      "text": "Beaumont,",
+      "start": 56130,
+      "end": 56794,
+      "confidence": 0.52619,
+      "speaker": "B"
+    },
+    {
+      "text": "Texas.",
+      "start": 56842,
+      "end": 57630,
+      "confidence": 0.72757,
+      "speaker": "B"
+    },
+    {
+      "text": "Zip",
+      "start": 58130,
+      "end": 58506,
+      "confidence": 0.70779,
+      "speaker": "A"
+    },
+    {
+      "text": "code",
+      "start": 58538,
+      "end": 58782,
+      "confidence": 0.99576,
+      "speaker": "A"
+    },
+    {
+      "text": "is",
+      "start": 58836,
+      "end": 59294,
+      "confidence": 0.54285,
+      "speaker": "A"
+    },
+    {
+      "text": "77706",
+      "start": 59412,
+      "end": 61470,
+      "confidence": 0.93,
+      "speaker": "A"
+    },
+    {
+      "text": "Gladys",
+      "start": 61620,
+      "end": 62266,
+      "confidence": 0.76596,
+      "speaker": "A"
+    },
+    {
+      "text": "Avenue,",
+      "start": 62298,
+      "end": 62682,
+      "confidence": 0.88355,
+      "speaker": "A"
+    },
+    {
+      "text": "Beaumont,",
+      "start": 62746,
+      "end": 63370,
+      "confidence": 0.79468,
+      "speaker": "A"
+    },
+    {
+      "text": "Texas.",
+      "start": 63450,
+      "end": 64010,
+      "confidence": 0.95721,
+      "speaker": "A"
+    },
+    {
+      "text": "Zip",
+      "start": 64090,
+      "end": 64378,
+      "confidence": 0.99898,
+      "speaker": "A"
+    },
+    {
+      "text": "code",
+      "start": 64394,
+      "end": 64874,
+      "confidence": 0.99962,
+      "speaker": "A"
+    },
+    {
+      "text": "7706.",
+      "start": 65012,
+      "end": 66722,
+      "confidence": 0.82,
+      "speaker": "A"
+    },
+    {
+      "text": "Thank",
+      "start": 66856,
+      "end": 67154,
+      "confidence": 0.98659,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 67192,
+      "end": 67298,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "for",
+      "start": 67304,
+      "end": 67426,
+      "confidence": 0.99991,
+      "speaker": "A"
+    },
+    {
+      "text": "the",
+      "start": 67448,
+      "end": 67586,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "information.",
+      "start": 67608,
+      "end": 68226,
+      "confidence": 0.9976,
+      "speaker": "A"
+    },
+    {
+      "text": "What",
+      "start": 68408,
+      "end": 68754,
+      "confidence": 0.99814,
+      "speaker": "A"
+    },
+    {
+      "text": "products",
+      "start": 68792,
+      "end": 69090,
+      "confidence": 0.99333,
+      "speaker": "A"
+    },
+    {
+      "text": "were",
+      "start": 69160,
+      "end": 69298,
+      "confidence": 0.89937,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 69304,
+      "end": 69426,
+      "confidence": 0.73,
+      "speaker": "A"
+    },
+    {
+      "text": "interested",
+      "start": 69448,
+      "end": 69778,
+      "confidence": 0.9991,
+      "speaker": "A"
+    },
+    {
+      "text": "in",
+      "start": 69864,
+      "end": 70066,
+      "confidence": 0.99993,
+      "speaker": "A"
+    },
+    {
+      "text": "purchasing?",
+      "start": 70088,
+      "end": 71038,
+      "confidence": 0.56208,
+      "speaker": "A"
+    },
+    {
+      "text": "Red",
+      "start": 71214,
+      "end": 71554,
+      "confidence": 0.99945,
+      "speaker": "B"
+    },
+    {
+      "text": "roses.",
+      "start": 71592,
+      "end": 72142,
+      "confidence": 0.98324,
+      "speaker": "B"
+    },
+    {
+      "text": "Probably",
+      "start": 72206,
+      "end": 72530,
+      "confidence": 0.9998,
+      "speaker": "B"
+    },
+    {
+      "text": "a",
+      "start": 72600,
+      "end": 72786,
+      "confidence": 0.99,
+      "speaker": "B"
+    },
+    {
+      "text": "dozen.",
+      "start": 72808,
+      "end": 73490,
+      "confidence": 0.99535,
+      "speaker": "B"
+    },
+    {
+      "text": "One",
+      "start": 73990,
+      "end": 74306,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "dozen",
+      "start": 74328,
+      "end": 74686,
+      "confidence": 0.54177,
+      "speaker": "A"
+    },
+    {
+      "text": "of",
+      "start": 74718,
+      "end": 74866,
+      "confidence": 0.99,
+      "speaker": "A"
+    },
+    {
+      "text": "red",
+      "start": 74888,
+      "end": 75086,
+      "confidence": 0.99956,
+      "speaker": "A"
+    },
+    {
+      "text": "roses.",
+      "start": 75128,
+      "end": 75506,
+      "confidence": 0.90501,
+      "speaker": "A"
+    },
+    {
+      "text": "Do",
+      "start": 75538,
+      "end": 75686,
+      "confidence": 0.99912,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 75708,
+      "end": 75798,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "want",
+      "start": 75804,
+      "end": 76022,
+      "confidence": 0.99916,
+      "speaker": "A"
+    },
+    {
+      "text": "long",
+      "start": 76076,
+      "end": 76294,
+      "confidence": 0.99759,
+      "speaker": "A"
+    },
+    {
+      "text": "stems?",
+      "start": 76332,
+      "end": 76866,
+      "confidence": 0.51095,
+      "speaker": "A"
+    },
+    {
+      "text": "Sure.",
+      "start": 76978,
+      "end": 77590,
+      "confidence": 0.69254,
+      "speaker": "B"
+    },
+    {
+      "text": "All",
+      "start": 77740,
+      "end": 78006,
+      "confidence": 0.87174,
+      "speaker": "A"
+    },
+    {
+      "text": "right,",
+      "start": 78028,
+      "end": 78310,
+      "confidence": 0.57828,
+      "speaker": "A"
+    },
+    {
+      "text": "Randall,",
+      "start": 78380,
+      "end": 78978,
+      "confidence": 0.91869,
+      "speaker": "A"
+    },
+    {
+      "text": "let",
+      "start": 79074,
+      "end": 79286,
+      "confidence": 0.99987,
+      "speaker": "A"
+    },
+    {
+      "text": "me",
+      "start": 79308,
+      "end": 79398,
+      "confidence": 0.99995,
+      "speaker": "A"
+    },
+    {
+      "text": "process",
+      "start": 79404,
+      "end": 79670,
+      "confidence": 0.52007,
+      "speaker": "A"
+    },
+    {
+      "text": "the",
+      "start": 79740,
+      "end": 79926,
+      "confidence": 0.44,
+      "speaker": "A"
+    },
+    {
+      "text": "order.",
+      "start": 79948,
+      "end": 80230,
+      "confidence": 0.80646,
+      "speaker": "A"
+    },
+    {
+      "text": "One",
+      "start": 80300,
+      "end": 80486,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "moment,",
+      "start": 80508,
+      "end": 80790,
+      "confidence": 0.99936,
+      "speaker": "A"
+    },
+    {
+      "text": "please.",
+      "start": 80860,
+      "end": 81480,
+      "confidence": 0.99997,
+      "speaker": "A"
+    },
+    {
+      "text": "Okay.",
+      "start": 82490,
+      "end": 83240,
+      "confidence": 0.99115,
+      "speaker": "B"
+    },
+    {
+      "text": "Randall,",
+      "start": 85050,
+      "end": 85634,
+      "confidence": 0.51748,
+      "speaker": "A"
+    },
+    {
+      "text": "you're",
+      "start": 85682,
+      "end": 85906,
+      "confidence": 0.65665,
+      "speaker": "A"
+    },
+    {
+      "text": "ordering",
+      "start": 85938,
+      "end": 86354,
+      "confidence": 0.79874,
+      "speaker": "A"
+    },
+    {
+      "text": "one",
+      "start": 86402,
+      "end": 86662,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "dozen",
+      "start": 86716,
+      "end": 87122,
+      "confidence": 0.9475,
+      "speaker": "A"
+    },
+    {
+      "text": "long",
+      "start": 87186,
+      "end": 87414,
+      "confidence": 0.99618,
+      "speaker": "A"
+    },
+    {
+      "text": "stand",
+      "start": 87452,
+      "end": 87798,
+      "confidence": 0.5565,
+      "speaker": "A"
+    },
+    {
+      "text": "red",
+      "start": 87884,
+      "end": 88134,
+      "confidence": 0.99894,
+      "speaker": "A"
+    },
+    {
+      "text": "roses.",
+      "start": 88172,
+      "end": 88594,
+      "confidence": 0.96992,
+      "speaker": "A"
+    },
+    {
+      "text": "The",
+      "start": 88642,
+      "end": 88806,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "total",
+      "start": 88828,
+      "end": 89062,
+      "confidence": 0.98903,
+      "speaker": "A"
+    },
+    {
+      "text": "amount",
+      "start": 89116,
+      "end": 89334,
+      "confidence": 0.99986,
+      "speaker": "A"
+    },
+    {
+      "text": "of",
+      "start": 89372,
+      "end": 89478,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "your",
+      "start": 89484,
+      "end": 89606,
+      "confidence": 0.9965,
+      "speaker": "A"
+    },
+    {
+      "text": "order",
+      "start": 89628,
+      "end": 89814,
+      "confidence": 0.99972,
+      "speaker": "A"
+    },
+    {
+      "text": "is",
+      "start": 89852,
+      "end": 90006,
+      "confidence": 0.99894,
+      "speaker": "A"
+    },
+    {
+      "text": "$40",
+      "start": 90028,
+      "end": 90854,
+      "confidence": 0.97,
+      "speaker": "A"
+    },
+    {
+      "text": "and",
+      "start": 90972,
+      "end": 91206,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "it",
+      "start": 91228,
+      "end": 91414,
+      "confidence": 0.9957,
+      "speaker": "A"
+    },
+    {
+      "text": "will",
+      "start": 91452,
+      "end": 91606,
+      "confidence": 0.99996,
+      "speaker": "A"
+    },
+    {
+      "text": "be",
+      "start": 91628,
+      "end": 91766,
+      "confidence": 0.99974,
+      "speaker": "A"
+    },
+    {
+      "text": "shipped",
+      "start": 91788,
+      "end": 92066,
+      "confidence": 0.99956,
+      "speaker": "A"
+    },
+    {
+      "text": "to",
+      "start": 92098,
+      "end": 92246,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "your",
+      "start": 92268,
+      "end": 92406,
+      "confidence": 0.99996,
+      "speaker": "A"
+    },
+    {
+      "text": "address",
+      "start": 92428,
+      "end": 92710,
+      "confidence": 0.9715,
+      "speaker": "A"
+    },
+    {
+      "text": "within",
+      "start": 92780,
+      "end": 93062,
+      "confidence": 0.99968,
+      "speaker": "A"
+    },
+    {
+      "text": "24",
+      "start": 93116,
+      "end": 93574,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "hours.",
+      "start": 93612,
+      "end": 94150,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "How",
+      "start": 94300,
+      "end": 94566,
+      "confidence": 0.48925,
+      "speaker": "B"
+    },
+    {
+      "text": "soon",
+      "start": 94588,
+      "end": 94822,
+      "confidence": 0.73629,
+      "speaker": "B"
+    },
+    {
+      "text": "can",
+      "start": 94876,
+      "end": 94998,
+      "confidence": 0.98337,
+      "speaker": "B"
+    },
+    {
+      "text": "you",
+      "start": 95004,
+      "end": 95126,
+      "confidence": 0.77,
+      "speaker": "B"
+    },
+    {
+      "text": "deliver",
+      "start": 95148,
+      "end": 95474,
+      "confidence": 0.99728,
+      "speaker": "B"
+    },
+    {
+      "text": "my",
+      "start": 95522,
+      "end": 95686,
+      "confidence": 0.99286,
+      "speaker": "B"
+    },
+    {
+      "text": "roses",
+      "start": 95708,
+      "end": 96242,
+      "confidence": 0.93741,
+      "speaker": "B"
+    },
+    {
+      "text": "again?",
+      "start": 96306,
+      "end": 96822,
+      "confidence": 0.99984,
+      "speaker": "B"
+    },
+    {
+      "text": "Within",
+      "start": 96956,
+      "end": 97302,
+      "confidence": 0.99941,
+      "speaker": "A"
+    },
+    {
+      "text": "24",
+      "start": 97356,
+      "end": 97894,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "hours.",
+      "start": 97932,
+      "end": 98566,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "Okay,",
+      "start": 98748,
+      "end": 99190,
+      "confidence": 0.93608,
+      "speaker": "B"
+    },
+    {
+      "text": "no",
+      "start": 99260,
+      "end": 99446,
+      "confidence": 0.99674,
+      "speaker": "B"
+    },
+    {
+      "text": "problem.",
+      "start": 99468,
+      "end": 100014,
+      "confidence": 0.99713,
+      "speaker": "B"
+    },
+    {
+      "text": "Is",
+      "start": 100172,
+      "end": 100446,
+      "confidence": 0.99782,
+      "speaker": "A"
+    },
+    {
+      "text": "there",
+      "start": 100468,
+      "end": 100654,
+      "confidence": 0.99896,
+      "speaker": "A"
+    },
+    {
+      "text": "anything",
+      "start": 100692,
+      "end": 100894,
+      "confidence": 0.99982,
+      "speaker": "A"
+    },
+    {
+      "text": "else",
+      "start": 100932,
+      "end": 101134,
+      "confidence": 0.9999,
+      "speaker": "A"
+    },
+    {
+      "text": "I",
+      "start": 101172,
+      "end": 101326,
+      "confidence": 0.66,
+      "speaker": "A"
+    },
+    {
+      "text": "can",
+      "start": 101348,
+      "end": 101486,
+      "confidence": 0.9992,
+      "speaker": "A"
+    },
+    {
+      "text": "help",
+      "start": 101508,
+      "end": 101646,
+      "confidence": 0.99989,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 101668,
+      "end": 101806,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "with?",
+      "start": 101828,
+      "end": 102494,
+      "confidence": 0.99927,
+      "speaker": "A"
+    },
+    {
+      "text": "That's",
+      "start": 102692,
+      "end": 103098,
+      "confidence": 0.9884,
+      "speaker": "B"
+    },
+    {
+      "text": "all",
+      "start": 103114,
+      "end": 103246,
+      "confidence": 0.98064,
+      "speaker": "B"
+    },
+    {
+      "text": "for",
+      "start": 103268,
+      "end": 103406,
+      "confidence": 0.99782,
+      "speaker": "B"
+    },
+    {
+      "text": "now.",
+      "start": 103428,
+      "end": 103662,
+      "confidence": 0.66,
+      "speaker": "B"
+    },
+    {
+      "text": "Thanks.",
+      "start": 103716,
+      "end": 104270,
+      "confidence": 0.80972,
+      "speaker": "B"
+    },
+    {
+      "text": "No",
+      "start": 104420,
+      "end": 104686,
+      "confidence": 0.99946,
+      "speaker": "A"
+    },
+    {
+      "text": "problem.",
+      "start": 104708,
+      "end": 104990,
+      "confidence": 0.9988,
+      "speaker": "A"
+    },
+    {
+      "text": "Randall.",
+      "start": 105060,
+      "end": 105482,
+      "confidence": 0.7588,
+      "speaker": "A"
+    },
+    {
+      "text": "Thank",
+      "start": 105546,
+      "end": 105726,
+      "confidence": 0.99886,
+      "speaker": "A"
+    },
+    {
+      "text": "you",
+      "start": 105748,
+      "end": 105838,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "for",
+      "start": 105844,
+      "end": 105966,
+      "confidence": 0.99971,
+      "speaker": "A"
+    },
+    {
+      "text": "calling",
+      "start": 105988,
+      "end": 106222,
+      "confidence": 0.99928,
+      "speaker": "A"
+    },
+    {
+      "text": "martha",
+      "start": 106276,
+      "end": 106586,
+      "confidence": 0.95647,
+      "speaker": "A"
+    },
+    {
+      "text": "Flores.",
+      "start": 106618,
+      "end": 107114,
+      "confidence": 0.16141,
+      "speaker": "A"
+    },
+    {
+      "text": "Have",
+      "start": 107162,
+      "end": 107326,
+      "confidence": 0.99915,
+      "speaker": "A"
+    },
+    {
+      "text": "a",
+      "start": 107348,
+      "end": 107438,
+      "confidence": 1.0,
+      "speaker": "A"
+    },
+    {
+      "text": "nice",
+      "start": 107444,
+      "end": 107662,
+      "confidence": 0.99798,
+      "speaker": "A"
+    },
+    {
+      "text": "day.",
+      "start": 107716,
+      "end": 108320,
+      "confidence": 0.99911,
+      "speaker": "A"
+    },
+    {
+      "text": "Bye.",
+      "start": 108690,
+      "end": 108970,
+      "confidence": 0.66415,
+      "speaker": "B"
+    }
+  ],
+  "utterances": [
+    {
+      "confidence": 0.8824118181818181,
+      "end": 3726,
+      "speaker": "A",
+      "start": 890,
+      "text": "Thank you for calling Marcus Flores. How may I assist you?",
+      "words": [
+        {
+          "text": "Thank",
+          "start": 890,
+          "end": 1006,
+          "confidence": 0.99941,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 1028,
+          "end": 1118,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "for",
+          "start": 1124,
+          "end": 1294,
+          "confidence": 0.99956,
+          "speaker": "A"
+        },
+        {
+          "text": "calling",
+          "start": 1332,
+          "end": 1534,
+          "confidence": 0.99979,
+          "speaker": "A"
+        },
+        {
+          "text": "Marcus",
+          "start": 1572,
+          "end": 1962,
+          "confidence": 0.70064,
+          "speaker": "A"
+        },
+        {
+          "text": "Flores.",
+          "start": 2026,
+          "end": 2506,
+          "confidence": 0.94609,
+          "speaker": "A"
+        },
+        {
+          "text": "How",
+          "start": 2538,
+          "end": 2734,
+          "confidence": 0.79395,
+          "speaker": "A"
+        },
+        {
+          "text": "may",
+          "start": 2772,
+          "end": 2878,
+          "confidence": 0.98,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 2884,
+          "end": 2958,
+          "confidence": 0.68,
+          "speaker": "A"
+        },
+        {
+          "text": "assist",
+          "start": 2964,
+          "end": 3274,
+          "confidence": 0.61709,
+          "speaker": "A"
+        },
+        {
+          "text": "you?",
+          "start": 3322,
+          "end": 3726,
+          "confidence": 0.99,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.9898526666666666,
+      "end": 7614,
+      "speaker": "B",
+      "start": 3828,
+      "text": "Hello. I'd like to order flowers and I think you have what I'm looking for.",
+      "words": [
+        {
+          "text": "Hello.",
+          "start": 3828,
+          "end": 4142,
+          "confidence": 0.97918,
+          "speaker": "B"
+        },
+        {
+          "text": "I'd",
+          "start": 4196,
+          "end": 4378,
+          "confidence": 0.99199,
+          "speaker": "B"
+        },
+        {
+          "text": "like",
+          "start": 4394,
+          "end": 4574,
+          "confidence": 0.98248,
+          "speaker": "B"
+        },
+        {
+          "text": "to",
+          "start": 4612,
+          "end": 4766,
+          "confidence": 1.0,
+          "speaker": "B"
+        },
+        {
+          "text": "order",
+          "start": 4788,
+          "end": 5070,
+          "confidence": 0.99903,
+          "speaker": "B"
+        },
+        {
+          "text": "flowers",
+          "start": 5140,
+          "end": 5706,
+          "confidence": 0.99882,
+          "speaker": "B"
+        },
+        {
+          "text": "and",
+          "start": 5738,
+          "end": 5886,
+          "confidence": 1.0,
+          "speaker": "B"
+        },
+        {
+          "text": "I",
+          "start": 5908,
+          "end": 5998,
+          "confidence": 1.0,
+          "speaker": "B"
+        },
+        {
+          "text": "think",
+          "start": 6004,
+          "end": 6174,
+          "confidence": 0.96835,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 6212,
+          "end": 6366,
+          "confidence": 0.94,
+          "speaker": "B"
+        },
+        {
+          "text": "have",
+          "start": 6388,
+          "end": 6526,
+          "confidence": 0.99921,
+          "speaker": "B"
+        },
+        {
+          "text": "what",
+          "start": 6548,
+          "end": 6686,
+          "confidence": 0.99956,
+          "speaker": "B"
+        },
+        {
+          "text": "I'm",
+          "start": 6708,
+          "end": 6906,
+          "confidence": 0.99239,
+          "speaker": "B"
+        },
+        {
+          "text": "looking",
+          "start": 6938,
+          "end": 7134,
+          "confidence": 0.99996,
+          "speaker": "B"
+        },
+        {
+          "text": "for.",
+          "start": 7172,
+          "end": 7614,
+          "confidence": 0.99682,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.9408326666666667,
+      "end": 10990,
+      "speaker": "A",
+      "start": 7732,
+      "text": "I'd be happy to take care of your order. May I have your name, please?",
+      "words": [
+        {
+          "text": "I'd",
+          "start": 7732,
+          "end": 8058,
+          "confidence": 0.42822,
+          "speaker": "A"
+        },
+        {
+          "text": "be",
+          "start": 8074,
+          "end": 8206,
+          "confidence": 0.9504,
+          "speaker": "A"
+        },
+        {
+          "text": "happy",
+          "start": 8228,
+          "end": 8414,
+          "confidence": 0.99965,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 8452,
+          "end": 8606,
+          "confidence": 0.99,
+          "speaker": "A"
+        },
+        {
+          "text": "take",
+          "start": 8628,
+          "end": 8766,
+          "confidence": 0.9996,
+          "speaker": "A"
+        },
+        {
+          "text": "care",
+          "start": 8788,
+          "end": 8926,
+          "confidence": 0.99907,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 8948,
+          "end": 9086,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 9108,
+          "end": 9246,
+          "confidence": 0.99553,
+          "speaker": "A"
+        },
+        {
+          "text": "order.",
+          "start": 9268,
+          "end": 9502,
+          "confidence": 0.99974,
+          "speaker": "A"
+        },
+        {
+          "text": "May",
+          "start": 9556,
+          "end": 9678,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 9684,
+          "end": 9758,
+          "confidence": 0.95,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 9764,
+          "end": 9886,
+          "confidence": 0.95957,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 9908,
+          "end": 10094,
+          "confidence": 0.84084,
+          "speaker": "A"
+        },
+        {
+          "text": "name,",
+          "start": 10132,
+          "end": 10382,
+          "confidence": 0.99993,
+          "speaker": "A"
+        },
+        {
+          "text": "please?",
+          "start": 10436,
+          "end": 10990,
+          "confidence": 0.99994,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.676705,
+      "end": 12490,
+      "speaker": "B",
+      "start": 11140,
+      "text": "Randall Thomas.",
+      "words": [
+        {
+          "text": "Randall",
+          "start": 11140,
+          "end": 11674,
+          "confidence": 0.58341,
+          "speaker": "B"
+        },
+        {
+          "text": "Thomas.",
+          "start": 11722,
+          "end": 12490,
+          "confidence": 0.77,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8127624999999998,
+      "end": 15470,
+      "speaker": "A",
+      "start": 12650,
+      "text": "Randall Thomas. Can you spell that for me?",
+      "words": [
+        {
+          "text": "Randall",
+          "start": 12650,
+          "end": 13194,
+          "confidence": 0.56204,
+          "speaker": "A"
+        },
+        {
+          "text": "Thomas.",
+          "start": 13242,
+          "end": 13802,
+          "confidence": 0.58,
+          "speaker": "A"
+        },
+        {
+          "text": "Can",
+          "start": 13866,
+          "end": 13998,
+          "confidence": 0.99981,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 14004,
+          "end": 14126,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "spell",
+          "start": 14148,
+          "end": 14426,
+          "confidence": 0.50742,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 14458,
+          "end": 14702,
+          "confidence": 0.85554,
+          "speaker": "A"
+        },
+        {
+          "text": "for",
+          "start": 14756,
+          "end": 14926,
+          "confidence": 0.99738,
+          "speaker": "A"
+        },
+        {
+          "text": "me?",
+          "start": 14948,
+          "end": 15470,
+          "confidence": 0.99991,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8155650000000001,
+      "end": 22590,
+      "speaker": "B",
+      "start": 15620,
+      "text": "Randall randall Thomas. T-H-O-M-A-N.",
+      "words": [
+        {
+          "text": "Randall",
+          "start": 15620,
+          "end": 16442,
+          "confidence": 0.65226,
+          "speaker": "B"
+        },
+        {
+          "text": "randall",
+          "start": 16586,
+          "end": 19200,
+          "confidence": 0.89,
+          "speaker": "B"
+        },
+        {
+          "text": "Thomas.",
+          "start": 19570,
+          "end": 20490,
+          "confidence": 0.98,
+          "speaker": "B"
+        },
+        {
+          "text": "T-H-O-M-A-N.",
+          "start": 20650,
+          "end": 22590,
+          "confidence": 0.74,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.9693094117647059,
+      "end": 27366,
+      "speaker": "A",
+      "start": 22740,
+      "text": "Thank you for that information, Randall. May I have your home or office number? Area code first?",
+      "words": [
+        {
+          "text": "Thank",
+          "start": 22740,
+          "end": 23006,
+          "confidence": 0.99968,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 23028,
+          "end": 23118,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "for",
+          "start": 23124,
+          "end": 23294,
+          "confidence": 0.92866,
+          "speaker": "A"
+        },
+        {
+          "text": "that",
+          "start": 23332,
+          "end": 23534,
+          "confidence": 0.99923,
+          "speaker": "A"
+        },
+        {
+          "text": "information,",
+          "start": 23572,
+          "end": 23918,
+          "confidence": 0.99995,
+          "speaker": "A"
+        },
+        {
+          "text": "Randall.",
+          "start": 24004,
+          "end": 24426,
+          "confidence": 0.99447,
+          "speaker": "A"
+        },
+        {
+          "text": "May",
+          "start": 24458,
+          "end": 24558,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 24564,
+          "end": 24686,
+          "confidence": 0.7,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 24708,
+          "end": 24846,
+          "confidence": 0.99664,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 24868,
+          "end": 25078,
+          "confidence": 0.97575,
+          "speaker": "A"
+        },
+        {
+          "text": "home",
+          "start": 25124,
+          "end": 25334,
+          "confidence": 0.99946,
+          "speaker": "A"
+        },
+        {
+          "text": "or",
+          "start": 25372,
+          "end": 25526,
+          "confidence": 0.96696,
+          "speaker": "A"
+        },
+        {
+          "text": "office",
+          "start": 25548,
+          "end": 25830,
+          "confidence": 0.99195,
+          "speaker": "A"
+        },
+        {
+          "text": "number?",
+          "start": 25900,
+          "end": 26182,
+          "confidence": 0.99883,
+          "speaker": "A"
+        },
+        {
+          "text": "Area",
+          "start": 26236,
+          "end": 26502,
+          "confidence": 0.9941,
+          "speaker": "A"
+        },
+        {
+          "text": "code",
+          "start": 26556,
+          "end": 26870,
+          "confidence": 0.93258,
+          "speaker": "A"
+        },
+        {
+          "text": "first?",
+          "start": 26940,
+          "end": 27366,
+          "confidence": 1.0,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8291016666666667,
+      "end": 34262,
+      "speaker": "B",
+      "start": 27468,
+      "text": "Area code 40. Nine, then 866-5088.",
+      "words": [
+        {
+          "text": "Area",
+          "start": 27468,
+          "end": 27734,
+          "confidence": 0.88984,
+          "speaker": "B"
+        },
+        {
+          "text": "code",
+          "start": 27772,
+          "end": 28022,
+          "confidence": 0.98688,
+          "speaker": "B"
+        },
+        {
+          "text": "40.",
+          "start": 28076,
+          "end": 28486,
+          "confidence": 0.79,
+          "speaker": "B"
+        },
+        {
+          "text": "Nine,",
+          "start": 28508,
+          "end": 29080,
+          "confidence": 0.92,
+          "speaker": "B"
+        },
+        {
+          "text": "then",
+          "start": 29450,
+          "end": 30200,
+          "confidence": 0.56789,
+          "speaker": "B"
+        },
+        {
+          "text": "866-5088.",
+          "start": 30810,
+          "end": 34262,
+          "confidence": 0.82,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.9162072727272729,
+      "end": 40986,
+      "speaker": "A",
+      "start": 34396,
+      "text": "That's 409-866-5088. Do you have a fax number or email address?",
+      "words": [
+        {
+          "text": "That's",
+          "start": 34396,
+          "end": 34834,
+          "confidence": 0.90136,
+          "speaker": "A"
+        },
+        {
+          "text": "409-866-5088.",
+          "start": 34882,
+          "end": 38330,
+          "confidence": 0.85,
+          "speaker": "A"
+        },
+        {
+          "text": "Do",
+          "start": 38400,
+          "end": 38586,
+          "confidence": 0.80978,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 38608,
+          "end": 38698,
+          "confidence": 0.99,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 38704,
+          "end": 38826,
+          "confidence": 0.99994,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 38848,
+          "end": 38986,
+          "confidence": 0.65,
+          "speaker": "A"
+        },
+        {
+          "text": "fax",
+          "start": 39008,
+          "end": 39334,
+          "confidence": 0.87734,
+          "speaker": "A"
+        },
+        {
+          "text": "number",
+          "start": 39382,
+          "end": 39642,
+          "confidence": 0.99996,
+          "speaker": "A"
+        },
+        {
+          "text": "or",
+          "start": 39696,
+          "end": 39914,
+          "confidence": 0.99991,
+          "speaker": "A"
+        },
+        {
+          "text": "email",
+          "start": 39952,
+          "end": 40250,
+          "confidence": 0.99999,
+          "speaker": "A"
+        },
+        {
+          "text": "address?",
+          "start": 40320,
+          "end": 40986,
+          "confidence": 1.0,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.7844979999999999,
+      "end": 46620,
+      "speaker": "B",
+      "start": 41168,
+      "text": "My email is Randall Thomas@gmail.com.",
+      "words": [
+        {
+          "text": "My",
+          "start": 41168,
+          "end": 41514,
+          "confidence": 0.57586,
+          "speaker": "B"
+        },
+        {
+          "text": "email",
+          "start": 41552,
+          "end": 41802,
+          "confidence": 0.99979,
+          "speaker": "B"
+        },
+        {
+          "text": "is",
+          "start": 41856,
+          "end": 42122,
+          "confidence": 0.76282,
+          "speaker": "B"
+        },
+        {
+          "text": "Randall",
+          "start": 42176,
+          "end": 42970,
+          "confidence": 0.87402,
+          "speaker": "B"
+        },
+        {
+          "text": "Thomas@gmail.com.",
+          "start": 43470,
+          "end": 46620,
+          "confidence": 0.71,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8738062499999999,
+      "end": 51870,
+      "speaker": "A",
+      "start": 46990,
+      "text": "Randall Thomas@gmail.com. May I have your shipping address?",
+      "words": [
+        {
+          "text": "Randall",
+          "start": 46990,
+          "end": 47862,
+          "confidence": 0.71013,
+          "speaker": "A"
+        },
+        {
+          "text": "Thomas@gmail.com.",
+          "start": 48006,
+          "end": 50102,
+          "confidence": 0.83,
+          "speaker": "A"
+        },
+        {
+          "text": "May",
+          "start": 50176,
+          "end": 50366,
+          "confidence": 0.74,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 50388,
+          "end": 50478,
+          "confidence": 0.88,
+          "speaker": "A"
+        },
+        {
+          "text": "have",
+          "start": 50484,
+          "end": 50654,
+          "confidence": 0.83451,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 50692,
+          "end": 50846,
+          "confidence": 0.99972,
+          "speaker": "A"
+        },
+        {
+          "text": "shipping",
+          "start": 50868,
+          "end": 51274,
+          "confidence": 0.99615,
+          "speaker": "A"
+        },
+        {
+          "text": "address?",
+          "start": 51322,
+          "end": 51870,
+          "confidence": 0.99994,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.6909033333333333,
+      "end": 57630,
+      "speaker": "B",
+      "start": 52020,
+      "text": "6800 okay. Gladys Avenue, Beaumont, Texas.",
+      "words": [
+        {
+          "text": "6800",
+          "start": 52020,
+          "end": 53230,
+          "confidence": 0.86,
+          "speaker": "B"
+        },
+        {
+          "text": "okay.",
+          "start": 53380,
+          "end": 54126,
+          "confidence": 0.67638,
+          "speaker": "B"
+        },
+        {
+          "text": "Gladys",
+          "start": 54308,
+          "end": 54906,
+          "confidence": 0.73876,
+          "speaker": "B"
+        },
+        {
+          "text": "Avenue,",
+          "start": 54938,
+          "end": 55790,
+          "confidence": 0.61652,
+          "speaker": "B"
+        },
+        {
+          "text": "Beaumont,",
+          "start": 56130,
+          "end": 56794,
+          "confidence": 0.52619,
+          "speaker": "B"
+        },
+        {
+          "text": "Texas.",
+          "start": 56842,
+          "end": 57630,
+          "confidence": 0.72757,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8940195652173912,
+      "end": 71038,
+      "speaker": "A",
+      "start": 58130,
+      "text": "Zip code is 77706 Gladys Avenue, Beaumont, Texas. Zip code 7706. Thank you for the information. What products were you interested in purchasing?",
+      "words": [
+        {
+          "text": "Zip",
+          "start": 58130,
+          "end": 58506,
+          "confidence": 0.70779,
+          "speaker": "A"
+        },
+        {
+          "text": "code",
+          "start": 58538,
+          "end": 58782,
+          "confidence": 0.99576,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 58836,
+          "end": 59294,
+          "confidence": 0.54285,
+          "speaker": "A"
+        },
+        {
+          "text": "77706",
+          "start": 59412,
+          "end": 61470,
+          "confidence": 0.93,
+          "speaker": "A"
+        },
+        {
+          "text": "Gladys",
+          "start": 61620,
+          "end": 62266,
+          "confidence": 0.76596,
+          "speaker": "A"
+        },
+        {
+          "text": "Avenue,",
+          "start": 62298,
+          "end": 62682,
+          "confidence": 0.88355,
+          "speaker": "A"
+        },
+        {
+          "text": "Beaumont,",
+          "start": 62746,
+          "end": 63370,
+          "confidence": 0.79468,
+          "speaker": "A"
+        },
+        {
+          "text": "Texas.",
+          "start": 63450,
+          "end": 64010,
+          "confidence": 0.95721,
+          "speaker": "A"
+        },
+        {
+          "text": "Zip",
+          "start": 64090,
+          "end": 64378,
+          "confidence": 0.99898,
+          "speaker": "A"
+        },
+        {
+          "text": "code",
+          "start": 64394,
+          "end": 64874,
+          "confidence": 0.99962,
+          "speaker": "A"
+        },
+        {
+          "text": "7706.",
+          "start": 65012,
+          "end": 66722,
+          "confidence": 0.82,
+          "speaker": "A"
+        },
+        {
+          "text": "Thank",
+          "start": 66856,
+          "end": 67154,
+          "confidence": 0.98659,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 67192,
+          "end": 67298,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "for",
+          "start": 67304,
+          "end": 67426,
+          "confidence": 0.99991,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 67448,
+          "end": 67586,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "information.",
+          "start": 67608,
+          "end": 68226,
+          "confidence": 0.9976,
+          "speaker": "A"
+        },
+        {
+          "text": "What",
+          "start": 68408,
+          "end": 68754,
+          "confidence": 0.99814,
+          "speaker": "A"
+        },
+        {
+          "text": "products",
+          "start": 68792,
+          "end": 69090,
+          "confidence": 0.99333,
+          "speaker": "A"
+        },
+        {
+          "text": "were",
+          "start": 69160,
+          "end": 69298,
+          "confidence": 0.89937,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 69304,
+          "end": 69426,
+          "confidence": 0.73,
+          "speaker": "A"
+        },
+        {
+          "text": "interested",
+          "start": 69448,
+          "end": 69778,
+          "confidence": 0.9991,
+          "speaker": "A"
+        },
+        {
+          "text": "in",
+          "start": 69864,
+          "end": 70066,
+          "confidence": 0.99993,
+          "speaker": "A"
+        },
+        {
+          "text": "purchasing?",
+          "start": 70088,
+          "end": 71038,
+          "confidence": 0.56208,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.993568,
+      "end": 73490,
+      "speaker": "B",
+      "start": 71214,
+      "text": "Red roses. Probably a dozen.",
+      "words": [
+        {
+          "text": "Red",
+          "start": 71214,
+          "end": 71554,
+          "confidence": 0.99945,
+          "speaker": "B"
+        },
+        {
+          "text": "roses.",
+          "start": 71592,
+          "end": 72142,
+          "confidence": 0.98324,
+          "speaker": "B"
+        },
+        {
+          "text": "Probably",
+          "start": 72206,
+          "end": 72530,
+          "confidence": 0.9998,
+          "speaker": "B"
+        },
+        {
+          "text": "a",
+          "start": 72600,
+          "end": 72786,
+          "confidence": 0.99,
+          "speaker": "B"
+        },
+        {
+          "text": "dozen.",
+          "start": 72808,
+          "end": 73490,
+          "confidence": 0.99535,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8943159999999999,
+      "end": 76866,
+      "speaker": "A",
+      "start": 73990,
+      "text": "One dozen of red roses. Do you want long stems?",
+      "words": [
+        {
+          "text": "One",
+          "start": 73990,
+          "end": 74306,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "dozen",
+          "start": 74328,
+          "end": 74686,
+          "confidence": 0.54177,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 74718,
+          "end": 74866,
+          "confidence": 0.99,
+          "speaker": "A"
+        },
+        {
+          "text": "red",
+          "start": 74888,
+          "end": 75086,
+          "confidence": 0.99956,
+          "speaker": "A"
+        },
+        {
+          "text": "roses.",
+          "start": 75128,
+          "end": 75506,
+          "confidence": 0.90501,
+          "speaker": "A"
+        },
+        {
+          "text": "Do",
+          "start": 75538,
+          "end": 75686,
+          "confidence": 0.99912,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 75708,
+          "end": 75798,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "want",
+          "start": 75804,
+          "end": 76022,
+          "confidence": 0.99916,
+          "speaker": "A"
+        },
+        {
+          "text": "long",
+          "start": 76076,
+          "end": 76294,
+          "confidence": 0.99759,
+          "speaker": "A"
+        },
+        {
+          "text": "stems?",
+          "start": 76332,
+          "end": 76866,
+          "confidence": 0.51095,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.69254,
+      "end": 77590,
+      "speaker": "B",
+      "start": 76978,
+      "text": "Sure.",
+      "words": [
+        {
+          "text": "Sure.",
+          "start": 76978,
+          "end": 77590,
+          "confidence": 0.69254,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8303990909090909,
+      "end": 81480,
+      "speaker": "A",
+      "start": 77740,
+      "text": "All right, Randall, let me process the order. One moment, please.",
+      "words": [
+        {
+          "text": "All",
+          "start": 77740,
+          "end": 78006,
+          "confidence": 0.87174,
+          "speaker": "A"
+        },
+        {
+          "text": "right,",
+          "start": 78028,
+          "end": 78310,
+          "confidence": 0.57828,
+          "speaker": "A"
+        },
+        {
+          "text": "Randall,",
+          "start": 78380,
+          "end": 78978,
+          "confidence": 0.91869,
+          "speaker": "A"
+        },
+        {
+          "text": "let",
+          "start": 79074,
+          "end": 79286,
+          "confidence": 0.99987,
+          "speaker": "A"
+        },
+        {
+          "text": "me",
+          "start": 79308,
+          "end": 79398,
+          "confidence": 0.99995,
+          "speaker": "A"
+        },
+        {
+          "text": "process",
+          "start": 79404,
+          "end": 79670,
+          "confidence": 0.52007,
+          "speaker": "A"
+        },
+        {
+          "text": "the",
+          "start": 79740,
+          "end": 79926,
+          "confidence": 0.44,
+          "speaker": "A"
+        },
+        {
+          "text": "order.",
+          "start": 79948,
+          "end": 80230,
+          "confidence": 0.80646,
+          "speaker": "A"
+        },
+        {
+          "text": "One",
+          "start": 80300,
+          "end": 80486,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "moment,",
+          "start": 80508,
+          "end": 80790,
+          "confidence": 0.99936,
+          "speaker": "A"
+        },
+        {
+          "text": "please.",
+          "start": 80860,
+          "end": 81480,
+          "confidence": 0.99997,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.99115,
+      "end": 83240,
+      "speaker": "B",
+      "start": 82490,
+      "text": "Okay.",
+      "words": [
+        {
+          "text": "Okay.",
+          "start": 82490,
+          "end": 83240,
+          "confidence": 0.99115,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.9415021428571428,
+      "end": 94150,
+      "speaker": "A",
+      "start": 85050,
+      "text": "Randall, you're ordering one dozen long stand red roses. The total amount of your order is $40 and it will be shipped to your address within 24 hours.",
+      "words": [
+        {
+          "text": "Randall,",
+          "start": 85050,
+          "end": 85634,
+          "confidence": 0.51748,
+          "speaker": "A"
+        },
+        {
+          "text": "you're",
+          "start": 85682,
+          "end": 85906,
+          "confidence": 0.65665,
+          "speaker": "A"
+        },
+        {
+          "text": "ordering",
+          "start": 85938,
+          "end": 86354,
+          "confidence": 0.79874,
+          "speaker": "A"
+        },
+        {
+          "text": "one",
+          "start": 86402,
+          "end": 86662,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "dozen",
+          "start": 86716,
+          "end": 87122,
+          "confidence": 0.9475,
+          "speaker": "A"
+        },
+        {
+          "text": "long",
+          "start": 87186,
+          "end": 87414,
+          "confidence": 0.99618,
+          "speaker": "A"
+        },
+        {
+          "text": "stand",
+          "start": 87452,
+          "end": 87798,
+          "confidence": 0.5565,
+          "speaker": "A"
+        },
+        {
+          "text": "red",
+          "start": 87884,
+          "end": 88134,
+          "confidence": 0.99894,
+          "speaker": "A"
+        },
+        {
+          "text": "roses.",
+          "start": 88172,
+          "end": 88594,
+          "confidence": 0.96992,
+          "speaker": "A"
+        },
+        {
+          "text": "The",
+          "start": 88642,
+          "end": 88806,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "total",
+          "start": 88828,
+          "end": 89062,
+          "confidence": 0.98903,
+          "speaker": "A"
+        },
+        {
+          "text": "amount",
+          "start": 89116,
+          "end": 89334,
+          "confidence": 0.99986,
+          "speaker": "A"
+        },
+        {
+          "text": "of",
+          "start": 89372,
+          "end": 89478,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 89484,
+          "end": 89606,
+          "confidence": 0.9965,
+          "speaker": "A"
+        },
+        {
+          "text": "order",
+          "start": 89628,
+          "end": 89814,
+          "confidence": 0.99972,
+          "speaker": "A"
+        },
+        {
+          "text": "is",
+          "start": 89852,
+          "end": 90006,
+          "confidence": 0.99894,
+          "speaker": "A"
+        },
+        {
+          "text": "$40",
+          "start": 90028,
+          "end": 90854,
+          "confidence": 0.97,
+          "speaker": "A"
+        },
+        {
+          "text": "and",
+          "start": 90972,
+          "end": 91206,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "it",
+          "start": 91228,
+          "end": 91414,
+          "confidence": 0.9957,
+          "speaker": "A"
+        },
+        {
+          "text": "will",
+          "start": 91452,
+          "end": 91606,
+          "confidence": 0.99996,
+          "speaker": "A"
+        },
+        {
+          "text": "be",
+          "start": 91628,
+          "end": 91766,
+          "confidence": 0.99974,
+          "speaker": "A"
+        },
+        {
+          "text": "shipped",
+          "start": 91788,
+          "end": 92066,
+          "confidence": 0.99956,
+          "speaker": "A"
+        },
+        {
+          "text": "to",
+          "start": 92098,
+          "end": 92246,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "your",
+          "start": 92268,
+          "end": 92406,
+          "confidence": 0.99996,
+          "speaker": "A"
+        },
+        {
+          "text": "address",
+          "start": 92428,
+          "end": 92710,
+          "confidence": 0.9715,
+          "speaker": "A"
+        },
+        {
+          "text": "within",
+          "start": 92780,
+          "end": 93062,
+          "confidence": 0.99968,
+          "speaker": "A"
+        },
+        {
+          "text": "24",
+          "start": 93116,
+          "end": 93574,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "hours.",
+          "start": 93612,
+          "end": 94150,
+          "confidence": 1.0,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8632875,
+      "end": 96822,
+      "speaker": "B",
+      "start": 94300,
+      "text": "How soon can you deliver my roses again?",
+      "words": [
+        {
+          "text": "How",
+          "start": 94300,
+          "end": 94566,
+          "confidence": 0.48925,
+          "speaker": "B"
+        },
+        {
+          "text": "soon",
+          "start": 94588,
+          "end": 94822,
+          "confidence": 0.73629,
+          "speaker": "B"
+        },
+        {
+          "text": "can",
+          "start": 94876,
+          "end": 94998,
+          "confidence": 0.98337,
+          "speaker": "B"
+        },
+        {
+          "text": "you",
+          "start": 95004,
+          "end": 95126,
+          "confidence": 0.77,
+          "speaker": "B"
+        },
+        {
+          "text": "deliver",
+          "start": 95148,
+          "end": 95474,
+          "confidence": 0.99728,
+          "speaker": "B"
+        },
+        {
+          "text": "my",
+          "start": 95522,
+          "end": 95686,
+          "confidence": 0.99286,
+          "speaker": "B"
+        },
+        {
+          "text": "roses",
+          "start": 95708,
+          "end": 96242,
+          "confidence": 0.93741,
+          "speaker": "B"
+        },
+        {
+          "text": "again?",
+          "start": 96306,
+          "end": 96822,
+          "confidence": 0.99984,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.9998033333333334,
+      "end": 98566,
+      "speaker": "A",
+      "start": 96956,
+      "text": "Within 24 hours.",
+      "words": [
+        {
+          "text": "Within",
+          "start": 96956,
+          "end": 97302,
+          "confidence": 0.99941,
+          "speaker": "A"
+        },
+        {
+          "text": "24",
+          "start": 97356,
+          "end": 97894,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "hours.",
+          "start": 97932,
+          "end": 98566,
+          "confidence": 1.0,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.9766499999999999,
+      "end": 100014,
+      "speaker": "B",
+      "start": 98748,
+      "text": "Okay, no problem.",
+      "words": [
+        {
+          "text": "Okay,",
+          "start": 98748,
+          "end": 99190,
+          "confidence": 0.93608,
+          "speaker": "B"
+        },
+        {
+          "text": "no",
+          "start": 99260,
+          "end": 99446,
+          "confidence": 0.99674,
+          "speaker": "B"
+        },
+        {
+          "text": "problem.",
+          "start": 99468,
+          "end": 100014,
+          "confidence": 0.99713,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.961651111111111,
+      "end": 102494,
+      "speaker": "A",
+      "start": 100172,
+      "text": "Is there anything else I can help you with?",
+      "words": [
+        {
+          "text": "Is",
+          "start": 100172,
+          "end": 100446,
+          "confidence": 0.99782,
+          "speaker": "A"
+        },
+        {
+          "text": "there",
+          "start": 100468,
+          "end": 100654,
+          "confidence": 0.99896,
+          "speaker": "A"
+        },
+        {
+          "text": "anything",
+          "start": 100692,
+          "end": 100894,
+          "confidence": 0.99982,
+          "speaker": "A"
+        },
+        {
+          "text": "else",
+          "start": 100932,
+          "end": 101134,
+          "confidence": 0.9999,
+          "speaker": "A"
+        },
+        {
+          "text": "I",
+          "start": 101172,
+          "end": 101326,
+          "confidence": 0.66,
+          "speaker": "A"
+        },
+        {
+          "text": "can",
+          "start": 101348,
+          "end": 101486,
+          "confidence": 0.9992,
+          "speaker": "A"
+        },
+        {
+          "text": "help",
+          "start": 101508,
+          "end": 101646,
+          "confidence": 0.99989,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 101668,
+          "end": 101806,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "with?",
+          "start": 101828,
+          "end": 102494,
+          "confidence": 0.99927,
+          "speaker": "A"
+        }
+      ]
+    },
+    {
+      "confidence": 0.887316,
+      "end": 104270,
+      "speaker": "B",
+      "start": 102692,
+      "text": "That's all for now. Thanks.",
+      "words": [
+        {
+          "text": "That's",
+          "start": 102692,
+          "end": 103098,
+          "confidence": 0.9884,
+          "speaker": "B"
+        },
+        {
+          "text": "all",
+          "start": 103114,
+          "end": 103246,
+          "confidence": 0.98064,
+          "speaker": "B"
+        },
+        {
+          "text": "for",
+          "start": 103268,
+          "end": 103406,
+          "confidence": 0.99782,
+          "speaker": "B"
+        },
+        {
+          "text": "now.",
+          "start": 103428,
+          "end": 103662,
+          "confidence": 0.66,
+          "speaker": "B"
+        },
+        {
+          "text": "Thanks.",
+          "start": 103716,
+          "end": 104270,
+          "confidence": 0.80972,
+          "speaker": "B"
+        }
+      ]
+    },
+    {
+      "confidence": 0.8952271428571429,
+      "end": 108970,
+      "speaker": "A",
+      "start": 104420,
+      "text": "No problem. Randall. Thank you for calling martha Flores. Have a nice day. Bye.",
+      "words": [
+        {
+          "text": "No",
+          "start": 104420,
+          "end": 104686,
+          "confidence": 0.99946,
+          "speaker": "A"
+        },
+        {
+          "text": "problem.",
+          "start": 104708,
+          "end": 104990,
+          "confidence": 0.9988,
+          "speaker": "A"
+        },
+        {
+          "text": "Randall.",
+          "start": 105060,
+          "end": 105482,
+          "confidence": 0.7588,
+          "speaker": "A"
+        },
+        {
+          "text": "Thank",
+          "start": 105546,
+          "end": 105726,
+          "confidence": 0.99886,
+          "speaker": "A"
+        },
+        {
+          "text": "you",
+          "start": 105748,
+          "end": 105838,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "for",
+          "start": 105844,
+          "end": 105966,
+          "confidence": 0.99971,
+          "speaker": "A"
+        },
+        {
+          "text": "calling",
+          "start": 105988,
+          "end": 106222,
+          "confidence": 0.99928,
+          "speaker": "A"
+        },
+        {
+          "text": "martha",
+          "start": 106276,
+          "end": 106586,
+          "confidence": 0.95647,
+          "speaker": "A"
+        },
+        {
+          "text": "Flores.",
+          "start": 106618,
+          "end": 107114,
+          "confidence": 0.16141,
+          "speaker": "A"
+        },
+        {
+          "text": "Have",
+          "start": 107162,
+          "end": 107326,
+          "confidence": 0.99915,
+          "speaker": "A"
+        },
+        {
+          "text": "a",
+          "start": 107348,
+          "end": 107438,
+          "confidence": 1.0,
+          "speaker": "A"
+        },
+        {
+          "text": "nice",
+          "start": 107444,
+          "end": 107662,
+          "confidence": 0.99798,
+          "speaker": "A"
+        },
+        {
+          "text": "day.",
+          "start": 107716,
+          "end": 108320,
+          "confidence": 0.99911,
+          "speaker": "A"
+        },
+        {
+          "text": "Bye.",
+          "start": 108690,
+          "end": 108970,
+          "confidence": 0.66415,
+          "speaker": "B"
+        }
+      ]
+    }
+  ],
+  "confidence": 0.901694148471616,
+  "audio_duration": 115,
+  "punctuate": true,
+  "format_text": true,
+  "dual_channel": null,
+  "webhook_url": null,
+  "webhook_status_code": null,
+  "webhook_auth": false,
+  "webhook_auth_header_name": null,
+  "speed_boost": false,
+  "auto_highlights_result": null,
+  "auto_highlights": false,
+  "audio_start_from": null,
+  "audio_end_at": null,
+  "word_boost": [],
+  "boost_param": null,
+  "filter_profanity": false,
+  "redact_pii": false,
+  "redact_pii_audio": false,
+  "redact_pii_audio_quality": null,
+  "redact_pii_policies": null,
+  "redact_pii_sub": null,
+  "speaker_labels": true,
+  "content_safety": false,
+  "iab_categories": false,
+  "content_safety_labels": {
+    "status": "unavailable",
+    "results": [],
+    "summary": {}
+  },
+  "iab_categories_result": {
+    "status": "unavailable",
+    "results": [],
+    "summary": {}
+  },
+  "language_detection": false,
+  "custom_spelling": null,
+  "throttled": null,
+  "auto_chapters": false,
+  "summarization": false,
+  "summary_type": null,
+  "summary_model": null,
+  "custom_topics": false,
+  "topics": [],
+  "disfluencies": false,
+  "sentiment_analysis": false,
+  "chapters": null,
+  "sentiment_analysis_results": null,
+  "entity_detection": false,
+  "entities": null,
+  "summary": null,
+  "speakers_expected": null
+}

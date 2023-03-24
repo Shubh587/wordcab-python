@@ -32,7 +32,11 @@ from wordcab.core_objects import (
     VTTSource,
     WordcabTranscriptSource,
 )
-from wordcab.core_objects.utils import _get_deepgram_utterances
+from wordcab.core_objects.utils import (
+    _get_assembly_utterances,
+    _get_deepgram_utterances,
+    _get_rev_monologues,
+)
 
 
 def test_available_audio_formats() -> None:
@@ -323,8 +327,28 @@ def test_signed_url_source() -> None:
 
 def test_rev_source() -> None:
     """Test the RevSource object."""
-    with pytest.raises(NotImplementedError):
-        RevSource(url="https://example.com")
+    path = "tests/rev_sample.json"
+    rev_source = RevSource(filepath=Path(path))
+
+    assert rev_source.filepath == Path(path)
+    assert rev_source.url is None
+    assert rev_source.source_type == "local"
+    assert rev_source._stem == Path(path).stem
+    assert rev_source._suffix == Path(path).suffix
+    assert rev_source.file_object is not None
+    assert hasattr(rev_source, "prepare_payload") and callable(
+        rev_source.prepare_payload
+    )
+    assert rev_source.prepare_payload() == json.dumps(
+        _get_rev_monologues(json.load(rev_source.file_object))
+    )
+    assert hasattr(rev_source, "prepare_headers") and callable(
+        rev_source.prepare_headers
+    )
+    assert rev_source.prepare_headers() == {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+    }
 
 
 def test_vtt_source() -> None:
@@ -334,9 +358,25 @@ def test_vtt_source() -> None:
 
 
 def test_assembly_ai_source() -> None:
-    """Test the AssemblyAISource object."""
-    with pytest.raises(NotImplementedError):
-        AssemblyAISource(url="https://example.com")
+    """Test the AssemblySource object."""
+    path = "tests/assembly_sample.json"
+    a_source = AssemblyAISource(filepath=Path(path))
+
+    assert a_source.filepath == Path(path)
+    assert a_source.url is None
+    assert a_source.source_type == "local"
+    assert a_source._stem == Path(path).stem
+    assert a_source._suffix == Path(path).suffix
+    assert a_source.file_object is not None
+    assert hasattr(a_source, "prepare_payload") and callable(a_source.prepare_payload)
+    assert a_source.prepare_payload() == json.dumps(
+        _get_assembly_utterances(json.load(a_source.file_object))
+    )
+    assert hasattr(a_source, "prepare_headers") and callable(a_source.prepare_headers)
+    assert a_source.prepare_headers() == {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+    }
 
 
 def test_deepgram_source() -> None:

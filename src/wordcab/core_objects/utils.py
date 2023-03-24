@@ -42,6 +42,18 @@ def _get_context_items(
     return context_items
 
 
+def _get_assembly_utterances(assembly_json: Dict[str, Any]) -> Any:
+    """Get the AssemblyAI utterances."""
+    utterances = assembly_json.pop("utterances", None)
+
+    if utterances is None:
+        raise ValueError(
+            "No utterances key found. Verify the AssemblyAI json file you are using."
+        )
+
+    return utterances
+
+
 def _get_deepgram_utterances(deepgram_json: Dict[str, Any]) -> Any:
     """Get the Deepgram utterances."""
     results = deepgram_json.pop("results", None)
