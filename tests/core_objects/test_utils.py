@@ -15,7 +15,7 @@
 """Test suite for the core objects utils functions."""
 
 import textwrap
-from typing import Any, Dict
+from typing import Any, Dict, List, Union
 
 import pytest
 
@@ -97,7 +97,7 @@ def test_no_context_items() -> None:
 
 def test_get_deepgram_utterances_valid() -> None:
     """Test that _get_deepgram_utterances returns the utterances from a valid Deepgram json file."""
-    deepgram_json = {
+    deepgram_json: Dict[str, Dict[str, List[Dict[str, Union[int, str]]]]] = {
         "results": {
             "utterances": [
                 {"speaker": 0, "transcript": "Hello world."},
@@ -111,7 +111,7 @@ def test_get_deepgram_utterances_valid() -> None:
 
 def test_get_deepgram_utterances_missing_results() -> None:
     """Test that _get_deepgram_utterances raises a ValueError when the input json is missing the 'results' key."""
-    deepgram_json = {}
+    deepgram_json: Dict[str, str] = {}
     with pytest.raises(
         ValueError,
         match="No results key found. Verify the Deepgram json file you are using.",
@@ -119,9 +119,9 @@ def test_get_deepgram_utterances_missing_results() -> None:
         _get_deepgram_utterances(deepgram_json)
 
 
-def test_get_deepgram_utterances_missing_utterances():
+def test_get_deepgram_utterances_missing_utterances() -> None:
     """Test that _get_deepgram_utterances raises a ValueError when the input json is missing the 'utterances' key."""
-    deepgram_json = {"results": {}}
+    deepgram_json: Dict[str, Dict[str, str]] = {"results": {}}
     with pytest.raises(
         ValueError,
         match="No utterances key found. Verify the Deepgram json file you are using.",

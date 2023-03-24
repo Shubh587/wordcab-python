@@ -139,7 +139,7 @@ def test_format_tags(tags: Union[str, List[str]]) -> None:
         assert _format_tags(tags=tags) == ",".join(tags)
 
 
-def test_format_deepgram_source_valid():
+def test_format_deepgram_source_valid() -> None:
     """Test with valid input."""
     deepgram_json = {
         "results": {

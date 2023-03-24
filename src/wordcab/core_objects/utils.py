@@ -42,7 +42,7 @@ def _get_context_items(
     return context_items
 
 
-def _get_deepgram_utterances(deepgram_json: Dict[str, Any]) -> str:
+def _get_deepgram_utterances(deepgram_json: Dict[str, Any]) -> Any:
     """Get the Deepgram utterances."""
     results = deepgram_json.pop("results", None)
 

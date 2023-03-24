@@ -49,13 +49,13 @@ def format_deepgram_source(deepgram_json: Dict[str, Any]) -> List[str]:
 
     for utt in utterances:
         if not utt_to_add:
-            utt_to_add = f"SPEAKER {TRANSCRIPT_SPEAKER_MAPPING[utt['speaker']]}: {utt['transcript']}"
+            utt_to_add = f"SPEAKER {TRANSCRIPT_SPEAKER_MAPPING[int(utt['speaker'])]}: {utt['transcript']}"
         else:
             if utt["speaker"] == utterances[utterances.index(utt) - 1]["speaker"]:
                 utt_to_add = f"{utt_to_add} {utt['transcript']}"
             else:
                 final_utterances.append(utt_to_add)
-                utt_to_add = f"SPEAKER {TRANSCRIPT_SPEAKER_MAPPING[utt['speaker']]}: {utt['transcript']}"
+                utt_to_add = f"SPEAKER {TRANSCRIPT_SPEAKER_MAPPING[int(utt['speaker'])]}: {utt['transcript']}"
 
     if utt_to_add:
         final_utterances.append(utt_to_add)
