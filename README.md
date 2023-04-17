@@ -103,7 +103,7 @@ summary_id = job.summary_details["summary_id"]
 summary = retrieve_summary(summary_id=summary_id)
 
 # Get the summary as a human-readable string
-print(summary.get_formatted_summary())
+print(summary.get_formatted_summaries())
 
 # Save the json object to a file
 with open("wordcab_summary.json", "w") as f:
