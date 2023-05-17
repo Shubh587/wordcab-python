@@ -58,6 +58,7 @@ class BaseJob:
     tags: Optional[List[str]] = field(default=None)
     time_started: Optional[str] = field(default=None)
     time_completed: Optional[str] = field(default=None)
+    transcript_details: Optional[Dict[str, str]] = field(default=None)
     transcript_id: Optional[str] = field(default=None)
 
     def __post_init__(self) -> None:
@@ -101,7 +102,6 @@ class SummarizeJob(BaseJob):
     """Wordcab API SummarizeJob object."""
 
     summary_details: Optional[Dict[str, str]] = field(default=None)
-    transcript_details: Optional[Dict[str, str]] = field(default=None)
 
     def __post_init__(self) -> None:
         """Post-init."""

@@ -32,6 +32,7 @@ def test_retrieve_summarize_job(api_key: str) -> None:
         assert job.target_lang is not None
         assert job.time_started is not None
         assert job.time_completed is not None
+        assert job.transcript_details is not None
         assert job.transcript_id is not None
         assert job.summary_details is not None
         assert isinstance(job.summary_details, dict)
@@ -51,4 +52,5 @@ def test_retrieve_extract_job(api_key: str) -> None:
         assert job.target_lang is None
         assert job.time_started is not None
         assert job.time_completed is not None
+        assert job.transcript_details is not None
         assert job.transcript_id is not None
