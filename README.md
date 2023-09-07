@@ -12,7 +12,7 @@
 		<img src="https://img.shields.io/pypi/l/wordcab" />
 	</a>
 	<a  href="https://github.com/Wordcab/wordcab-python/actions?workflow=ci-cd" target="_blank">
-		<img src="https://github.com/Wordcab/wordcab-python/workflows/Tests/badge.svg" />
+		<img src="https://github.com/Wordcab/wordcab-python/workflows/ci-cd/badge.svg" />
 	</a>
 	<a  href="https://app.codecov.io/gh/Wordcab/wordcab-python" target="_blank">
 		<img src="https://codecov.io/gh/Wordcab/wordcab-python/branch/main/graph/badge.svg" />
