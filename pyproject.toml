@@ -1,88 +1,139 @@
-[tool.poetry]
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[project]
 name = "wordcab"
-version = "0.6.5"
-description = "Wordcab Python SDK"
-authors = ["Wordcab <info@wordcab.com>"]
+dynamic = ["version"]
+description = "📖 Transcribe and Summarize any business communication at scale with Wordcab's API"
 license = "Apache-2.0"
 readme = "README.md"
-homepage = "https://github.com/Wordcab/wordcab-python"
-repository = "https://github.com/Wordcab/wordcab-python"
-documentation = "https://wordcab-python.readthedocs.io"
-packages = [
-    { include = "wordcab", from = "src" },
+requires-python = ">=3.8,<3.12"
+keywords = ["wordcab", "sdk", "api", "transcription", "summarization"]
+authors = [
+    { name = "Thomas Chaigneau", email = "thomas@wordcab.com" },
+    { name = "Wordcab", email = "info@wordcab.com" },
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+  "Topic :: Internet",
+  "Topic :: Software Development",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+    "click>=8.0.1",
+    "requests>=2.31.0",
+    "validators>=0.20.0",
 ]
 
-[tool.poetry.urls]
+[project.urls]
 Changelog = "https://github.com/Wordcab/wordcab-python/releases"
+Documentation = "https://wordcab-python.readthedocs.io"
+Homepage = "https://github.com/Wordcab/wordcab-python"
+Issues = "https://github.com/Wordcab/wordcab-python/issues"
+Source = "https://github.com/Wordcab/wordcab-python"
 
-[tool.poetry.dependencies]
-python = ">=3.8,<4.0"
-click = ">=8.0.1"
-requests = ">=2.28.1"
-validators = ">=0.20.0"
+[tool.hatch.version]
+path = "src/wordcab/__init__.py"
 
-[tool.poetry.group.dev.dependencies]
-Pygments = ">=2.10.0"
-black = ">=23.1.0"
-coverage = {extras = ["toml"], version = ">=6.2"}
-darglint = ">=1.8.1"
-flake8 = ">=4.0.1"
-flake8-bandit = ">=2.1.2"
-flake8-bugbear = ">=21.9.2"
-flake8-docstrings = ">=1.6.0"
-flake8-rst-docstrings = ">=0.2.5"
-furo = ">=2023.3.23"
-ipykernel = ">=6.22.0"
-isort = ">=5.10.1"
-jupyter = ">=1.0.0"
-mypy = ">=0.930"
-myst-parser = {version = ">=1.0.0"}
-notebook = ">=6.5.3"
-pep8-naming = ">=0.12.1"
-pre-commit = ">=3.2.0"
-pre-commit-hooks = ">=4.1.0"
-pytest = ">=6.2.5"
-pyupgrade = ">=2.29.1"
-safety = ">=1.10.3"
-sphinx = ">=4.3.2"
-sphinx-autobuild = ">=2021.3.14"
-sphinx-click = ">=3.0.2"
-sphinx-copybutton = ">=0.5.1"
-toml = ">=0.10.2"
-# typeguard = ">=2.13.3"  # Deactivated due to runtime errors with Client class
-xdoctest = {extras = ["colors"], version = ">=0.15.10"}
+[project.optional-dependencies]
+docs = [
+  "mkdocs>=1.4.0",
+  "mkdocs-material>=8.5.4",
+  "mkdocs-git-revision-date-localized-plugin>=1.1.0",
+  "mkdocstrings[python]>=0.20.0",
+]
+quality = [
+  "black>=22.10.0",
+  "ruff>=0.0.263",
+  "pre-commit>=2.20.0",
+]
+tests = [
+  "httpx>=0.23.3",
+  "pytest>=7.4",
+  "pytest-asyncio>=0.21.1",
+  "pytest-cov>=4.1",
+  "responses>=0.23.3",
+]
 
-[tool.poetry.scripts]
+[project.scripts]
 wordcab = "wordcab.__main__:main"
 
-[tool.coverage.paths]
-source = ["src", "*/site-packages"]
-tests = ["tests", "*/tests"]
+[tool.hatch.envs.quality]
+features = [
+  "quality",
+]
 
-[tool.coverage.run]
-branch = true
-source = ["wordcab", "tests"]
+[tool.hatch.envs.quality.scripts]
+check = [
+  "black --check --diff --preview src tests",
+  "ruff src tests",
+]
+format = [
+  "black --preview src tests",
+  "ruff --fix src tests",
+  "check",
+]
 
-[tool.coverage.report]
-show_missing = true
-fail_under = 90
+[tool.ruff]
+ignore = [
+  "E501", # line too long, handled by black
+  "B008", # do not perform function calls in argument defaults
+  "C901", # too complex
+]
+select = [
+  "E", # pycodestyle errors
+  "W", # pycodestyle warnings
+  "F", # pyflakes
+  "I", # isort
+  "C", # flake8-comprehensions
+  "B", # flake8-bugbear
+]
 
-[tool.isort]
-profile = "black"
-force_single_line = false
-lines_after_imports = 2
+[tool.ruff.isort]
+known-first-party = ["wordcab_transcribe"]
 
-[tool.mypy]
-strict = true
-warn_unreachable = true
-pretty = true
-show_column_numbers = true
-show_error_codes = true
-show_error_context = true
+[tool.hatch.envs.tests]
+features = [
+  "tests",
+]
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.hatch.envs.tests.scripts]
+run = "pytest --cov=wordcab --cov-report=term-missing tests/ --durations 0 -s -vv {args:tests}"
+
+[tool.hatch.envs.docs]
+features = [
+  "docs",
+]
+
+[tool.hatch.envs.docs.scripts]
+build = [
+  "mkdocs build",
+]
+serve = [
+  "mkdocs serve",
+]
+
+[[tool.hatch.envs.tests.matrix]]
+python = ["38"]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/.vscode",
+  "/docs",
+  "/.devcontainer",
+  "/.pre-commit-config.yaml",
+  "/.gitignore",
+  "/tests",
+  "/Dockerfile",
+  "/.dockerignore",
+]

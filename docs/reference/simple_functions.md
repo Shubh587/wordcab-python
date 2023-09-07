@@ -14,66 +14,44 @@ They are simple wrappers around the client object. You can use the client object
 
 ## get_stats
 
-```{eval-rst}
-.. autofunction:: wordcab.get_stats
-```
+::: src.wordcab.get_stats
 
 ## start_summary
 
-```{eval-rst}
-.. autofunction:: wordcab.start_summary
-```
+::: src.wordcab.start_summary
 
 ## start_extract
 
-```{eval-rst}
-.. autofunction:: wordcab.start_extract
-```
+::: src.wordcab.start_extract
 
 ## list_jobs
 
-```{eval-rst}
-.. autofunction:: wordcab.list_jobs
-```
+::: src.wordcab.list_jobs
 
 ## list_summaries
 
-```{eval-rst}
-.. autofunction:: wordcab.list_summaries
-```
+::: src.wordcab.list_summaries
 
 ## list_transcripts
 
-```{eval-rst}
-.. autofunction:: wordcab.list_transcripts
-```
+::: src.wordcab.list_transcripts
 
 ## retrieve_job
 
-```{eval-rst}
-.. autofunction:: wordcab.retrieve_job
-```
+::: src.wordcab.retrieve_job
 
 ## retrieve_summary
 
-```{eval-rst}
-.. autofunction:: wordcab.retrieve_summary
-```
+::: src.wordcab.retrieve_summary
 
 ## retrieve_transcript
 
-```{eval-rst}
-.. autofunction:: wordcab.retrieve_transcript
-```
+::: src.wordcab.retrieve_transcript
 
 ## delete_job
 
-```{eval-rst}
-.. autofunction:: wordcab.delete_job
-```
+::: src.wordcab.delete_job
 
 ## change_speaker_labels
 
-```{eval-rst}
-.. autofunction:: wordcab.change_speaker_labels
-```
+::: src.wordcab.change_speaker_labels

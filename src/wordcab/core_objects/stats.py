@@ -22,7 +22,6 @@ import validators  # type: ignore
 
 from ..config import AVAILABLE_PLAN
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -63,5 +62,6 @@ class Stats:
 
         if self.min_created > self.max_created:
             raise ValueError(
-                f"min_created must be before max_created, not {self.min_created} and {self.max_created}"
+                f"min_created must be before max_created, not {self.min_created} and"
+                f" {self.max_created}"
             )

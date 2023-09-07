@@ -31,7 +31,6 @@ from .utils import (
     _get_rev_monologues,
 )
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -90,11 +89,13 @@ class BaseSource:
         self.source = self.__class__.__name__
         if not self.filepath and not self.url:
             raise ValueError(
-                "Please provide either a local or a remote source, respectively `filepath` or `url`."
+                "Please provide either a local or a remote source, respectively"
+                " `filepath` or `url`."
             )
         if self.filepath and self.url:
             raise ValueError(
-                "Please provide either a local or a remote source, not both `filepath` and `url`."
+                "Please provide either a local or a remote source, not both `filepath`"
+                " and `url`."
             )
 
         if self.filepath:
@@ -102,7 +103,8 @@ class BaseSource:
                 self.filepath, str
             ):
                 raise TypeError(
-                    f"The path must be a string or a Path object, not {type(self.filepath)}"
+                    "The path must be a string or a Path object, not"
+                    f" {type(self.filepath)}"
                 )
 
             if isinstance(self.filepath, str):
@@ -208,11 +210,13 @@ class InMemorySource:
         if isinstance(self.obj, dict):
             if "transcript" not in self.obj:
                 raise ValueError(
-                    "Please provide a valid in-memory object. It must have a `transcript` key."
+                    "Please provide a valid in-memory object. It must have a"
+                    " `transcript` key."
                 )
             elif not isinstance(self.obj["transcript"], list):
                 raise TypeError(
-                    "Please provide a valid in-memory object. The `transcript` key must be a list."
+                    "Please provide a valid in-memory object. The `transcript` key must"
+                    " be a list."
                 )
         elif isinstance(self.obj, list):
             self.obj = {"transcript": self.obj}
@@ -417,7 +421,8 @@ class WordcabTranscriptSource:
         """Post-init method."""
         if self.transcript_id is None:
             raise ValueError(
-                "Please provide a `transcript_id` to initialize a WordcabTranscriptSource object."
+                "Please provide a `transcript_id` to initialize a"
+                " WordcabTranscriptSource object."
             )
         self.source = "wordcab_transcript"
 
@@ -489,7 +494,8 @@ class AssemblyAISource(BaseSource):
 
         if self._suffix != ".json":
             raise ValueError(
-                f"Please provide a valid AssemblyAI file format. {self._suffix} is not valid, it should be .json."
+                f"Please provide a valid AssemblyAI file format. {self._suffix} is not"
+                " valid, it should be .json."
             )
 
         if self.source_type == "local":
@@ -553,7 +559,8 @@ class DeepgramSource(BaseSource):
 
         if self._suffix != ".json":
             raise ValueError(
-                f"Please provide a valid Deepgram file format. {self._suffix} is not valid, it should be .json."
+                f"Please provide a valid Deepgram file format. {self._suffix} is not"
+                " valid, it should be .json."
             )
 
         if self.source_type == "local":
@@ -617,7 +624,8 @@ class RevSource(BaseSource):
 
         if self._suffix != ".json":
             raise ValueError(
-                f"Please provide a valid Rev.ai file format. {self._suffix} is not valid, it should be .json."
+                f"Please provide a valid Rev.ai file format. {self._suffix} is not"
+                " valid, it should be .json."
             )
 
         if self.source_type == "local":
@@ -681,7 +689,8 @@ class VTTSource(BaseSource):
 
         if self._suffix != ".vtt":
             raise ValueError(
-                f"Please provide a valid VTT file format. {self._suffix} is not valid, it should be .vtt."
+                f"Please provide a valid VTT file format. {self._suffix} is not valid,"
+                " it should be .vtt."
             )
 
         if self.source_type == "local":

@@ -31,7 +31,6 @@ from .stats import Stats
 from .summary import BaseSummary, ListSummaries, StructuredSummary
 from .transcript import BaseTranscript, ListTranscripts, TranscriptUtterance
 
-
 __all__ = [
     "AssemblyAISource",
     "AudioSource",

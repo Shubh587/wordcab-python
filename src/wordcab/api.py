@@ -36,7 +36,7 @@ from .core_objects import (
 def request(
     method: str,
     api_key: Optional[str] = None,
-    **kwargs: Union[bool, int, str, Dict[str, str], List[int], List[str]]
+    **kwargs: Union[bool, int, str, Dict[str, str], List[int], List[str]],
 ) -> Union[
     BaseSource,
     BaseSummary,

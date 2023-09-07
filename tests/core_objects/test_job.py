@@ -18,7 +18,6 @@ import logging
 from typing import Union
 
 import pytest
-
 from wordcab.config import EXTRACT_AVAILABLE_STATUS, SUMMARIZE_AVAILABLE_STATUS
 from wordcab.core_objects import (
     BaseJob,

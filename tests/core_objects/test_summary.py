@@ -18,9 +18,7 @@ import logging
 from typing import List
 
 import pytest
-
 from wordcab.core_objects import BaseSummary, ListSummaries, StructuredSummary
-
 
 logger = logging.getLogger(__name__)
 
@@ -394,11 +392,13 @@ def test_base_summary_get_formatted_summaries(conv_summary: BaseSummary) -> None
     assert summaries["1"] == "conversational - length: 1\n\n[1/1]\nThis is a test.\n\n"
     assert (
         summaries["3"]
-        == "conversational - length: 3\n\n[1/2]\nThis is a test.\n\n[2/2]\nThis is another test.\n\n"
+        == "conversational - length: 3\n\n[1/2]\nThis is a test.\n\n[2/2]\nThis is"
+        " another test.\n\n"
     )
     assert (
-        summaries["5"] == "conversational - length: 5\n\n"
-        "[1/3]\nThis is a test.\n\n[2/3]\nThis is another test.\n\n[3/3]\nThis is a third test.\n\n"
+        summaries["5"]
+        == "conversational - length: 5\n\n[1/3]\nThis is a test.\n\n[2/3]\nThis is"
+        " another test.\n\n[3/3]\nThis is a third test.\n\n"
     )
 
 
@@ -410,15 +410,18 @@ def test_base_summary_get_formatted_summaries_brief(brief_summary: BaseSummary) 
     assert isinstance(summaries, dict)
     assert (
         summaries["1"]
-        == "brief - length: 1\n\n[1/1]\nTitle: This is a title.\nSummary: This is a summary.\n\n"
+        == "brief - length: 1\n\n[1/1]\nTitle: This is a title.\nSummary: This is a"
+        " summary.\n\n"
     )
     assert (
-        summaries["3"] == "brief - length: 3\n\n"
+        summaries["3"]
+        == "brief - length: 3\n\n"
         "[1/2]\nTitle: This is a title.\nSummary: This is a summary.\n\n"
         "[2/2]\nTitle: This is another title.\nSummary: This is another summary.\n\n"
     )
     assert (
-        summaries["5"] == "brief - length: 5\n\n"
+        summaries["5"]
+        == "brief - length: 5\n\n"
         "[1/3]\nTitle: This is a title.\nSummary: This is a summary.\n\n"
         "[2/3]\nTitle: This is another title.\nSummary: This is another summary.\n\n"
         "[3/3]\nTitle: This is a third title.\nSummary: This is a third summary.\n\n"

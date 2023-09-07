@@ -76,18 +76,18 @@ You can also use the API with a client object.
 
 ## Available functions
 
-Check out the [Reference](reference.md) for a list of available functions.
+Check out the [Reference](reference/simple_functions.md) for a list of available functions.
 
-| name                  | client | simple |
-| --------------------- | ------ | ------ |
-| get_stats             | ✅     | ✅     |
-| start_summary         | ✅     | ✅     |
-| start_extract         | ✅     | ✅     |
-| list_jobs             | ✅     | ✅     |
-| list_summaries        | ✅     | ✅     |
-| list_transcripts      | ✅     | ✅     |
-| retrieve_job          | ✅     | ✅     |
-| retrieve_summary      | ✅     | ✅     |
-| retrieve_transcript   | ✅     | ✅     |
-| delete_job            | ✅     | ✅     |
-| change_speaker_labels | ✅     | ✅     |
+| name                    | client | simple |
+| ----------------------- | ------ | ------ |
+| `get_stats`             | ✅     | ✅     |
+| `start_summary`         | ✅     | ✅     |
+| `start_extract`         | ✅     | ✅     |
+| `list_jobs`             | ✅     | ✅     |
+| `list_summaries`        | ✅     | ✅     |
+| `list_transcripts`      | ✅     | ✅     |
+| `retrieve_job`          | ✅     | ✅     |
+| `retrieve_summary`      | ✅     | ✅     |
+| `retrieve_transcript`   | ✅     | ✅     |
+| `delete_job`            | ✅     | ✅     |
+| `change_speaker_labels` | ✅     | ✅     |

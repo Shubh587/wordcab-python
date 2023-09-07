@@ -24,7 +24,6 @@ import requests  # type: ignore
 
 from .config import REQUEST_TIMEOUT, WORDCAB_TOKEN_FOLDER
 
-
 logger = logging.getLogger(__name__)
 
 path_to_token = Path(WORDCAB_TOKEN_FOLDER).expanduser()
@@ -47,16 +46,14 @@ def cli_login() -> None:
     This function is called from the CLI, prompting the user for their
     credentials and then storing them as git credentials.
     """
-    logger.warning(
-        r"""
+    logger.warning(r"""
          _  _   __   ____  ____   ___   __   ____
         / )( \ /  \ (  _ \(    \ / __) / _\ (  _ \
         \ /\ /(  O ) )   / ) D (( (__ /    \ ) _ (
         (_/\_) \__/ (__\_)(____/ \___)\_/\_/(____/
 
         To login, please use your API token generated from https://wordcab.com/account/api-key/
-        """
-    )
+        """)
     account = input("    Email: ")
     token = getpass("    API Token: ")
     _login(account, token)
@@ -69,16 +66,14 @@ def cli_logout() -> None:
     This function is called from the CLI, prompting the user for their email
     address and then removing their stored git credentials.
     """
-    logger.warning(
-        r"""
+    logger.warning(r"""
      _  _   __   ____  ____   ___   __   ____
     / )( \ /  \ (  _ \(    \ / __) / _\ (  _ \
     \ /\ /(  O ) )   / ) D (( (__ /    \ ) _ (
     (_/\_) \__/ (__\_)(____/ \___)\_/\_/(____/
 
     To logout, please enter your email address.
-        """
-    )
+        """)
     account = input("    Email: ")
     _logout(account)
 
@@ -113,7 +108,8 @@ def _login(account: str, token: str) -> None:
         with path_to_token.open("w+") as f:
             f.write(f"{account}:{token}")
         logger.warning(
-            f"Successfully logged in as {account} . Credentials are stored in {path_to_token}"
+            f"Successfully logged in as {account} . Credentials are stored in"
+            f" {path_to_token}"
         )
     else:
         logger.warning(
@@ -125,5 +121,6 @@ def _logout(account: str) -> None:
     """Logout from Wordcab API."""
     path_to_token.unlink()
     logger.warning(
-        f"Successfully logged out as {account} . Credentials are removed from {path_to_token}"
+        f"Successfully logged out as {account} . Credentials are removed from"
+        f" {path_to_token}"
     )

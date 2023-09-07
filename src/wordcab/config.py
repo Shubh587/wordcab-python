@@ -16,7 +16,6 @@
 
 from pathlib import Path
 
-
 AVAILABLE_AUDIO_FORMATS = [".flac", ".m4a", ".mp3", ".mpga", ".ogg", ".wav"]
 AVAILABLE_GENERIC_FORMATS = [".json", ".txt"]
 AVAILABLE_PLAN = ["free", "metered", "paid"]

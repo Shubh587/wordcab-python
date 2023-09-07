@@ -17,7 +17,6 @@ with Client(api_key="my_api_key") as client:
    stats = client.get_stats()
 ```
 
-```{eval-rst}
-.. autoclass:: wordcab.Client
-   :members:
-```
+::: src.wordcab.client.Client
+   options:
+      show_root_toc_entry: false

@@ -14,13 +14,26 @@
 
 """Test suite for the Client delete_job method."""
 
+import pytest
+import responses
 from wordcab.client import Client
 
 
-def test_delete_job(api_key: str) -> None:
-    """Test client delete_job method."""
-    with Client(api_key=api_key) as client:
-        deleted_job = client.delete_job(job_name="job_7WcE9BZ86Ce77esnmHiK7E6vaCLa5P7u")
-        assert deleted_job is not None
-        assert isinstance(deleted_job, dict)
-        assert deleted_job["job_name"] == "job_7WcE9BZ86Ce77esnmHiK7E6vaCLa5P7u"
+class TestClientDeleteJob:
+    """Test suite for the Client delete_job method."""
+
+    @pytest.mark.usefixtures("api_key", "get_job_name", "mock_server")
+    def test_delete_job(api_key, get_job_name, mock_server) -> None:
+        """Test client delete_job method."""
+        with Client(api_key=api_key) as client:
+            mock_server.add(
+                responses.DELETE,
+                f"https://wordcab.com/api/v1/jobs/{get_job_name}",
+                json={"job_name": get_job_name},
+                status=200,
+            )
+            deleted_job = client.delete_job(job_name=get_job_name)
+
+            assert deleted_job is not None
+            assert isinstance(deleted_job, dict)
+            assert deleted_job["job_name"] == get_job_name

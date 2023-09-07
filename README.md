@@ -1,4 +1,5 @@
 <h1 align="center">Wordcab Python</h1>
+<p align="center">📖 Transcribe and Summarize any business communication at scale with Wordcab's API</p>
 
 <div align="center">
 	<a  href="https://pypi.org/project/wordcab" target="_blank">
@@ -16,33 +17,30 @@
 	<a  href="https://app.codecov.io/gh/Wordcab/wordcab-python" target="_blank">
 		<img src="https://codecov.io/gh/Wordcab/wordcab-python/branch/main/graph/badge.svg" />
 	</a>
-</div>
-<br>
-<div align="center">
-	<a href="https://linkedin.com/company/wordcab" target="_blank">
-		<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+	<a  href="https://github.com/pypa/hatch" target="_blank">
+		<img src="https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg" />
 	</a>
 </div>
 
-# What is Wordcab?
+---
 
-- **Summarize any business communications at scale with Wordcab's API.**
-- **Wordcab** is a summarization service that provides a simple API to summarize any `audio`, `text`, or `JSON` file.
-- It also includes compatibility with famous transcripts platforms like
-  - [![AssemblyAI](https://img.shields.io/badge/AssemblyAI-blue)](https://www.assemblyai.com/)
-  - [![Deepgram](https://img.shields.io/badge/Deepgram-green)](https://deepgram.com/)
-  - [![Rev.ai](https://img.shields.io/badge/Rev.ai-orange)](https://www.rev.ai/)
-  - [![Otter.ai](https://img.shields.io/badge/Otter.ai-purple)](https://otter.ai/)
-  - [![Sonix.ai](https://img.shields.io/badge/Sonix.ai-yellow)](https://sonix.ai/)
+**Wordcab** is a transcription and summarization service that provides a simple API to summarize any `audio`, `text`, or `JSON` file.
 
-# Getting started
+It also includes compatibility with other transcripts platforms like:
+[![AssemblyAI](https://img.shields.io/badge/AssemblyAI-blue)](https://www.assemblyai.com/)
+[![Deepgram](https://img.shields.io/badge/Deepgram-green)](https://deepgram.com/)
+[![Rev.ai](https://img.shields.io/badge/Rev.ai-orange)](https://www.rev.ai/)
+[![Otter.ai](https://img.shields.io/badge/Otter.ai-purple)](https://otter.ai/)
+[![Sonix.ai](https://img.shields.io/badge/Sonix.ai-yellow)](https://sonix.ai/)
+
+## Getting started
 
 You can learn more about Wordcab services and pricing on our [website](https://wordcab.com/).
 
 If you want to try out the API, you can [signup](https://wordcab.com/signup/) for a free account and start using the API
 right away.
 
-# Requirements
+## Requirements
 
 - OS:
   - ![Linux](https://img.shields.io/badge/-Linux-orange?style=flat-square&logo=linux&logoColor=white)
@@ -51,9 +49,9 @@ right away.
 - Python:
   - ![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue)
 
-# Installation
+## Installation
 
-You can install _Wordcab Python_ via [pip] from [PyPI]:
+You can install _Wordcab Python_ via pip from [PyPI](https://pypi.org/project/wordcab/):
 
 ```console
 $ pip install wordcab
@@ -61,9 +59,9 @@ $ pip install wordcab
 
 Start using the API with any python script right away!
 
-# Usage
+## Usage
 
-## Start Summary full pipeline
+### Start Summary full pipeline
 
 ```python
 import time
@@ -110,38 +108,22 @@ with open("wordcab_summary.json", "w") as f:
 	f.write(summary)
 ```
 
-# Documentation
+## Documentation
 
 Please see the [Documentation](https://wordcab-python.readthedocs.io/) for more details.
 
-# Contributing
+## Contributing
 
 Contributions are very welcome. 🚀
-To learn more, see the [Contributor Guide].
+To learn more, see the [Contributor Guide](https://github.com/Wordcab/wordcab-python/blob/main/CONTRIBUTING.md).
 
-# License
+## License
 
 - Distributed under the terms of the [![Apache 2.0 License Badge](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 - _Wordcab Python SDK_ is free and open source software.
 
-# Issues
+## Issues
 
 If you encounter any problems,
 please [file an issue](https://github.com/Wordcab/wordcab-python/issues) along with a detailed description.
-
-# Credits
-
-This project was generated from [@cjolowicz]'s [Hypermodern Python Cookiecutter] template.
-
-[@cjolowicz]: https://github.com/cjolowicz
-[pypi]: https://pypi.org/
-[hypermodern python cookiecutter]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-[file an issue]: https://github.com/Wordcab/wordcab-python/issues
-[pip]: https://pip.pypa.io/
-
-<!-- github-only -->
-
-[license]: https://github.com/Wordcab/wordcab-python/blob/main/LICENSE
-[contributor guide]: https://github.com/Wordcab/wordcab-python/blob/main/CONTRIBUTING.md
-[command-line reference]: https://wordcab-python.readthedocs.io/en/latest/usage.html

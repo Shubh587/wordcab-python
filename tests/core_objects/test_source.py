@@ -18,7 +18,6 @@ import json
 from pathlib import Path
 
 import pytest
-
 from wordcab.config import AVAILABLE_AUDIO_FORMATS
 from wordcab.core_objects import (
     AssemblyAISource,

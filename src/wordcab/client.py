@@ -61,7 +61,6 @@ from .utils import (
     _format_tags,
 )
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -72,12 +71,10 @@ class Client:
         """Initialize the client."""
         self.api_key = api_key if api_key else get_token()
         if not self.api_key:
-            raise ValueError(
-                """
+            raise ValueError("""
             API Key not found. You must set the WORDCAB_API_KEY environment variable. Use `wordcab login` to login
             to the Wordcab CLI and set the environment variable.
-            """
-            )
+            """)
         self.timeout = REQUEST_TIMEOUT
 
     def __enter__(self) -> "Client":
@@ -163,40 +160,35 @@ class Client:
     ) -> ExtractJob:
         """Start an Extraction job."""
         if _check_extract_pipelines(pipelines) is False:
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 You must specify a valid list of pipelines.
                 Available pipelines are: {", ".join(EXTRACT_PIPELINES[:-1])} and {EXTRACT_PIPELINES[-1]}.
-            """
-            )
+            """)
         if (
             isinstance(
                 source_object, (BaseSource, InMemorySource, WordcabTranscriptSource)
             )
             is False
         ):
-            raise ValueError(
-                """
+            raise ValueError("""
                 You must specify a valid source object for the extraction job.
                 See https://docs.wordcab.com/docs/accepted-sources for more information.
-            """
-            )
+            """)
 
         source = source_object.source
         if source not in SOURCE_OBJECT_MAPPING.keys():
             raise ValueError(
-                f"Invalid source: {source}. Source must be one of {SOURCE_OBJECT_MAPPING.keys()}"
+                f"Invalid source: {source}. Source must be one of"
+                f" {SOURCE_OBJECT_MAPPING.keys()}"
             )
         if (
             source_object.__class__.__name__ != SOURCE_OBJECT_MAPPING[source]
             and source_object.__class__.__name__ != "InMemorySource"
         ):
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 Invalid source object: {source_object}. Source object must be of type {SOURCE_OBJECT_MAPPING[source]},
                 but is of type {type(source_object)}.
-            """
-            )
+            """)
 
         if hasattr(source_object, "payload"):
             payload = source_object.payload
@@ -281,11 +273,9 @@ class Client:
             )
 
         if summary_type == "reason_conclusion":
-            raise ValueError(
-                """
+            raise ValueError("""
                 The summary type 'reason_conclusion' has been removed. You can use `brief` instead.
-            """
-            )
+            """)
         else:
             if summary_lens is None:
                 logger.warning(
@@ -293,20 +283,16 @@ class Client:
                 )
                 summary_lens = 3
             if _check_summary_length(summary_lens) is False:
-                raise ValueError(
-                    f"""
+                raise ValueError(f"""
                     You must specify a valid summary length. Summary length must be an integer or a list of integers.
                     The integer values must be between {SUMMARY_LENGTHS_RANGE[0]} and {SUMMARY_LENGTHS_RANGE[1]}.
-                """
-                )
+                """)
 
         if _check_summary_pipelines(pipelines) is False:
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 You must specify a valid list of pipelines.
                 Available pipelines are: {", ".join(SUMMARY_PIPELINES[:-1])} and {SUMMARY_PIPELINES[-1]}.
-            """
-            )
+            """)
 
         if (
             isinstance(
@@ -314,20 +300,16 @@ class Client:
             )
             is False
         ):
-            raise ValueError(
-                """
+            raise ValueError("""
                 You must specify a valid source object to summarize.
                 See https://docs.wordcab.com/docs/accepted-sources for more information.
-            """
-            )
+            """)
 
         if _check_context_elements(context) is False:
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 You must specify valid context elements. Context elements must be a string or a list of strings.
                 Here are the available context elements: {", ".join(CONTEXT_ELEMENTS[:-1])} and {CONTEXT_ELEMENTS[-1]}.
-            """
-            )
+            """)
 
         if source_lang is None:
             source_lang = "en"
@@ -336,43 +318,36 @@ class Client:
             target_lang = source_lang
 
         if _check_source_lang(source_lang) is False:
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 You must specify a valid source language.
                 Available languages are: {", ".join(SOURCE_LANG[:-1])} or {SOURCE_LANG[-1]}.
-            """
-            )
+            """)
         elif _check_target_lang(target_lang) is False:
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 You must specify a valid target language.
                 Available languages are: {", ".join(TARGET_LANG[:-1])} or {TARGET_LANG[-1]}.
-            """
-            )
+            """)
         elif source_lang != "en" or target_lang != "en":
-            logger.warning(
-                """
+            logger.warning("""
                 Languages outside `en` are currently in beta and may not be as accurate as the English model.
                 We are working to improve the accuracy of the non-English models.
                 If you have any feedback, don't hesitate to get in touch with us at info@wordcab.com.
-            """
-            )
+            """)
 
         source = source_object.source
         if source not in SOURCE_OBJECT_MAPPING.keys():
             raise ValueError(
-                f"Invalid source: {source}. Source must be one of {SOURCE_OBJECT_MAPPING.keys()}"
+                f"Invalid source: {source}. Source must be one of"
+                f" {SOURCE_OBJECT_MAPPING.keys()}"
             )
         if (
             source_object.__class__.__name__ != SOURCE_OBJECT_MAPPING[source]
             and source_object.__class__.__name__ != "InMemorySource"
         ):
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 Invalid source object: {source_object}. Source object must be of type {SOURCE_OBJECT_MAPPING[source]},
                 but is of type {type(source_object)}.
-            """
-            )
+            """)
 
         if hasattr(source_object, "payload"):
             payload = source_object.payload
@@ -450,12 +425,10 @@ class Client:
     ) -> ListJobs:
         """List all jobs."""
         if order_by not in LIST_JOBS_ORDER_BY:
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 Invalid `order_by` parameter. Must be one of {LIST_JOBS_ORDER_BY}.
                 You can use - to indicate descending order.
-            """
-            )
+            """)
 
         headers = {
             "Authorization": f"Bearer {self.api_key}",

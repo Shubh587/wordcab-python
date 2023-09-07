@@ -16,7 +16,6 @@
 
 import pytest
 from click.testing import CliRunner
-
 from wordcab import __main__
 
 

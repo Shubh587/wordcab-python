@@ -21,7 +21,6 @@ from typing import Any, Dict, List, Optional, Union
 from ..config import SUMMARY_TYPES
 from .utils import _get_context_items, _textwrap
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -44,7 +43,9 @@ class StructuredSummary:
 
     def __repr__(self) -> str:
         """Return a string representation of the object without the None values."""
-        return f"{self.__class__.__name__}({', '.join(f'{k}={v!r}' for k, v in self.__dict__.items() if v is not None)})"
+        return (
+            f"{self.__class__.__name__}({', '.join(f'{k}={v!r}' for k, v in self.__dict__.items() if v is not None)})"
+        )
 
 
 @dataclass
@@ -71,7 +72,8 @@ class BaseSummary:
         if self.summary_type:
             if self.summary_type not in SUMMARY_TYPES:
                 raise ValueError(
-                    f"Summary type must be one of {SUMMARY_TYPES}, not {self.summary_type}"
+                    f"Summary type must be one of {SUMMARY_TYPES}, not"
+                    f" {self.summary_type}"
                 )
 
         if self.time_started and self.time_completed:

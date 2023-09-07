@@ -24,7 +24,6 @@ from ..config import (
     SUMMARIZE_AVAILABLE_STATUS,
 )
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -65,11 +64,9 @@ class BaseJob:
         """Post-init method."""
         logger.info(f"Job {self.job_name} created.")
         if self.source not in SOURCE_OBJECT_MAPPING.keys():
-            raise ValueError(
-                f"""
+            raise ValueError(f"""
                 Source {self.source} is not a valid source. Valid sources are {SOURCE_OBJECT_MAPPING.keys()}.
-            """
-            )
+            """)
 
     def job_update(self, parameters: Dict[str, str]) -> None:
         """Update the job attributes."""

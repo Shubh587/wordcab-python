@@ -18,7 +18,6 @@ import textwrap
 from typing import Any, Dict, List, Union
 
 import pytest
-
 from wordcab.core_objects.utils import (
     _get_assembly_utterances,
     _get_context_items,
@@ -30,7 +29,10 @@ from wordcab.core_objects.utils import (
 
 def test_textwrap_default_width() -> None:
     """Test that _textwrap wraps the text to the default width of 80."""
-    text_to_wrap = "This is a long text that should be wrapped to the specified width of 80 characters by default."
+    text_to_wrap = (
+        "This is a long text that should be wrapped to the specified width of 80"
+        " characters by default."
+    )
 
     expected_result = "\n".join(textwrap.wrap(text_to_wrap, width=80))
     result = _textwrap(text_to_wrap)
@@ -79,11 +81,10 @@ def test_multiple_context_items() -> None:
     result = _get_context_items(context)
 
     expected_result = (
-        "Issue: This is an issue\n"
-        "Purpose: This is a purpose\n"
-        "Next steps: {'text': 'These are next steps', 'associated_speakers': ['SPEAKER B']}\n"
-        "Discussion points: ['These are discussion points', 'These are more discussion points']\n"
-        "Keywords: ['These are keywords', 'These are more keywords']\n"
+        "Issue: This is an issue\nPurpose: This is a purpose\nNext steps: {'text':"
+        " 'These are next steps', 'associated_speakers': ['SPEAKER B']}\nDiscussion"
+        " points: ['These are discussion points', 'These are more discussion"
+        " points']\nKeywords: ['These are keywords', 'These are more keywords']\n"
     )
     assert expected_result == result
 

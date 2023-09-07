@@ -31,7 +31,6 @@ from .api import (
 from .client import Client
 from .login import login
 
-
 __all__ = [
     "Client",
     "change_speaker_labels",

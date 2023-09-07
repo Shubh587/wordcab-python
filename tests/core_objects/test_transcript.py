@@ -18,9 +18,7 @@ import logging
 from typing import Dict, Union
 
 import pytest
-
 from wordcab.core_objects import BaseTranscript, ListTranscripts, TranscriptUtterance
-
 
 logger = logging.getLogger(__name__)
 
@@ -74,7 +72,10 @@ def dummy_full_transcript() -> BaseTranscript:
                 "question_speaker": "A",
             },
             {
-                "answer": "I was just calling about to see how much it would cost to update the map in my car.",
+                "answer": (
+                    "I was just calling about to see how much it would cost to update"
+                    " the map in my car."
+                ),
                 "question": "How can I help you?",
                 "answer_speaker": "B",
                 "question_speaker": "A",
@@ -110,8 +111,8 @@ def test_transcript(dummy_empty_transcript: BaseTranscript) -> None:
         for _ in range(10)
     ]
     assert isinstance(dummy_empty_transcript, BaseTranscript)
-    assert dummy_empty_transcript.job_id_set == list()
-    assert dummy_empty_transcript.summary_id_set == list()
+    assert dummy_empty_transcript.job_id_set == []
+    assert dummy_empty_transcript.summary_id_set == []
     assert dummy_empty_transcript.speaker_map == {}
     assert dummy_empty_transcript.question_answers is None
 
@@ -159,7 +160,10 @@ def test_full_transcript(dummy_full_transcript: BaseTranscript) -> None:
             "question_speaker": "A",
         },
         {
-            "answer": "I was just calling about to see how much it would cost to update the map in my car.",
+            "answer": (
+                "I was just calling about to see how much it would cost to update the"
+                " map in my car."
+            ),
             "question": "How can I help you?",
             "answer_speaker": "B",
             "question_speaker": "A",

@@ -17,7 +17,6 @@
 from typing import List, Union
 
 import pytest
-
 from wordcab.utils import (
     _check_context_elements,
     _check_source_lang,

@@ -18,9 +18,7 @@ import logging
 from typing import List
 
 import pytest
-
 from wordcab.core_objects import Stats
-
 
 logger = logging.getLogger(__name__)
 

@@ -14,26 +14,44 @@
 
 """Fixtures and mocks for all test files."""
 
-import os
+import random
 from pathlib import Path
 from typing import List, Optional
 
 import pytest
-
+import responses
 from wordcab.client import Client
 from wordcab.core_objects import AudioSource, BaseSource, GenericSource, InMemorySource
 
 
 @pytest.fixture
+def mock_server():
+    with responses.RequestsMock() as rsps:
+        yield rsps
+
+
+@pytest.fixture
 def api_key() -> Optional[str]:
     """Fixture for the API key."""
-    return os.environ.get("WORDCAB_API_KEY")
+    return "".join(random.choice("abcdef1234567890") for _ in range(32))
 
 
 @pytest.fixture
 def client() -> Client:
     """Client fixture."""
     return Client(api_key="dummy_api_key")
+
+
+@pytest.fixture
+def get_job_name() -> str:
+    """Fixture for a job name."""
+    return f"job_{random.randint(1000000000, 9999999999)}"
+
+
+@pytest.fixture
+def get_transcript_id() -> str:
+    """Fixture for a transcript id."""
+    return f"generic_transcript_{random.randint(1000000000, 9999999999)}"
 
 
 @pytest.fixture

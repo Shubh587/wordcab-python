@@ -18,7 +18,6 @@ import logging
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -53,11 +52,13 @@ class BaseTranscript:
             for key, val in self.speaker_map.items():
                 if not isinstance(key, str):
                     raise TypeError(
-                        f"BaseTranscript.speaker_map keys must be strings, not {type(key)}"
+                        "BaseTranscript.speaker_map keys must be strings, not"
+                        f" {type(key)}"
                     )
                 if not isinstance(val, str):
                     raise TypeError(
-                        f"BaseTranscript.speaker_map values must be strings, not {type(val)}"
+                        "BaseTranscript.speaker_map values must be strings, not"
+                        f" {type(val)}"
                     )
 
     def update_speaker_map(self, speaker_map: Dict[str, str]) -> None:

@@ -15,22 +15,24 @@
 """Test suite for the Wordcab Client."""
 
 import pytest
-
 from wordcab import Client
 
 
-def test_client_succeeds(client: Client) -> None:
-    """Test client."""
-    assert client.api_key == "dummy_api_key"
+class TestClient:
+    """Test suite for the Wordcab Client."""
 
-
-def test_client_enter_exit(client: Client) -> None:
-    """Test client enter and exit methods."""
-    with Client(api_key="dummy_api_key") as client:
+    @pytest.mark.usefixtures("client")
+    def test_client_succeeds(self, client) -> None:
+        """Test client."""
         assert client.api_key == "dummy_api_key"
 
+    def test_client_enter_exit(self) -> None:
+        """Test client enter and exit methods."""
+        with Client(api_key="dummy_api_key") as client:
+            assert client.api_key == "dummy_api_key"
 
-def test_request(client: Client) -> None:
-    """Test client request method."""
-    with pytest.raises(ValueError):
-        client.request(method=None)
+    def test_request(self) -> None:
+        """Test client request method."""
+        with pytest.raises(ValueError):
+            with Client(api_key="dummy_api_key") as client:
+                client.request(method=None)
