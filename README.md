@@ -110,7 +110,7 @@ with open("wordcab_summary.json", "w") as f:
 
 ## Documentation
 
-Please see the [Documentation](https://wordcab-python.readthedocs.io/) for more details.
+Please see the [Documentation](https://wordcab.github.io/wordcab-python/) for more details.
 
 ## Contributing
 

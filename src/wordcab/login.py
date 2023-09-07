@@ -80,12 +80,14 @@ def cli_logout() -> None:
 
 def get_token() -> Optional[str]:
     """Read API token from git credential store."""
-    token = os.environ.get("WORDCAB_API_KEY")
+    token = os.environ.get("WORDCAB_API_KEY", None)
+
     if token is None:
         try:
             return path_to_token.read_text().split(":")[1]
         except FileNotFoundError:
             pass
+
     return token
 
 

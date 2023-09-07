@@ -29,13 +29,14 @@ from .api import (
     start_summary,
 )
 from .client import Client
-from .login import login
+from .login import get_token, login
 
 __all__ = [
     "Client",
     "change_speaker_labels",
     "delete_job",
     "get_stats",
+    "get_token",
     "list_jobs",
     "list_summaries",
     "list_transcripts",

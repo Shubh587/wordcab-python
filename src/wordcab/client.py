@@ -71,10 +71,11 @@ class Client:
         """Initialize the client."""
         self.api_key = api_key if api_key else get_token()
         if not self.api_key:
-            raise ValueError("""
-            API Key not found. You must set the WORDCAB_API_KEY environment variable. Use `wordcab login` to login
-            to the Wordcab CLI and set the environment variable.
-            """)
+            raise ValueError(
+                "API Key not found. You must set the WORDCAB_API_KEY environment "
+                "variable. Use `wordcab login` to login to the Wordcab CLI and set "
+                "the environment variable."
+            )
         self.timeout = REQUEST_TIMEOUT
 
     def __enter__(self) -> "Client":
