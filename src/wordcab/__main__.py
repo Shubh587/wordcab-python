@@ -13,9 +13,22 @@
 # limitations under the License.
 
 """Command-line interface."""
+import asyncio
+from functools import wraps
+
 import click
 
 from .login import cli_login, cli_logout
+
+
+def coroutine(f) -> asyncio.coroutine:
+    """Decorator to run a function as a coroutine."""
+
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        return asyncio.run(f(*args, **kwargs))
+
+    return wrapper
 
 
 @click.group()
@@ -39,6 +52,38 @@ def logout() -> None:
 
 main.add_command(login)
 main.add_command(logout)
+
+try:
+    from .live import cli_live
+
+    @click.command()
+    @click.option(
+        "--server-url",
+        "-s",
+        default="ws://localhost:5001/api/v1/live",
+        help="Wordcab API Live server URL",
+    )
+    @click.option(
+        "--source-lang",
+        "-l",
+        default="en",
+        help="Source language of the audio",
+    )
+    @click.option(
+        "--api-key",
+        "-k",
+        default=None,
+        help="Wordcab API Key",
+    )
+    @coroutine
+    async def live(server_url: str, source_lang: str, api_key: str) -> None:
+        """Transcribe audio in real-time."""
+        await cli_live(server_url, source_lang, api_key)
+
+    main.add_command(live)
+
+except ImportError:
+    pass
 
 
 if __name__ == "__main__":

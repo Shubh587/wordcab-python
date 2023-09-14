@@ -46,6 +46,8 @@ path = "src/wordcab/__init__.py"
 
 [project.optional-dependencies]
 live = [
+  "numpy>=1.21.2",
+  "pyaudio>=0.2.11",
   "websockets>=11.0.3",
 ]
 docs = [
@@ -61,6 +63,8 @@ quality = [
 ]
 tests = [
   "httpx>=0.23.3",
+  "numpy>=1.21.2",
+  "pyaudio>=0.2.11",
   "pytest>=7.4",
   "pytest-asyncio>=0.21.1",
   "pytest-cov>=4.1",
