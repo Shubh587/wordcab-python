@@ -108,6 +108,19 @@ class SummarizeJob(BaseJob):
 
 
 @dataclass
+class TranscribeJob(BaseJob):
+    """Wordcab API TranscribeJob object."""
+
+    audio_duration: int = field(default=0)
+
+    def __post_init__(self) -> None:
+        """Post-init."""
+        super().__post_init__()
+        self._job_type = "TranscribeJob"
+        self.available_status = SUMMARIZE_AVAILABLE_STATUS
+
+
+@dataclass
 class ListJobs:
     """Wordcab API ListJobs object."""
 

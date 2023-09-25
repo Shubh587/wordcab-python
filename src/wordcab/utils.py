@@ -14,6 +14,7 @@
 
 """Wordcab API Utils functions."""
 
+import re
 from typing import Any, Dict, List, Optional, Union
 
 from .config import (
@@ -286,3 +287,12 @@ def _format_tags(tags: Union[str, List[str]]) -> str:
         return tags
 
     return ",".join(tags)
+
+
+def _is_youtube_link(url: str) -> bool:
+    """Check if the url is a youtube link."""
+    pattern = re.compile(
+        r"^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$", re.IGNORECASE
+    )
+
+    return bool(pattern.match(url))

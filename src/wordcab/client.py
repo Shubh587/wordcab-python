@@ -30,8 +30,10 @@ from .config import (
     SUMMARY_PIPELINES,
     SUMMARY_TYPES,
     TARGET_LANG,
+    TRANSCRIBE_LANGUAGE_CODES,
 )
 from .core_objects import (
+    AudioSource,
     BaseSource,
     BaseSummary,
     BaseTranscript,
@@ -44,8 +46,10 @@ from .core_objects import (
     Stats,
     StructuredSummary,
     SummarizeJob,
+    TranscribeJob,
     TranscriptUtterance,
     WordcabTranscriptSource,
+    YoutubeSource,
 )
 from .login import get_token
 from .utils import (
@@ -413,6 +417,78 @@ class Client:
                     pipeline=pipelines,
                     split_long_utterances=split_long_utterances,
                     only_api=only_api,
+                ),
+            )
+        else:
+            raise ValueError(r.text)
+
+    def start_transcription(
+        self,
+        source_object: Union[AudioSource, YoutubeSource],
+        display_name: str,
+        source_lang: str,
+        diarization: bool = False,
+        ephemeral_data: bool = False,
+        only_api: Optional[bool] = True,
+        tags: Union[str, List[str], None] = None,
+        api_key: Union[str, None] = None,
+    ) -> TranscribeJob:
+        """Start a transcription job."""
+        if source_lang not in TRANSCRIBE_LANGUAGE_CODES:
+            raise ValueError(f"""
+                Invalid source language: {source_lang}. Source language must be one of {TRANSCRIBE_LANGUAGE_CODES}.
+            """)
+
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+        }
+
+        params = {
+            "display_name": display_name,
+            "source_lang": source_lang,
+            "diarization": str(diarization).lower(),
+            "ephemeral_data": str(ephemeral_data).lower(),
+        }
+        if tags:
+            params["tags"] = _format_tags(tags)
+
+        if isinstance(source_object, AudioSource):
+            _data = source_object.file_object
+
+            if source_object.file_object is None:  # URL source
+                params["url_type"] = "audio_url"
+                params["url"] = source_object.url
+            else:  # File object source
+                headers["Content-Disposition"] = (
+                    f'attachment; filename="{source_object._stem}"'
+                )
+                headers["Content-Type"] = f"audio/{source_object._suffix}"
+
+        else:  # Youtube source
+            params["url_type"] = source_object.source_type
+            params["url"] = source_object.url
+            _data = None
+
+        r = requests.post(
+            "https://wordcab.com/api/v1/transcribe",
+            headers=headers,
+            params=params,
+            data=_data,
+            timeout=self.timeout,
+        )
+
+        if r.status_code == 200 or r.status_code == 201:
+            logger.info("Transcription job started.")
+            return TranscribeJob(
+                display_name=display_name,
+                job_name=r.json()["job_name"],
+                source=source_object.source,
+                source_lang=source_lang,
+                settings=JobSettings(
+                    pipeline="transcribe",
+                    ephemeral_data=ephemeral_data,
+                    only_api=only_api,
+                    split_long_utterances=False,
                 ),
             )
         else:

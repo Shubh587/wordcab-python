@@ -25,6 +25,7 @@ import requests  # type: ignore
 import validators  # type: ignore
 
 from ..config import AVAILABLE_AUDIO_FORMATS, AVAILABLE_GENERIC_FORMATS, REQUEST_TIMEOUT
+from ..utils import _is_youtube_link
 from .utils import (
     _get_assembly_utterances,
     _get_deepgram_utterances,
@@ -359,6 +360,7 @@ class AudioSource(BaseSource):
     """
 
     file_object: bytes = field(init=False, repr=False)
+    download: bool = field(default=False, repr=False)
 
     def __post_init__(self) -> None:
         """Post-init method."""
@@ -370,8 +372,10 @@ class AudioSource(BaseSource):
             )
         if self.source_type == "local":
             self.file_object = self._load_file_from_path()
-        elif self.source_type == "remote":
+        elif self.source_type == "remote" and self.download is True:
             self.file_object = self._load_file_from_url()
+        else:
+            self.file_object = None
 
     def prepare_payload(self) -> Dict[str, bytes]:
         """Prepare payload for API request."""
@@ -383,6 +387,51 @@ class AudioSource(BaseSource):
         """Prepare headers for API request."""
         self.headers = {}
         return self.headers
+
+
+@dataclass
+class YoutubeSource:
+    """
+    Youtube source object using a Youtube video url.
+
+    Parameters
+    ----------
+    url : str
+        The Youtube video url to use as input.
+
+    Examples
+    --------
+    >>> from wordcab.core_objects import YoutubeSource
+
+    >>> youtube_source = YoutubeSource(url="https://www.youtube.com/watch?v=12345")  # doctest: +SKIP
+    >>> youtube_source
+    YoutubeSource(url='https://www.youtube.com/watch?v=12345')
+
+    Returns
+    -------
+    YoutubeSource
+        The Youtube source object.
+    """
+
+    url: str = field(default=None)
+    source: str = field(init=False)
+    source_type: str = field(init=False)
+
+    def __post_init__(self) -> None:
+        """Post-init method."""
+        if self.url is None:
+            raise ValueError(
+                "Please provide a `url` to initialize a YoutubeSource object."
+            )
+
+        if not _is_youtube_link(self.url):
+            raise ValueError(
+                f"Please provide a valid Youtube URL. {self.url} is not valid. "
+                "Use AudioSource instead if you want to use a signed URL."
+            )
+
+        self.source = "youtube"
+        self.source_type = "remote"
 
 
 @dataclass
@@ -438,20 +487,6 @@ class WordcabTranscriptSource:
         """Prepare headers for API request."""
         self.headers = {"Accept": "application/json"}
         return self.headers
-
-
-@dataclass
-class SignedURLSource(BaseSource):
-    """Signed URL source object."""
-
-    signed_url: Optional[str] = field(init=False)
-
-    def __post_init__(self) -> None:
-        """Post-init method."""
-        super().__post_init__()
-        self.signed_url = self.url
-        self.source = "signed_url"
-        raise NotImplementedError("Signed URL source is not implemented yet.")
 
 
 @dataclass

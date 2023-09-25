@@ -25,6 +25,7 @@ from wordcab.core_objects import (
     JobSettings,
     ListJobs,
     SummarizeJob,
+    TranscribeJob,
 )
 
 
@@ -62,6 +63,20 @@ def dummy_summarize_job() -> SummarizeJob:
         job_name="dummy_summarize_job",
         settings=JobSettings(pipeline="transcribe,summarize"),
         source="generic",
+        time_started="dummy_time",
+        transcript_id="dummy_transcript",
+    )
+
+
+@pytest.fixture
+def dummy_transcribe_job() -> TranscribeJob:
+    """Fixture for a dummy TranscribeJob object."""
+    return TranscribeJob(
+        display_name="Dummy Transcribe Job",
+        job_name="dummy_transcribe_job",
+        settings=JobSettings(pipeline="transcribe"),
+        source="audio",
+        audio_duration=100,
         time_started="dummy_time",
         transcript_id="dummy_transcript",
     )
@@ -178,6 +193,28 @@ def test_dummy_summarize_job(dummy_summarize_job: SummarizeJob) -> None:
     assert dummy_summarize_job.available_status == SUMMARIZE_AVAILABLE_STATUS
     assert hasattr(dummy_summarize_job, "job_update") and callable(
         dummy_summarize_job.job_update
+    )
+
+
+def test_dummy_transcribe_job(dummy_transcribe_job: TranscribeJob) -> None:
+    """Test for a dummy TranscribeJob object."""
+    assert dummy_transcribe_job is not None
+    assert dummy_transcribe_job.display_name == "Dummy Transcribe Job"
+    assert dummy_transcribe_job.job_name == "dummy_transcribe_job"
+    assert dummy_transcribe_job.job_status == "Pending"
+    assert dummy_transcribe_job.settings is not None
+    assert dummy_transcribe_job.source == "audio"
+    assert dummy_transcribe_job.time_started == "dummy_time"
+    assert dummy_transcribe_job.time_completed is None
+    assert dummy_transcribe_job.transcript_id == "dummy_transcript"
+    assert dummy_transcribe_job._job_type == "TranscribeJob"
+    assert dummy_transcribe_job.source_lang is None
+    assert dummy_transcribe_job.target_lang is None
+    assert dummy_transcribe_job.available_status is not None
+    assert dummy_transcribe_job.available_status == SUMMARIZE_AVAILABLE_STATUS
+    assert dummy_transcribe_job.audio_duration == 100
+    assert hasattr(dummy_transcribe_job, "job_update") and callable(
+        dummy_transcribe_job.job_update
     )
 
 

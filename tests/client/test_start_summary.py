@@ -271,9 +271,9 @@ class TestClientStartSummary:
                 only_api=True,
             )
 
-    @pytest.mark.usefixtures("audio_url_source", "api_key", "mock_server")
+    @pytest.mark.usefixtures("audio_url_source_no_download", "api_key", "mock_server")
     def test_start_summary_audio_url(
-        self, audio_url_source, api_key, mock_server
+        self, audio_url_source_no_download, api_key, mock_server
     ) -> None:
         """Test client start_summary method with audio url source."""
         with Client(api_key=api_key) as client:
@@ -284,7 +284,7 @@ class TestClientStartSummary:
                 status=201,
             )
             audio_job = client.start_summary(
-                source_object=audio_url_source,
+                source_object=audio_url_source_no_download,
                 display_name="test-sdk-audio-url",
                 summary_type="narrative",
                 summary_lens=3,
