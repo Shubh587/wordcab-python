@@ -27,7 +27,6 @@ from wordcab.core_objects import (
     GenericSource,
     InMemorySource,
     RevSource,
-    SignedURLSource,
     VTTSource,
     WordcabTranscriptSource,
 )
@@ -243,9 +242,29 @@ def test_audio_source(tmp_path: Path) -> None:
     with pytest.raises(ValueError):
         AudioSource(filepath=Path(aac_path))
 
+    # Test download is False
     url = "https://github.com/Wordcab/wordcab-python/blob/main/tests/sample_1.mp3?raw=true"
     headers = {"Accept": "application/json", "Content-Type": "application/json"}
     audio_source = AudioSource(url=url, url_headers=headers)
+    assert audio_source.filepath is None
+    assert audio_source.url == url
+    assert audio_source.url_headers == headers
+    assert audio_source.source_type == "remote"
+    assert audio_source._stem == "sample_1"
+    assert audio_source._suffix == ".mp3"
+    assert audio_source.file_object is None
+    assert hasattr(audio_source, "prepare_payload") and callable(
+        audio_source.prepare_payload
+    )
+    assert audio_source.prepare_payload() == {"audio_file": audio_source.file_object}
+    assert hasattr(audio_source, "prepare_headers") and callable(
+        audio_source.prepare_headers
+    )
+    assert audio_source.prepare_headers() == {}
+    # Test download is True
+    url = "https://github.com/Wordcab/wordcab-python/blob/main/tests/sample_1.mp3?raw=true"
+    headers = {"Accept": "application/json", "Content-Type": "application/json"}
+    audio_source = AudioSource(url=url, url_headers=headers, download=True)
     assert audio_source.filepath is None
     assert audio_source.url == url
     assert audio_source.url_headers == headers
@@ -272,7 +291,7 @@ def test_audio_source(tmp_path: Path) -> None:
     assert audio_source.source_type == "remote"
     assert audio_source._stem == "test file with dots"
     assert audio_source._suffix == ".mp3"
-    assert audio_source.file_object is not None
+    assert audio_source.file_object is None
     assert hasattr(audio_source, "prepare_payload") and callable(
         audio_source.prepare_payload
     )
@@ -316,12 +335,6 @@ def test_wordcab_transcript_source() -> None:
     assert source_obj.transcript_id == "test"
     assert source_obj.source == "wordcab_transcript"
     assert source_obj.__repr__() == "WordcabTranscriptSource(transcript_id=test)"
-
-
-def test_signed_url_source() -> None:
-    """Test the SignedURLSource object."""
-    with pytest.raises(NotImplementedError):
-        SignedURLSource(url="https://example.com")
 
 
 def test_rev_source() -> None:

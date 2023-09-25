@@ -18,6 +18,7 @@ from typing import Dict, List, Optional, Union, no_type_check
 
 from .client import Client
 from .core_objects import (
+    AudioSource,
     BaseSource,
     BaseSummary,
     BaseTranscript,
@@ -28,7 +29,9 @@ from .core_objects import (
     ListTranscripts,
     Stats,
     SummarizeJob,
+    TranscribeJob,
     WordcabTranscriptSource,
+    YoutubeSource,
 )
 
 
@@ -226,6 +229,60 @@ def start_summary(
         split_long_utterances=split_long_utterances,
         summary_lens=summary_lens,
         target_lang=target_lang,
+        tags=tags,
+        api_key=api_key,
+    )
+
+
+@no_type_check
+def start_transcription(
+    source_object: Union[AudioSource, YoutubeSource],
+    display_name: str,
+    source_lang: str,
+    diarization: bool = False,
+    ephemeral_data: bool = False,
+    only_api: bool = True,
+    tags: Union[str, List[str], None] = None,
+    api_key: Union[str, None] = None,
+) -> TranscribeJob:
+    """
+    Start a transcription job.
+
+    Parameters
+    ----------
+    source_object : AudioSource
+        The source object to transcribe.
+    display_name : str
+        The display name of the transcription. This is useful for retrieving the job later.
+    source_lang : str
+        The language of the source audio.
+    diarization : bool
+        Whether to perform speaker diarization. The default is False.
+    ephemeral_data : bool
+        Whether to delete the data after the transcription is complete. The default is False. If False, the data will be
+        kept on Wordcab's servers. You can delete the data at any time, check the documentation here:
+        https://docs.wordcab.com/docs/enabling-ephemeral-data
+    only_api : bool
+        Whether to only use the API to transcribe the audio. The default is True.
+    tags : str or list of str, optional
+        The tags to add to the job. The default is None. If None, no tags will be added.
+    api_key : str, optional
+        The API key to use. The default is None. If None, the API key will be
+        automatically retrieved from the environment variable WORDCAB_API_KEY.
+
+    Returns
+    -------
+    TranscribeJob
+        The transcribe job object.
+    """
+    return request(
+        method="start_transcription",
+        source_object=source_object,
+        display_name=display_name,
+        source_lang=source_lang,
+        diarization=diarization,
+        ephemeral_data=ephemeral_data,
+        only_api=only_api,
         tags=tags,
         api_key=api_key,
     )

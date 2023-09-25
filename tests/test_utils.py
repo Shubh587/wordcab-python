@@ -26,6 +26,7 @@ from wordcab.utils import (
     _format_lengths,
     _format_pipelines,
     _format_tags,
+    _is_youtube_link,
     format_deepgram_source,
 )
 
@@ -150,3 +151,30 @@ def test_format_deepgram_source_valid() -> None:
     }
     expected_output = ["SPEAKER A: Hello world.", "SPEAKER B: How are you?"]
     assert format_deepgram_source(deepgram_json) == expected_output
+
+
+@pytest.mark.parametrize(
+    "youtube_url",
+    [
+        "https://youtu.be/yU896nvfMy0?si=YaZYWjNEXlQQSqtU",
+        "https://youtu.be/yU896nvfMy0",
+        "https://www.youtube.com/watch?v=yU896nvfMy0",
+        "www.youtube.com/watch?v=yU896nvfMy0",
+    ],
+)
+def test_is_youtube_link_valid(youtube_url: str) -> None:
+    """Test with valid input."""
+    assert _is_youtube_link(youtube_url) is True
+
+
+@pytest.mark.parametrize(
+    "youtube_url",
+    [
+        "https://wordcab.com/",
+        "www.wordcab.com",
+        "https://www.wordcab.com",
+    ],
+)
+def test_is_youtube_link_invalid(youtube_url: str) -> None:
+    """Test with invalid input."""
+    assert _is_youtube_link(youtube_url) is False

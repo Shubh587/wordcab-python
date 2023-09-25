@@ -145,11 +145,11 @@ def test_source_object_mapping() -> None:
         "generic": "GenericSource",
         "audio": "AudioSource",
         "wordcab_transcript": "WordcabTranscriptSource",
-        "signed_url": "SignedUrlSource",
         "assembly_ai": "AssemblyAISource",
         "deepgram": "DeepgramSource",
         "rev_ai": "RevSource",
         "vtt": "VTTSource",
+        "youtube": "YoutubeSource",
     }
 
 

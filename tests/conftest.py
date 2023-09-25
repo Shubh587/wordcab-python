@@ -21,7 +21,13 @@ from typing import List, Optional
 import pytest
 import responses
 from wordcab.client import Client
-from wordcab.core_objects import AudioSource, BaseSource, GenericSource, InMemorySource
+from wordcab.core_objects import (
+    AudioSource,
+    BaseSource,
+    GenericSource,
+    InMemorySource,
+    YoutubeSource,
+)
 
 
 @pytest.fixture
@@ -90,11 +96,26 @@ def audio_source() -> AudioSource:
 
 
 @pytest.fixture
-def audio_url_source() -> AudioSource:
+def audio_url_source_no_download() -> AudioSource:
     """Fixture for an AudioSource object."""
     return AudioSource(
         url="https://github.com/Wordcab/wordcab-python/blob/main/tests/sample_1.mp3?raw=true"
     )
+
+
+@pytest.fixture
+def audio_url_source_with_download() -> AudioSource:
+    """Fixture for an AudioSource object."""
+    return AudioSource(
+        url="https://github.com/Wordcab/wordcab-python/blob/main/tests/sample_1.mp3?raw=true",
+        download=True,
+    )
+
+
+@pytest.fixture
+def youtube_source() -> YoutubeSource:
+    """Fixture for a YoutubeSource object."""
+    return YoutubeSource(url="https://www.youtube.com/watch?v=9bZkp7q19f0")
 
 
 @pytest.fixture

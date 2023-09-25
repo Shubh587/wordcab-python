@@ -49,6 +49,7 @@ class BaseJob:
     display_name: str
     job_name: str
     source: str
+    audio_duration: int = field(default=0)
     job_status: Optional[str] = field(default="Pending")
     metadata: Optional[Dict[str, str]] = field(default=None)
     settings: Optional[JobSettings] = field(default=None)
@@ -104,6 +105,17 @@ class SummarizeJob(BaseJob):
         """Post-init."""
         super().__post_init__()
         self._job_type = "SummarizeJob"
+        self.available_status = SUMMARIZE_AVAILABLE_STATUS
+
+
+@dataclass
+class TranscribeJob(BaseJob):
+    """Wordcab API TranscribeJob object."""
+
+    def __post_init__(self) -> None:
+        """Post-init."""
+        super().__post_init__()
+        self._job_type = "TranscribeJob"
         self.available_status = SUMMARIZE_AVAILABLE_STATUS
 
 

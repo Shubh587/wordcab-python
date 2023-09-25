@@ -27,6 +27,7 @@ from .api import (
     retrieve_transcript,
     start_extract,
     start_summary,
+    start_transcription,
 )
 from .client import Client
 from .login import get_token, login
@@ -47,6 +48,7 @@ __all__ = [
     "retrieve_transcript",
     "start_extract",
     "start_summary",
+    "start_transcription",
 ]
 
-__version__ = "0.7.0"
+__version__ = "0.7.2"

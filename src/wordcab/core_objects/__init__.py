@@ -14,7 +14,7 @@
 
 """Wordcab API Core Objects."""
 
-from .job import BaseJob, ExtractJob, JobSettings, ListJobs, SummarizeJob
+from .job import BaseJob, ExtractJob, JobSettings, ListJobs, SummarizeJob, TranscribeJob
 from .source import (
     AssemblyAISource,
     AudioSource,
@@ -23,9 +23,9 @@ from .source import (
     GenericSource,
     InMemorySource,
     RevSource,
-    SignedURLSource,
     VTTSource,
     WordcabTranscriptSource,
+    YoutubeSource,
 )
 from .stats import Stats
 from .summary import BaseSummary, ListSummaries, StructuredSummary
@@ -47,11 +47,12 @@ __all__ = [
     "ListSummaries",
     "ListTranscripts",
     "RevSource",
-    "SignedURLSource",
     "Stats",
     "StructuredSummary",
     "SummarizeJob",
+    "TranscribeJob",
     "TranscriptUtterance",
     "VTTSource",
     "WordcabTranscriptSource",
+    "YoutubeSource",
 ]
